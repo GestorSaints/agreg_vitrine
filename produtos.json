@@ -1,0 +1,57 @@
+[
+    {
+        "nome": "Vestido Floral",
+        "preco": 149.90,
+        "imagem": "img/vestido1.jpeg"
+    },
+    {
+        "nome": "Vestido Floral",
+        "preco": 149.90,
+        "imagem": "img/vestido2.jpeg"
+    },
+    {
+        "nome": "Vestido Floral",
+        "preco": 149.90,
+        "imagem": "img/vestido3.jpeg"
+    },
+    {
+        "nome": "Vestido Floral",
+        "preco": 149.90,
+        "imagem": "img/vestido4.jpeg"
+    },
+    {
+        "nome": "Saia Jeans",
+        "preco": 89.90,
+        "imagem": "img/saia_jeans1.jpeg"
+    },
+    {
+        "nome": "Saia Jeans",
+        "preco": 89.90,
+        "imagem": "img/saia_jeans2.jpeg"
+    },
+    {
+        "nome": "Saia Jeans",
+        "preco": 89.90,
+        "imagem": "img/saia_jeans3.jpeg"
+    },
+    {
+        "nome": "Conjuntos",
+        "preco": 69.90,
+        "imagem": "img/conjunto_bermuda1.jpeg"
+    },
+    {
+        "nome": "Conjuntos",
+        "preco": 69.90,
+        "imagem": "img/conjunto_bermuda2.jpeg"
+    },
+    {
+        "nome": "Conjuntos",
+        "preco": 69.90,
+        "imagem": "img/conjunto_bermuda3.jpeg"
+    },
+    {
+        "nome": "Conjuntos",
+        "preco": 69.90,
+        "imagem": "img/conjunto_bermuda4.jpeg"
+    }
+]
