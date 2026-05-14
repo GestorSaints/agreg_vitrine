@@ -7,7 +7,7 @@
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    background-color: #ce21d485;
+    background-color:rgba(226, 160, 203, 0.937)
 }
 header{
     display: inline;
@@ -18,7 +18,7 @@ header{
     width: 100%;
     height: 150px;
 
-    background-color: rgb(197, 154, 102);
+    background-color: rgba(179, 103, 152, 0.742);
     color: #000;
     
     align-items: center;
