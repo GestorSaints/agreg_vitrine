@@ -30,6 +30,8 @@ h1{
     font-size: 80px;
     text-align: center;
     margin-top: 0px ;
+    border: black;
+    border-size: 3px;
 }
 .logo{
     background-color: #0ced2e08 ;
