@@ -1,0 +1,21 @@
+# Estrutura das pastas
+
+```txt
+📁 projeto
+ ├── index.html
+ ├── style.css
+ ├── script.js
+ ├── produtos.json
+ └── 📁 img
+      ├── vestido1.jpeg
+      ├── vestido2.jpeg
+      ├── vestido3.jpeg
+      ├── vestido4.jpeg
+      ├── saia_jeans1.jpeg
+      ├── saia_jeans2.jpeg
+      ├── saia_jeans3.jpeg
+      ├── conjunto_bermuda1.jpeg
+      ├── conjunto_bermuda2.jpeg
+      ├── conjunto_bermuda3.jpeg
+      └── conjunto_bermuda4.jpeg
+```
