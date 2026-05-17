@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "nome": "Vestido Floral",
+    "nome": "Conjuntos - Calças",
     "categoria": "Vestidos",
     "preco": 149.90,
     "imagem": "img/vestido1.jpeg"
@@ -9,7 +9,7 @@
 
   {
     "id": 2,
-    "nome": "Vestido Floral",
+    "nome": "Conjuntos - Shorts",
     "categoria": "Vestidos",
     "preco": 149.90,
     "imagem": "img/vestido2.jpeg"
@@ -17,7 +17,7 @@
 
   {
     "id": 3,
-    "nome": "Vestido Floral",
+    "nome": "Conjuntos - Saias",
     "categoria": "Vestidos",
     "preco": 149.90,
     "imagem": "img/vestido3.jpeg"
@@ -25,7 +25,7 @@
 
   {
     "id": 4,
-    "nome": "Vestido Floral",
+    "nome": "Vestidos",
     "categoria": "Vestidos",
     "preco": 149.90,
     "imagem": "img/vestido4.jpeg"
@@ -33,7 +33,7 @@
 
   {
     "id": 5,
-    "nome": "Saia Jeans",
+    "nome": "Macacão",
     "categoria": "Saias",
     "preco": 89.90,
     "imagem": "img/saia_jeans1.jpeg"
@@ -41,7 +41,7 @@
 
   {
     "id": 6,
-    "nome": "Saia Jeans",
+    "nome": "Blusas",
     "categoria": "Saias",
     "preco": 89.90,
     "imagem": "img/saia_jeans2.jpeg"
@@ -49,7 +49,7 @@
 
   {
     "id": 7,
-    "nome": "Saia Jeans",
+    "nome": "Calças Jeans",
     "categoria": "Saias",
     "preco": 89.90,
     "imagem": "img/saia_jeans3.jpeg"
@@ -57,7 +57,7 @@
 
   {
     "id": 8,
-    "nome": "Conjuntos",
+    "nome": "Shorts Jeans",
     "categoria": "Conjuntos",
     "preco": 69.90,
     "imagem": "img/conjunto_bermuda1.jpeg"
@@ -65,7 +65,7 @@
 
   {
     "id": 9,
-    "nome": "Conjuntos",
+    "nome": "Saias Jeans",
     "categoria": "Conjuntos",
     "preco": 69.90,
     "imagem": "img/conjunto_bermuda2.jpeg"
@@ -79,6 +79,13 @@
     "imagem": "img/conjunto_bermuda3.jpeg"
   },
 
+  {
+    "id": 11,
+    "nome": "Conjuntos",
+    "categoria": "Conjuntos",
+    "preco": 69.90,
+    "imagem": "img/conjunto_bermuda4.jpeg"
+  },
   {
     "id": 11,
     "nome": "Conjuntos",
