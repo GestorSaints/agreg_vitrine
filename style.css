@@ -375,4 +375,52 @@ footer{
     font-size:32px;
   }
 
+  /* HEADER MOBILE */
+
+header{
+
+  flex-direction:column;
+
+  align-items:center;
+
+  height:auto;
+
+  padding:20px;
+}
+
+/* MENU MOBILE */
+
+.menu{
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:12px;
+
+  margin:20px 0;
+}
+
+.menu a{
+
+  font-size:18px;
+}
+
+/* BOTÃO WHATS */
+
+.whatsapp-btn{
+
+  width:100%;
+
+  justify-content:center;
+}
+
+/* AJUSTE MAIN */
+
+main{
+
+  padding-top:260px;
+}
 }
