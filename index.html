@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
 
   <meta charset="UTF-8">
@@ -17,115 +18,99 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
+
 <body>
 
-  <!-- HEADER -->
+  <!---------------------------- HEADER -------------------------------->
 
   <header>
 
-    <div class="logo-area">
-
-    
-        <img src="img/agreg_logo.jpeg" class="log">
-    
-
-      
-        <img src="img/agreg_slogan2.JPG" class="logon" >
-      
-
+    <div class="header-left">
+      <img src="img/agreg_logo.jpeg" class="logo">
     </div>
 
+<!---------------------------- MENU -------------------------------->
+
+<nav class="menu">
+  <a href="feminino.html" onclick="showCategory('feminino')">
+    Feminino
+  </a>
+  <a href="masculino.html" onclick="showCategory('masculino')">
+    Masculino
+  </a>
+  <a href="#">
+        Promoções
+  </a>
+  <a href="#">
+        Contato
+  </a>
+</nav>
+
+
+    <div class="header-right">
+      <a
+      href="https://wa.me/558681799539" target="_blank" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp
+      </a>
+    </div>
   </header>
 
-  <!-- MAIN -->
-
+  <!----------------------------- MAIN (inicio) ----------------------->
   <main>
+      <div class="carousel">
+  <div class="slide active">
+    <img src="img/conjunto_bermuda1.jpeg" alt="Moda Masculina">
+    <div class="caption">
+      <h2>Moda Masculina</h2>
+    </div>
+  </div>
 
-    <!-- CAROUSEL -->
-
-    <section class="carousel">
-
-      <div class="slides" id="slides">
-
-      </div>
-
-      <button class="prev" onclick="prevSlide()">
-        ❮
-      </button>
-
-      <button class="next" onclick="nextSlide()">
-        ❯
-      </button>
-
-    </section>
-
-    <!-- PRODUTOS -->
-
-    <section class="products">
-
-      <h2 class="products-title">
-        Destaques AGREG
-      </h2>
-
-      <div class="products-grid"
-      id="products-grid">
-
-      </div>
-
-    </section>
-
+  <div class="slide">
+    <img src="img/saia_jeans1.jpeg" alt="Moda Feminina">
+    <div class="caption">
+      <h2>Moda Feminina</h2>
+    </div>
+  </div>
+</div>
   </main>
+  <!------------------------ MAIN (fim) ------------------------------->
 
-  <!-- FOOTER -->
+  <!------------------------------- FOOTER ----------------------------->
 
   <footer>
-
     <div class="footer-container">
 
-      <!-- LOGO -->
+      <!-- MARCA -->
 
       <div class="footer-brand">
-
         <h2>
           AGREG
         </h2>
-
         <p>
-          Moda feminina moderna com identidade premium.
+          Moda moderna para homens e mulheres.
         </p>
-
       </div>
 
-      <!-- REDES SOCIAIS -->
+      <!-- REDES -->
 
       <div class="footer-socials">
-
         <h3>
           Redes Sociais
         </h3>
-
         <div class="social-icons">
 
-          <a href="https://wa.me/558681799539"
-          target="_blank">
-
+          <a href="https://wa.me/558681799539" target="_blank">
             <i class="fa-brands fa-whatsapp"></i>
-
           </a>
 
-          <a href="https://instagram.com"
-          target="_blank">
-
+          <a href="https://instagram.com" target="_blank">
             <i class="fa-brands fa-instagram"></i>
-
           </a>
-
         </div>
-
       </div>
 
       <!-- QR CODE -->
-
       <div class="qr-code">
 
         <h3>
@@ -134,21 +119,18 @@
 
         <img
         src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/558681799539"
-        alt="QR Code WhatsApp">
+        alt="QR Code">
 
       </div>
-
     </div>
-
     <div class="copyright">
       © 2026 AGREG - Todos os direitos reservados.
     </div>
 
   </footer>
 
-  <!-- JS -->
-
+  <!----------------------- JS ------------------------>
   <script src="script.js"></script>
-
+  <!----------------------- JS ------------------------>
 </body>
 </html>
