@@ -151,6 +151,98 @@ main{
   padding: 15px 25px;
   border-radius: 10px;
 }
+
+/*  --------    feminino.html (style)   ----------------*/
+/* GRID */
+
+.catalog-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+
+  gap:25px;
+}
+
+/* CARD */
+
+.product-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:25px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* MINI GALERIA */
+
+.mini-gallery{
+
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:10px;
+}
+
+.mini-gallery img{
+
+  width:100%;
+
+  height:250px;
+
+  object-fit:cover;
+
+  border-radius:15px;
+}
+
+/* TITULO */
+
+.product-card h3{
+
+  margin:15px 0;
+}
+
+/* BOTÃO */
+
+.details-btn{
+
+  width:100%;
+
+  border:none;
+
+  background:#111;
+
+  color:white;
+
+  padding:12px;
+
+  border-radius:15px;
+
+  cursor:pointer;
+}
+
+/* DETALHES */
+
+.product-details{
+
+  display:none;
+
+  margin-top:15px;
+
+  line-height:1.8;
+}
+
+.show-details{
+
+  display:block;
+}
+/*  --------    feminino.html (style)   ----------------*/
+
 /* ----- ------------------ FOOTER ------------------------ */
 
 footer{
@@ -285,93 +377,3 @@ footer{
   }
 
 }
-/*  --------    feminino.html (style)   ----------------*/
-/* GRID */
-
-.catalog-grid{
-
-  display:grid;
-
-  grid-template-columns:
-  repeat(4,1fr);
-
-  gap:25px;
-}
-
-/* CARD */
-
-.product-card{
-
-  background:white;
-
-  border-radius:20px;
-
-  padding:25px;
-
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* MINI GALERIA */
-
-.mini-gallery{
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:10px;
-}
-
-.mini-gallery img{
-
-  width:100%;
-
-  height:250px;
-
-  object-fit:cover;
-
-  border-radius:15px;
-}
-
-/* TITULO */
-
-.product-card h3{
-
-  margin:15px 0;
-}
-
-/* BOTÃO */
-
-.details-btn{
-
-  width:100%;
-
-  border:none;
-
-  background:#111;
-
-  color:white;
-
-  padding:12px;
-
-  border-radius:15px;
-
-  cursor:pointer;
-}
-
-/* DETALHES */
-
-.product-details{
-
-  display:none;
-
-  margin-top:15px;
-
-  line-height:1.8;
-}
-
-.show-details{
-
-  display:block;
-}
-/*  --------    feminino.html (style)   ----------------*/
