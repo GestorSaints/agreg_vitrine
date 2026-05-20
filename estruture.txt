@@ -19,3 +19,6 @@
       ├── conjunto_bermuda3.jpeg
       └── conjunto_bermuda4.jpeg
 ```
+RGB: (150, 92, 50)
+
+HEX (Hexadecimal): #965C32
