@@ -1,0 +1,209 @@
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#85db8f54;
+}
+
+/* HEADER */
+header{
+    width:100%;
+    height:80px;
+
+    background:#205f05c6;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:999;
+
+    display:flex;
+    align-items:center;
+}
+
+/* LOGO */
+.logo{
+    margin-left:20px;
+}
+
+.logo img{
+    width:120px;
+    height:auto;
+}
+
+/* NAV */
+nav{
+    margin-left:40px;
+}
+
+/* MENU */
+.menu{
+    display:flex;
+
+    list-style:none;
+}
+
+/* ITENS */
+.menu > li{
+    position:relative;
+}
+
+/* LINKS */
+.menu li a{
+    display:block;
+
+    padding:30px 18px;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+/* HOVER */
+.menu li a:hover{
+    background:#2d7a0d;
+}
+
+/* SUBMENU */
+.submenu{
+    display:none;
+
+    position:absolute;
+
+    top:100%;
+    left:0;
+
+    min-width:220px;
+
+    background:white;
+
+    list-style:none;
+
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* LINKS SUBMENU */
+.submenu li a{
+    color:#111;
+    padding:15px;
+}
+
+/* HOVER SUBMENU */
+.submenu li a:hover{
+    background:#eeeeee;
+}
+
+/* MOSTRAR */
+.dropdown:hover .submenu{
+    display:block;
+}
+
+/* MAIN */
+main{
+    padding-top:120px;
+    padding-left:20px;
+}
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+.menu-mobile{
+    display:none;
+
+    font-size:32px;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-left:auto;
+    margin-right:20px;
+}
+
+/* TABLET E CELULAR */
+@media(max-width: 900px){
+
+    header{
+        height:auto;
+
+        flex-wrap:wrap;
+
+        padding:10px 0;
+    }
+
+    /* LOGO */
+    .logo img{
+        width:90px;
+    }
+
+    /* BOTÃO */
+    .menu-mobile{
+        display:block;
+    }
+
+    /* NAV */
+    nav{
+        width:100%;
+
+        margin-left:0;
+    }
+
+    /* MENU */
+    .menu{
+        display:none;
+
+        flex-direction:column;
+
+        width:100%;
+
+        background:#205f05;
+    }
+
+    /* MENU ATIVO */
+    .menu.active{
+        display:flex;
+    }
+
+    /* LINKS */
+    .menu li a{
+        padding:18px 20px;
+
+        border-top:1px solid rgba(255,255,255,0.1);
+    }
+
+    /* SUBMENU */
+    .submenu{
+        position:static;
+
+        display:none;
+
+        width:100%;
+
+        box-shadow:none;
+
+        background:#2d7a0d;
+    }
+
+    /* SUBMENU LINKS */
+    .submenu li a{
+        color:white;
+
+        padding-left:40px;
+    }
+
+    /* ABRIR SUBMENU */
+    .dropdown.active .submenu{
+        display:block;
+    }
+
+}
