@@ -156,8 +156,191 @@
 </aside>
 <main>
 
-</main>
+  <!-- TOPO -->
 
+  <section class="topo-clientes">
+
+    <div class="titulo-clientes">
+
+      <h1>
+
+        Vendas
+
+      </h1>
+
+      <p>
+
+        Controle de pedidos e pagamentos da AGREG
+
+      </p>
+
+    </div>
+   <section class="lista-clientes"></section>
+    <!-- BOTÃO -->
+
+    <button class="btn-novo">
+
+      <i class="fa-solid fa-cart-plus"></i>
+
+      Nova Venda
+
+    </button>
+
+  </section>
+
+  <!-- LISTA DE VENDAS -->
+
+  <section class="lista-clientes">
+
+    <!-- VENDA 1 -->
+    <!-- VENDA 2 -->
+    <!-- VENDA 3 -->
+  </section>
+
+</main>
+   <!-- FOOTER VENDAS -->
+
+<footer class="footer-clientes">
+
+  <div class="footer-container">
+
+    <!-- TÍTULO -->
+
+    <div class="footer-topo">
+
+      <h2>
+
+        <i class="fa-solid fa-cart-plus"></i>
+
+        Nova Venda
+
+      </h2>
+
+      <p>
+
+        Registre novos pedidos e pagamentos da AGREG
+
+      </p>
+
+    </div>
+
+    <!-- FORMULÁRIO -->
+
+    <form class="form-vendas">
+
+      <!-- CLIENTE -->
+
+      <div class="input-group">
+
+        <label for="cliente">
+
+          Cliente
+
+        </label>
+
+        <input
+          type="text"
+          id="cliente"
+          placeholder="Nome do cliente"
+        >
+
+      </div>
+
+      <!-- PRODUTO -->
+
+      <div class="input-group">
+
+        <label for="produto">
+
+          Produto
+
+        </label>
+
+        <input
+          type="text"
+          id="produto"
+          placeholder="Nome do produto"
+        >
+
+      </div>
+
+      <!-- VALOR -->
+
+      <div class="input-group">
+
+        <label for="valor">
+
+          Valor
+
+        </label>
+
+        <input
+          type="number"
+          id="valor"
+          placeholder="R$ 0,00"
+        >
+
+      </div>
+
+      <!-- STATUS -->
+
+      <div class="input-group">
+
+        <label for="status">
+
+          Status do Pagamento
+
+        </label>
+
+        <select id="status">
+
+          <option value="pendente">
+
+            Pendente
+
+          </option>
+
+          <option value="pago">
+
+            Pago
+
+          </option>
+
+        </select>
+
+      </div>
+
+      <!-- OBS -->
+
+      <div class="input-group">
+
+        <label for="obs">
+
+          Observações
+
+        </label>
+
+        <textarea
+          id="obs"
+          placeholder="Detalhes da venda..."
+        ></textarea>
+
+      </div>
+
+      <!-- BOTÃO -->
+
+      <button type="submit" class="btn-salvar">
+
+        <i class="fa-solid fa-floppy-disk"></i>
+
+        Salvar Venda
+
+      </button>
+
+    </form>
+
+  </div>
+</footer>
 <script src="script_fin.js"></script>
 </body>
 </html>

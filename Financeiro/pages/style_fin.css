@@ -870,3 +870,26 @@ header nav{
   overflow-y:auto;
 
 }
+
+
+/* SELECT */
+
+.input-group select{
+
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:#2a2a40;
+
+  color:#fff;
+
+  font-size:15px;
+
+  outline:none;
+
+}

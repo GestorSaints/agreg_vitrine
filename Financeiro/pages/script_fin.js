@@ -117,7 +117,7 @@ if(btnNovo && footerClientes){
 
 }
 
-const form = document.querySelector(".form-cliente");
+const form = document.querySelector(".form-clientes");
 
 if (form) {
   form.addEventListener("submit", (e) => {
@@ -176,3 +176,164 @@ function renderClientes() {
 document.addEventListener("DOMContentLoaded", () => {
   renderClientes();
 });
+
+/* ===================================== */
+/* NOVA VENDA */
+/* ===================================== */
+
+const btnNovaVenda = document.querySelector(".btn-novo");
+
+/* FUTURO FORMULÁRIO */
+
+const footerVendas = document.querySelector(".footer-clientes");
+
+/* VERIFICA SE EXISTE */
+
+if(btnNovaVenda && footerVendas){
+
+  btnNovaVenda.addEventListener("click", () => {
+
+    footerVendas.scrollIntoView({
+
+      behavior:"smooth"
+
+    });
+
+  });
+
+}
+
+
+/* ===================================== */
+/* SALVAR VENDAS */
+/* ===================================== */
+
+const formVenda = document.querySelector(".form-vendas");
+
+const listaVendas = document.querySelector(".lista-clientes");
+
+/* PEGA VENDAS */
+
+function getVendas(){
+
+  return JSON.parse(
+    localStorage.getItem("agreg_vendas")
+  ) || [];
+
+}
+
+/* SALVA VENDAS */
+
+function salvarVendas(vendas){
+
+  localStorage.setItem(
+    "agreg_vendas",
+    JSON.stringify(vendas)
+  );
+
+}
+
+/* RENDERIZA */
+
+function renderVendas(){
+
+  if(!listaVendas) return;
+
+  listaVendas.innerHTML = "";
+
+  const vendas = getVendas();
+
+  vendas.forEach(venda => {
+
+    listaVendas.innerHTML += `
+
+      <div class="cliente-card">
+
+        <div class="cliente-info">
+
+          <h2>
+
+            ${venda.cliente}
+
+          </h2>
+
+          <p>
+
+            <i class="fa-solid fa-shirt"></i>
+
+            ${venda.produto}
+
+          </p>
+
+          <p>
+
+            <i class="fa-solid fa-money-bill"></i>
+
+            R$ ${venda.valor}
+
+          </p>
+
+        </div>
+
+        <div class="cliente-status ${venda.status}">
+
+          ${venda.status.toUpperCase()}
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+/* SALVAR FORM */
+
+if(formVenda){
+
+  formVenda.addEventListener("submit", (e) => {
+
+    e.preventDefault();
+
+    const cliente =
+    document.getElementById("cliente").value;
+
+    const produto =
+    document.getElementById("produto").value;
+
+    const valor =
+    document.getElementById("valor").value;
+
+    const status =
+    document.getElementById("status").value;
+
+    const obs =
+    document.getElementById("obs").value;
+
+    const vendas = getVendas();
+
+    vendas.push({
+
+      cliente,
+      produto,
+      valor,
+      status,
+      obs
+
+    });
+
+    salvarVendas(vendas);
+
+    renderVendas();
+
+    formVenda.reset();
+
+  });
+
+}
+
+/* INICIA */
+
+renderVendas();
