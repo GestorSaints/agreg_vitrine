@@ -1,0 +1,324 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ==========================
+   BODY
+========================== */
+
+body{
+    background-color:#2b2b2b;
+    color:#e8dfc8;
+    font-family:Georgia, serif;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    padding:15px 25px;
+
+    background-color:#3a3a3a;
+
+    border-bottom:2px solid #555;
+
+    box-shadow:0 2px 5px rgba(0,0,0,.4);
+}
+
+/* ==========================
+   BOTÃO MENU
+========================== */
+
+#menu-btn{
+
+    width:45px;
+    height:45px;
+
+    background-color:#4a4a4a;
+
+    color:#d8ceb5;
+
+    border:1px solid #666;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:1.4rem;
+}
+
+/* ==========================
+   TÍTULO
+========================== */
+
+h1{
+
+    font-size:1.5rem;
+
+    font-weight:normal;
+
+    color:#e8dfc8;
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+#sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:-260px;
+
+    width:260px;
+    height:100vh;
+
+    background-color:#3a3a3a;
+
+    padding:20px;
+
+    transition:left .3s ease;
+
+    box-shadow:2px 0 10px rgba(0,0,0,.5);
+
+    z-index:1000;
+}
+
+#sidebar ul{
+
+    list-style:none;
+
+    margin-top:40px;
+}
+
+#sidebar ul li{
+
+    margin:15px 0;
+}
+
+#sidebar ul li a{
+
+    color:#e8dfc8;
+
+    text-decoration:none;
+
+    font-size:1.1rem;
+}
+
+/* SIDEBAR ABERTA */
+
+#sidebar.active{
+
+    left:0;
+}
+
+/* ==========================
+   OVERLAY
+========================== */
+
+#overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:rgba(48,2,17,.3);
+
+    display:none;
+
+    z-index:900;
+}
+
+#overlay.active{
+
+    display:block;
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+main{
+
+    width:100%;
+}
+
+/* ==========================
+   ÁREA DO VÍDEO
+========================== */
+
+#video{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:90vh;
+
+    padding:20px;
+}
+
+#video-player{
+
+    width:100%;
+
+    max-width:1400px;
+
+    height:80vh;
+
+    border:none;
+}
+
+/* ==========================
+   MATERIAIS
+========================== */
+
+.materiais{
+
+    width:80%;
+
+    margin:20px auto 50px;
+}
+
+/* ESCONDE O CHECKBOX */
+
+#abrir-materiais{
+
+    display:none;
+}
+
+/* BOTÃO */
+
+.btn-materiais{
+
+    display:block;
+
+    text-align:center;
+
+    padding:15px;
+
+    background-color:#4a4a4a;
+
+    color:#e8dfc8;
+
+    border:1px solid #666;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:1.1rem;
+
+    transition:.3s;
+}
+
+.btn-materiais:hover{
+
+    background-color:#555;
+}
+
+/* CONTEÚDO FECHADO */
+
+.conteudo-materiais{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+}
+
+/* ABRIR */
+
+#abrir-materiais:checked + .btn-materiais + .conteudo-materiais{
+
+    max-height:1000px;
+}
+
+/* CARDS DOS MATERIAIS */
+
+.grupo-material{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    background-color:#3a3a3a;
+
+    border:1px solid #555;
+
+    border-radius:8px;
+}
+
+/* TÍTULOS */
+
+.grupo-material h3{
+
+    margin-bottom:10px;
+
+    color:#e8dfc8;
+}
+
+/* LINKS */
+
+.grupo-material a{
+
+    display:block;
+
+    margin:6px 0;
+
+    color:#d8ceb5;
+
+    text-decoration:none;
+}
+
+.grupo-material a:hover{
+
+    text-decoration:underline;
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width:768px){
+
+    header{
+
+        padding:15px;
+    }
+
+    h1{
+
+        font-size:1.2rem;
+    }
+
+    #video-player{
+
+        height:60vh;
+    }
+
+    .materiais{
+
+        width:95%;
+    }
+}

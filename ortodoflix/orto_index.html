@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Patrística</title>
+    <link rel="stylesheet" href="orto_style.css">
+</head>
+
+<body>
+
+    <header>
+        <button id="menu-btn">☰</button>
+        <h1>Biblioteca Patrística</h1>
+    </header>
+
+    <nav id="sidebar">
+        <ul class="menu">
+
+            <li>
+                <a href="#video">Introdução</a>
+            </li>
+
+            <li>
+                <a href="#">📜 Patrística</a>
+            </li>
+
+            <li>
+                <a href="#">📜 Alexandria</a>
+            </li>
+
+            <li>
+                <a href="#">📜 Antioquia</a>
+            </li>
+
+            <li>
+                <a href="#">📜 Cartago</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div id="overlay"></div>
+
+    <main>
+
+        <section id="video">
+
+            <iframe
+                id="video-player"
+                src="https://www.youtube.com/embed/v0HsV_7ZMpg"
+                title="Biblioteca Patrística"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </section>
+
+        <!-- MATERIAIS DE APOIO -->
+
+        <section class="materiais">
+
+            <input type="checkbox" id="abrir-materiais">
+
+            <label for="abrir-materiais" class="btn-materiais">
+                📚 Materiais de Apoio
+            </label>
+
+            <div class="conteudo-materiais">
+
+                <div class="grupo-material">
+
+                    <h3>PDFs</h3>
+
+                    <a href="#">
+                        Patrística.pdf
+                    </a>
+
+                </div>
+
+                <div class="grupo-material">
+
+                    <h3>Artigos</h3>
+
+                    <a href="#">
+                        Introdução à Patrística
+                    </a>
+
+                </div>
+
+                <div class="grupo-material">
+
+                    <h3>Mapas</h3>
+
+                    <a href="#">
+                        Mapa de Alexandria
+                    </a>
+
+                </div>
+
+                <div class="grupo-material">
+
+                    <h3>Imagens</h3>
+
+                    <a href="#">
+                        Biblioteca de Alexandria
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="orto_script.js"></script>
+
+</body>
+
+</html>
