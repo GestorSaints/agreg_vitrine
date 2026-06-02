@@ -13,8 +13,8 @@
 ========================== */
 
 body{
-    background-color:#2b2b2b;
-    color:#e8dfc8;
+    background-color:#43372c;
+    color:#ecca73b8;
     font-family:Georgia, serif;
 }
 
@@ -30,7 +30,7 @@ header{
 
     padding:15px 25px;
 
-    background-color:#3a3a3a;
+    background-color:#7b4848ad;
 
     border-bottom:2px solid #555;
 
@@ -155,36 +155,42 @@ h1{
    MAIN
 ========================== */
 
-main{
-
-    width:100%;
+/* ==========================
+      TÍTULO DO ESTUDO
+========================== */
+.apresentacao{
+    padding: 20px;
+    text-align: center;
 }
+
+.apresentacao h2{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+
+
 
 /* ==========================
    ÁREA DO VÍDEO
 ========================== */
 
-#video{
+.video-principal{
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     min-height:90vh;
-
     padding:20px;
 }
 
 #video-player{
 
     width:100%;
-
     max-width:1400px;
-
     height:80vh;
-
+    
     border:none;
 }
 
@@ -193,10 +199,10 @@ main{
 ========================== */
 
 .materiais{
-
     width:80%;
-
     margin:20px auto 50px;
+
+    background-color: #5a4a3b;
 }
 
 /* ESCONDE O CHECKBOX */
@@ -211,90 +217,65 @@ main{
 .btn-materiais{
 
     display:block;
-
     text-align:center;
-
     padding:15px;
-
-    background-color:#4a4a4a;
-
-    color:#e8dfc8;
-
+    background-color:#44040466;
+    color:#f4f3f0;
     border:1px solid #666;
-
     border-radius:8px;
-
     cursor:pointer;
-
     font-size:1.1rem;
-
     transition:.3s;
 }
 
 .btn-materiais:hover{
-
-    background-color:#555;
+    background-color:#c9a195d8;
 }
 
 /* CONTEÚDO FECHADO */
 
 .conteudo-materiais{
-
     max-height:0;
-
     overflow:hidden;
-
     transition:max-height .4s ease;
 }
 
 /* ABRIR */
 
 #abrir-materiais:checked + .btn-materiais + .conteudo-materiais{
-
     max-height:1000px;
 }
 
 /* CARDS DOS MATERIAIS */
 
 .grupo-material{
-
     margin-top:20px;
-
     padding:15px;
-
-    background-color:#3a3a3a;
-
-    border:1px solid #555;
-
+    background-color:#b6a2a2d4;
+    border:1px solid #ece7e7;
     border-radius:8px;
 }
 
 /* TÍTULOS */
 
 .grupo-material h3{
-
     margin-bottom:10px;
-
-    color:#e8dfc8;
+    color:#7e5d0b;
 }
 
 /* LINKS */
 
 .grupo-material a{
-
     display:block;
-
     margin:6px 0;
-
-    color:#d8ceb5;
-
+    color:#181818;
     text-decoration:none;
 }
 
 .grupo-material a:hover{
-
     text-decoration:underline;
 }
+
 
 /* ==========================
    RESPONSIVIDADE
@@ -303,22 +284,19 @@ main{
 @media (max-width:768px){
 
     header{
-
         padding:15px;
     }
 
     h1{
-
         font-size:1.2rem;
     }
 
     #video-player{
-
         height:60vh;
     }
 
     .materiais{
-
         width:95%;
     }
 }
+

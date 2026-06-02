@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Patrística</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<!-- CABEÇALHO -->
+    <header>
+        <button id="menu-btn">☰</button>
+        <h1>Biblioteca Patrística</h1>
+    </header>
+<!-- HAMBURGER -->
+    <nav id="sidebar">
+        <ul class="menu">
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="introducao.html">Introdução</a>
+            </li>
+            <li>
+                <a href="patristica.html">📜 Patrística</a>
+            </li>
+            <li>
+                <a href="alexandria.html">📜 Alexandria</a>
+            </li>
+            <li>
+                <a href="antioquia.html">📜 Antioquia</a>
+            </li>
+            <li>
+                <a href="cartago.html">📜 Cartago</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="overlay"></div>
+<!-- Área de estudo -->
+<main>
+        <!-- APRESENTAÇÃO DO ESTUDO -->
+    <section class="apresentacao">
+        <h2>História do Pensamento Cristão</h2>
+        <p>Estudo introdutório baseado na obra de 
+            Justo L. González.</p>
+    </section>
+        <!--- SEÇÃO DE VIDEO -->
+    <!-- VÍDEO PRINCIPAL -->
+    <section class="video-principal">
+        <iframe
+            id="video-player"
+            src="https://www.youtube.com/embed/SEU_VIDEO"
+            title="Biblioteca Patrística"
+            allowfullscreen>
+        </iframe>
+    </section>
+        <!--- SEÇÃO DE MATERIAIS -->
+<!-- MATERIAIS DE APOIO -->
+    <section class="materiais">
+        <input type="checkbox" id="abrir-materiais">
+        <label for="abrir-materiais" class="btn-materiais">
+            📚 Material de Apoio
+        </label>
+        <div class="conteudo-materiais">
+            <div class="grupo-material">
+                <h3>Livros</h3>
+                <a href="#">
+                    pensamento_intro.pdf
+                </a>
+            </div>
+            <div class="grupo-material">
+                <h3>Resumos</h3>
+                <a href="#">
+                    Esboço - Introdução
+                </a>
+                <a href="#">
+                    Esboço - Sumário
+                </a>
+
+            </div>
+            <div class="grupo-material">
+                <h3>Mapas</h3>
+                <a href="#">
+                    Fluxograma do Estudo
+                </a>
+            </div>
+            <div class="grupo-material">
+                <h3>Imagens</h3>
+                <a href="#">
+                    Mapa da Palestina - sec.I
+                </a>
+                <a href="#">
+                    Mapa da Imperio Romano - sec.I
+                </a>
+                <a href="#">
+                    Mapa da Anatólia - sec.I-II
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+</body>
+<script src="../script.js"></script>
+</html>
