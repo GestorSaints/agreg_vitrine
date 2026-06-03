@@ -95,4 +95,10 @@ main{
         min-height: auto;
         padding: 15px;
     }
+    .vela{
+    font-size: 2rem;
+    opacity: 0.8;
+
+    filter: drop-shadow(0 0 6px rgba(255, 200, 100, 0.3));
+}
 }
