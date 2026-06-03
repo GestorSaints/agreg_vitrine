@@ -81,3 +81,18 @@ main{
 .trocar-video:hover{
     background: rgba(0,0,0,0.6);
 }
+
+@media (max-width: 768px) {
+
+    .escrivaninha{
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .pergaminho{
+        width: 95%;
+        min-height: auto;
+        padding: 15px;
+    }
+}
