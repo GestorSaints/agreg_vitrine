@@ -1,0 +1,22 @@
+ASCET SPACE
+
+Conceito:
+Uma escrivaninha monástica interativa.
+
+Tela inicial:
+- Escrivaninha de madeira.
+- Pergaminho central para vídeos.
+- Atmosfera contemplativa.
+
+Expansões futuras:
+- Gavetas de pergaminhos.
+- Biblioteca patrística.
+- Cantos sacros.
+- História da Igreja.
+- Alexandria.
+- Antioquia.
+- Cartago.
+
+Objetivo:
+Criar um ambiente de estudo e contemplação,
+não apenas uma plataforma de vídeos.
