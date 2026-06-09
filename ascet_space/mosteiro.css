@@ -101,10 +101,43 @@ inset 0 -20px 40px rgba(0,0,0,0.45);
 .trocar-video:hover{
     background: rgba(0,0,0,0.6);
 }
-.gaveta{
-    background-color: rgba(41, 7, 59, 0.519);
-    border-radius: 20px;
-    color: #e5bb91;
+.gaveta1{
+    position: absolute;
+    top: 10px;
+    right: 150px;
+
+    background: rgba(0,0,0,0.4);
+    color: #f5deb3;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+
+    padding: 6px 10px;
+
+    font-size: 0.8rem;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+.gaveta2{
+    position: absolute;
+    top: 10px;
+    right: 270px;
+
+    background: rgba(0,0,0,0.4);
+    color: #f5deb3;
+
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+
+    padding: 6px 10px;
+
+    font-size: 0.8rem;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
 }
 a{
     text-decoration: none;
