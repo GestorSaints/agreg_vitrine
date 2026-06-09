@@ -127,3 +127,18 @@ span{
 
     background: #2e1904f4;
 }
+.leitura{
+    background: #a76e2d;
+
+    border-radius: 10px;
+
+    transition: 0.2s ease;
+}
+.leitura:hover{
+  transform: translate(5px);
+    scale:(0.10);
+    box-shadow: 
+      -10px 8px 15px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+
+}
