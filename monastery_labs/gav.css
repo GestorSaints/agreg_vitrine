@@ -1,0 +1,129 @@
+/*body{
+    margin: 0;
+    overflow: hidden;
+}
+.acervo{
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 3px;
+
+    background: #f6dbc8;
+}
+.arquivo{
+    width: 700px;
+    height: 500px;
+
+    background: #5c371c;
+
+    border: 10px solid #3b2411;
+
+    border-bottom: 20px solid #2a170a;
+}*/
+body{
+    margin: 0;
+    overflow: hidden;
+}
+.arquivo{
+    display: flex;
+
+    margin: 50px auto;
+
+    width: 90%;
+    max-width: 1200px;
+
+    height: calc(100vh - 100px);
+
+    background: #643919f8;
+
+    border: 10px solid #3b2411;
+    border-top: 8px solid #3b2411;
+    border-bottom: 30px solid #2a170a;
+    box-shadow: 
+        inset 0 2px 6px rgba(52, 7, 7, 0.25),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+    
+    outline: 10px solid #2a170a;
+    outline-offset: 0px;
+}
+.gaveteiro{
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+    height: 100%;
+    
+    padding: 0 10px 10px 10px;
+
+    background: #2e1904f4;
+
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+
+    gap: 2px;
+    
+}
+.gaveta{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.8rem;
+
+    color: #754d32;
+    text-shadow: 
+        1px 1px 0 #d5ac90,
+        2px 2px 2px rgba(0, 0, 0, .4);
+    
+    transition: 0.2s ease;
+
+    flex: 1;
+    
+    background: 
+      linear-gradient(
+        to bottom,
+           #2a170a 0px,
+           #754d32 20px,
+           #2a170a 40px,
+
+           #2a170a 40px,
+           #754d32 220px,
+           #2a170a 280px,
+           #2a170a 300px,
+           #754d32 320px,
+           #2a170a 450px
+      );
+    border: 1px solid rgb(129, 111, 111);
+    border-radius: 4px;
+           
+}
+.gaveta:hover{
+    transform: translateY(30px);
+    scale:(1.10);
+    box-shadow: 
+      -10px 8px 15px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
+span{
+    box-shadow:
+      1px 1px 0 #2a170a, 
+      2px 2px 3px rgba(0, 0, 0, .4);
+    text-shadow:
+      1px 1px 0 #2a170a, 
+      2px 2px 3px rgba(0, 0, 0, .4);
+    border-radius: 5px;
+    border: 2px solid #754829c5;     
+}
+.rolos{
+    width: 40%;
+    height: 100%;
+
+    padding: 20px;
+
+    background: #2e1904f4;
+}
