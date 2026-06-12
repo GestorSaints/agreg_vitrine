@@ -142,3 +142,39 @@ span{
     cursor: pointer;
 
 }
+.rolos{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    
+    gap: 10px;
+
+    padding: 20px;
+
+    background: #2e1904f4;
+
+    transition: 0.2s ease;
+}
+.rolo{
+    width: 100px;
+    height: 95%;
+
+    border-radius: 20px;
+
+     background:
+      linear-gradient(
+        to right,
+        rgba(170,145,110,0.8),
+        rgba(235,220,190,0.9),
+        rgba(170,145,110,0.8)
+      );
+
+    border: 1px solid rgba(60, 40, 20, 0.3);
+}
+.rolo:hover{
+    transform: translateX(-30px);
+    scale:(1.10);
+    box-shadow: 
+      -10px 8px 15px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+}
