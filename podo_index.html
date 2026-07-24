@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Roseane Sobral | Podóloga</title>
+
+<meta name="description"
+content="Podologia especializada em Recife. Atendimento humanizado, podofilaxia, unhas encravadas, pé diabético, calosidades, fissuras e muito mais.">
+
+<!-- Google Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+:root{
+
+--verde:#2FA86F;
+--verde-escuro:#1B7A4D;
+--rosa:#F6D9E6;
+--dourado:#D4AF37;
+--cinza:#555;
+--branco:#ffffff;
+--fundo:#F7FCF9;
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:var(--fundo);
+color:#333;
+
+}
+
+img{
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
+}
+
+/*======================
+HEADER
+=======================*/
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:#fff;
+box-shadow:0 3px 20px rgba(0,0,0,.08);
+z-index:999;
+
+}
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:700;
+color:var(--verde);
+
+}
+
+.logo span{
+
+color:var(--dourado);
+
+}
+
+.menu{
+
+display:flex;
+gap:35px;
+
+}
+
+.menu a{
+
+color:#444;
+font-weight:500;
+transition:.3s;
+
+}
+
+.menu a:hover{
+
+color:var(--verde);
+
+}
+
+.botao{
+
+padding:14px 28px;
+background:var(--verde);
+color:white;
+border-radius:40px;
+font-weight:600;
+transition:.3s;
+
+}
+
+.botao:hover{
+
+background:var(--verde-escuro);
+
+}
+
+/*======================
+HERO
+=======================*/
+
+.hero{
+
+padding-top:120px;
+min-height:100vh;
+
+display:flex;
+align-items:center;
+
+}
+
+.hero-grid{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
+}
+
+.hero h1{
+
+font-size:56px;
+line-height:1.2;
+margin-bottom:25px;
+
+}
+
+.hero h1 span{
+
+color:var(--verde);
+
+}
+
+.hero p{
+
+font-size:18px;
+line-height:1.8;
+color:#666;
+margin-bottom:30px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:16px 30px;
+border-radius:40px;
+font-weight:600;
+display:inline-block;
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:var(--verde);
+color:white;
+
+}
+
+.btn-primary:hover{
+
+background:var(--verde-escuro);
+
+}
+
+.btn-outline{
+
+border:2px solid var(--verde);
+color:var(--verde);
+
+}
+
+.btn-outline:hover{
+
+background:var(--verde);
+color:white;
+
+}
+
+.hero-image{
+
+text-align:center;
+
+}
+
+.hero-image img{
+
+width:430px;
+border-radius:30px;
+box-shadow:0 20px 60px rgba(0,0,0,.18);
+
+}
+
+/*======================
+BADGES
+=======================*/
+
+.badges{
+
+margin-top:40px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+
+}
+
+.badge{
+
+background:white;
+padding:10px 18px;
+border-radius:30px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+font-size:14px;
+font-weight:500;
+
+}
+
+.badge i{
+
+color:var(--verde);
+margin-right:8px;
+
+}
+
+/*======================
+RESPONSIVO
+=======================*/
+
+@media(max-width:900px){
+
+.menu{
+
+display:none;
+
+}
+
+.hero-grid{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero-image img{
+
+width:90%;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.badges{
+
+justify-content:center;
+
+}
+
+}
+/*=================================================
+FAQ
+=================================================*/
+
+.faq{
+
+padding:100px 0;
+background:#fff;
+
+}
+
+.faq-item{
+
+margin-bottom:20px;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.faq-btn{
+
+width:100%;
+
+padding:22px;
+
+border:none;
+
+background:white;
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:18px;
+
+font-weight:600;
+
+}
+
+.faq-content{
+
+display:none;
+
+padding:20px;
+
+background:#fafafa;
+
+}
+
+.faq-item.ativo .faq-content{
+
+display:block;
+
+}
+
+/*=================================================
+CONTATO
+=================================================*/
+
+.contato{
+
+padding:100px 0;
+
+text-align:center;
+
+background:#f8fbf9;
+
+}
+
+.contato p{
+
+margin:15px 0;
+
+font-size:18px;
+
+}
+
+/*=================================================
+FOOTER
+=================================================*/
+
+footer{
+
+padding:35px;
+
+background:#222;
+
+color:white;
+
+text-align:center;
+
+}
+
+footer p{
+
+margin:10px 0;
+
+}
+
+/*=================================================
+BOTÃO WHATSAPP
+=================================================*/
+
+.whatsapp{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:32px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+z-index:999;
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.1);
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<nav>
+
+<div class="logo">
+
+Roseane <span>Sobral</span>
+
+</div>
+
+<div class="menu">
+
+<a href="#">Início</a>
+<a href="#sobre">Sobre</a>
+<a href="#servicos">Serviços</a>
+<a href="#galeria">Galeria</a>
+<a href="#contato">Contato</a>
+
+</div>
+
+<a class="botao"
+href="https://wa.me/5581995776549"
+target="_blank">
+
+Agendar
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<h1>
+
+Cuidando da saúde dos seus
+<span>pés</span>
+com carinho e profissionalismo.
+
+</h1>
+
+<p>
+
+Atendimento especializado em Recife para quem busca conforto,
+bem-estar e qualidade de vida.
+Atendimento em clínica e também em domicílio.
+
+</p>
+
+<div class="hero-buttons">
+
+<a class="btn btn-primary"
+
+href="https://wa.me/5581995776549"
+
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Agendar Atendimento
+
+</a>
+
+<a class="btn btn-outline"
+
+href="#servicos">
+
+Conheça os Serviços
+
+</a>
+
+</div>
+
+<div class="badges">
+
+<div class="badge">
+
+<i class="fa-solid fa-location-dot"></i>
+
+Recife - PE
+
+</div>
+
+<div class="badge">
+
+<i class="fa-solid fa-house-medical"></i>
+
+Clínica e Domicílio
+
+</div>
+
+<div class="badge">
+
+<i class="fa-solid fa-heart"></i>
+
+Atendimento Humanizado
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="img/roseane.png"
+alt="Roseane Sobral">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =====================================================
+     SOBRE
+====================================================== -->
+
+<section id="sobre" class="sobre">
+
+    <div class="container">
+
+        <div class="sobre-grid">
+
+            <div class="sobre-img">
+
+                <img src="img/roseane2.jpg" alt="Roseane Sobral">
+
+            </div>
+
+            <div class="sobre-texto">
+
+                <span class="subtitulo">
+                    Conheça a Profissional
+                </span>
+
+                <h2>
+                    Roseane Sobral
+                </h2>
+
+                <h4>
+                    Podóloga
+                </h4>
+
+                <p>
+
+                    A saúde dos pés merece atenção especializada.
+                    Meu compromisso é oferecer um atendimento
+                    acolhedor, cuidadoso e humanizado,
+                    promovendo conforto, prevenção e qualidade de vida
+                    para cada paciente.
+
+                </p>
+
+                <p>
+
+                    Atendo em clínica e também em domicílio,
+                    sempre priorizando a biossegurança,
+                    o respeito e o bem-estar de cada pessoa.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+SERVIÇOS
+====================================================== -->
+
+<section id="servicos" class="servicos">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>
+
+Serviços
+
+</h2>
+
+<p>
+
+Conheça alguns dos atendimentos realizados.
+
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-shoe-prints"></i>
+
+<h3>Podofilaxia</h3>
+
+<p>
+
+Prevenção e manutenção da saúde dos pés.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-bandage"></i>
+
+<h3>Unha Encravada</h3>
+
+<p>
+
+Tratamento especializado para aliviar dor
+e desconforto.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-scissors"></i>
+
+<h3>Órtese Ungueal</h3>
+
+<p>
+
+Correção da curvatura das unhas.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-foot"></i>
+
+<h3>Calosidades</h3>
+
+<p>
+
+Remoção de calos e excesso de pele.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-droplet"></i>
+
+<h3>Fissuras</h3>
+
+<p>
+
+Tratamento de rachaduras nos pés.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-spa"></i>
+
+<h3>Massagem Relaxante</h3>
+
+<p>
+
+Bem-estar e relaxamento para seus pés.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-virus"></i>
+
+<h3>Micoses</h3>
+
+<p>
+
+Cuidados podológicos para alterações
+causadas por fungos.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>Pé Diabético</h3>
+
+<p>
+
+Cuidados preventivos especializados.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+DIFERENCIAIS
+====================================================== -->
+
+<section class="diferenciais">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>
+
+Por que escolher a Roseane?
+
+</h2>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>
+
+Atendimento Humanizado
+
+</h3>
+
+<p>
+
+Cada paciente recebe atenção individualizada.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-shield-heart"></i>
+
+<h3>
+
+Biossegurança
+
+</h3>
+
+<p>
+
+Materiais esterilizados e protocolos
+de higiene.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h3>
+
+Experiência
+
+</h3>
+
+<p>
+
+Compromisso com qualidade e cuidado.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-house-medical"></i>
+
+<h3>
+
+Clínica e Domicílio
+
+</h3>
+
+<p>
+
+Mais comodidade para você.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- =====================================================
+GALERIA
+====================================================== -->
+
+<section id="galeria" class="galeria">
+
+    <div class="container">
+
+        <div class="titulo">
+            <h2>Galeria</h2>
+            <p>Conheça um pouco do ambiente e dos atendimentos.</p>
+        </div>
+
+        <div class="galeria-grid">
+
+            <img src="img/foto1.jpg" alt="Atendimento 1">
+            <img src="img/foto2.jpg" alt="Atendimento 2">
+            <img src="img/foto3.jpg" alt="Atendimento 3">
+            <img src="img/foto4.jpg" alt="Atendimento 4">
+            <img src="img/foto5.jpg" alt="Atendimento 5">
+            <img src="img/foto6.jpg" alt="Atendimento 6">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+ANTES E DEPOIS
+====================================================== -->
+
+<section class="antes-depois">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <h2>Resultados</h2>
+
+            <p>
+                Alguns registros de procedimentos realizados.
+            </p>
+
+        </div>
+
+        <div class="antes-grid">
+
+            <div class="antes-card">
+
+                <img src="img/antes1.jpg">
+
+                <h3>Antes</h3>
+
+            </div>
+
+            <div class="antes-card">
+
+                <img src="img/depois1.jpg">
+
+                <h3>Depois</h3>
+
+            </div>
+
+            <div class="antes-card">
+
+                <img src="img/antes2.jpg">
+
+                <h3>Antes</h3>
+
+            </div>
+
+            <div class="antes-card">
+
+                <img src="img/depois2.jpg">
+
+                <h3>Depois</h3>
+
+            </div>
+
+        </div>
+
+        <p class="observacao">
+
+            * Imagens divulgadas mediante autorização dos pacientes.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+DEPOIMENTOS
+====================================================== -->
+
+<section class="depoimentos">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>
+
+O que dizem meus pacientes
+
+</h2>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+★★★★★
+
+<p>
+
+"Atendimento maravilhoso.
+Muito cuidadosa e atenciosa."
+
+</p>
+
+<strong>
+
+Maria S.
+
+</strong>
+
+</div>
+
+<div class="card">
+
+★★★★★
+
+<p>
+
+"Minha unha encravada melhorou muito.
+Recomendo!"
+
+</p>
+
+<strong>
+
+José A.
+
+</strong>
+
+</div>
+
+<div class="card">
+
+★★★★★
+
+<p>
+
+"Profissional muito educada,
+explica tudo e transmite confiança."
+
+</p>
+
+<strong>
+
+Ana C.
+
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+CTA
+====================================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+
+Agende seu atendimento agora mesmo.
+
+</h2>
+
+<p>
+
+Será um prazer cuidar da saúde dos seus pés.
+
+</p>
+
+<a href="https://wa.me/5581995776549"
+
+class="btn btn-primary"
+
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Falar pelo WhatsApp
+
+</a>
+
+</div>
+
+</section>
+<!-- =====================================================
+FAQ
+====================================================== -->
+
+<section class="faq" id="faq">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Perguntas Frequentes</h2>
+
+<p>Tire algumas dúvidas sobre os atendimentos.</p>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-btn">
+
+O atendimento dói?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+<p>
+
+O atendimento é realizado com técnicas apropriadas,
+buscando sempre o máximo conforto do paciente.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-btn">
+
+Preciso agendar?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+<p>
+
+Sim. O agendamento garante um atendimento tranquilo
+e personalizado.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-btn">
+
+Você atende em domicílio?
+
+<span>+</span>
+
+</button>
+
+<div class="faq-content">
+
+<p>
+
+Sim.
+Também realizo atendimentos em domicílio
+mediante agendamento.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+CONTATO
+====================================================== -->
+
+<section id="contato" class="contato">
+
+<div class="container">
+
+<div class="titulo">
+
+<h2>Entre em Contato</h2>
+
+</div>
+
+<p>
+
+📍 Recife - PE
+
+</p>
+
+<p>
+
+📱 (81) 99577-6549
+
+</p>
+
+<p>
+
+🏥 Atendimento em Clínica e Domicílio
+
+</p>
+
+<br>
+
+<a class="btn btn-primary"
+
+href="https://wa.me/5581995776549"
+
+target="_blank">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+Agendar Agora
+
+</a>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+FOOTER
+====================================================== -->
+
+<footer>
+
+<div class="container">
+
+<p>
+
+© 2026
+
+<strong>
+
+Roseane Sobral
+
+</strong>
+
+Todos os direitos reservados.
+
+</p>
+
+<p>
+
+Desenvolvido com ❤️
+
+</p>
+
+</div>
+
+</footer>
+
+<!-- BOTÃO FLUTUANTE -->
+
+<a href="https://wa.me/5581995776549"
+
+target="_blank"
+
+class="whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<script>
+
+/*==========================
+FAQ
+==========================*/
+
+const botoes=document.querySelectorAll(".faq-btn");
+
+botoes.forEach(botao=>{
+
+botao.addEventListener("click",()=>{
+
+const item=botao.parentElement;
+
+item.classList.toggle("ativo");
+
+});
+
+});
+
+/*==========================
+MENU FUTURO
+==========================*/
+
+console.log("Landing RS carregada.");
+
+</script>
+
+</body>
+
+</html>
