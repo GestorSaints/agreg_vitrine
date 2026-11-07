@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escudeiro — Tema 5 | História dos Embaixadores do Rei</title>
+
+    <style>
+        :root {
+            --azul: #102B49;
+            --azul-secundario: #183D61;
+            --dourado: #C5A15B;
+            --dourado-claro: #E0C98F;
+            --branco: #FFFFFF;
+            --creme: #F7F4EC;
+            --texto: #263442;
+            --linha: #D8DDE3;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #E9EDF1;
+            color: var(--texto);
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        .pagina {
+            width: 100%;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 45px;
+            background: var(--branco);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+        }
+
+        header {
+            padding: 35px 25px;
+            margin-bottom: 35px;
+            text-align: center;
+            color: var(--branco);
+            background: var(--azul);
+            border-bottom: 6px solid var(--dourado);
+        }
+
+        .identificacao {
+            margin-bottom: 12px;
+            color: var(--dourado-claro);
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+
+        header p {
+            margin: 15px 0 0;
+            color: #E5EAF0;
+        }
+
+        h2 {
+            margin-top: 35px;
+            padding-bottom: 10px;
+            color: var(--azul);
+            font-family: Georgia, serif;
+            border-bottom: 2px solid var(--dourado);
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: var(--azul-secundario);
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .etapa {
+            margin: 28px 0;
+            padding: 22px 25px;
+            background: var(--creme);
+            border-left: 5px solid var(--dourado);
+            border-radius: 4px;
+        }
+
+        .etapa h2 {
+            margin-top: 0;
+        }
+
+        .destaque {
+            margin: 22px 0;
+            padding: 20px;
+            background: #F0F4F8;
+            border: 1px solid #D8E1EA;
+            border-radius: 5px;
+        }
+
+        .destaque strong {
+            color: var(--azul);
+        }
+
+        .data-historica {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .data {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            text-align: center;
+            background: var(--azul);
+            color: var(--branco);
+            border-bottom: 4px solid var(--dourado);
+        }
+
+        .data strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dourado-claro);
+            font-family: Georgia, serif;
+            font-size: 2rem;
+        }
+
+        .pergunta {
+            margin: 18px 0;
+            padding: 15px;
+            background: var(--branco);
+            border: 1px solid var(--linha);
+            border-radius: 4px;
+        }
+
+        .resposta {
+            display: block;
+            width: 100%;
+            min-height: 65px;
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #BFC8D1;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            resize: vertical;
+        }
+
+        .resposta-curta {
+            min-height: 42px;
+        }
+
+        .campo {
+            margin: 18px 0;
+        }
+
+        .campo label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--azul);
+        }
+
+        .campo input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #BFC8D1;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .lista {
+            padding-left: 25px;
+        }
+
+        .lista li {
+            margin-bottom: 10px;
+        }
+
+        .linha-assinatura {
+            margin-top: 45px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .assinatura {
+            flex: 1;
+            padding-top: 8px;
+            text-align: center;
+            border-top: 1px solid #555;
+        }
+
+        .botoes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px auto;
+        }
+
+        button {
+            padding: 13px 22px;
+            border: none;
+            border-radius: 5px;
+            background: var(--azul);
+            color: var(--branco);
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--azul-secundario);
+        }
+
+        .botao-voltar {
+            background: #80643A;
+        }
+
+        footer {
+            margin-top: 45px;
+            padding-top: 20px;
+            text-align: center;
+            color: #647180;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--linha);
+        }
+
+        @media (max-width: 700px) {
+            .pagina {
+                margin: 0;
+                padding: 20px;
+            }
+
+            header {
+                padding: 25px 15px;
+            }
+
+            header h1 {
+                font-size: 1.55rem;
+            }
+
+            .linha-assinatura {
+                flex-direction: column;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 1.7cm;
+            }
+
+            body {
+                background: white;
+                color: #222;
+                font-size: 11pt;
+            }
+
+            .pagina {
+                width: 100%;
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .botoes {
+                display: none;
+            }
+
+            header {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .etapa,
+            .destaque,
+            .data {
+                break-inside: avoid;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            textarea,
+            input {
+                color: #222;
+                border: 1px solid #888;
+            }
+
+            h2,
+            h3 {
+                break-after: avoid;
+            }
+
+            footer {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="pagina">
+
+        <header>
+
+            <div class="identificacao">
+                Embaixadores do Rei
+            </div>
+
+            <h1>História da Organização</h1>
+
+            <p>
+                Posto de Escudeiro — Tema 5
+                <br>
+                O início nos Estados Unidos e no Brasil
+            </p>
+
+        </header>
+
+
+        <!-- IDENTIFICAÇÃO DO ALUNO -->
+
+        <section>
+
+            <div class="campo">
+                <label for="nome">Nome do Embaixador:</label>
+                <input type="text" id="nome">
+            </div>
+
+            <div class="campo">
+                <label for="embaixada">Embaixada:</label>
+                <input type="text" id="embaixada">
+            </div>
+
+            <div class="campo">
+                <label for="data-estudo">Data do estudo:</label>
+                <input type="date" id="data-estudo">
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 1 -->
+
+        <section class="etapa">
+
+            <h2>1. Conhecendo o tema</h2>
+
+            <p>
+                Toda organização tem uma história. Conhecer essa história
+                nos ajuda a compreender como ela começou, quais eram seus
+                objetivos e como suas atividades chegaram a outras partes
+                do mundo.
+            </p>
+
+            <p>
+                A organização Embaixadores do Rei nasceu de uma iniciativa
+                missionária. Antes mesmo de existir formalmente, um grupo
+                de rapazes demonstrou que meninos e jovens também poderiam
+                participar do trabalho missionário por meio do estudo da
+                Bíblia, da oração e do apoio à obra missionária.
+            </p>
+
+            <p>
+                Nossa história começa em 1883, na cidade de Owensboro,
+                no estado de Kentucky, nos Estados Unidos da América.
+            </p>
+
+            <div class="destaque">
+
+                <strong>Uma ideia importante:</strong>
+
+                <p>
+                    O movimento que inspirou a organização começou em 1883.
+                    A organização Embaixadores do Rei tornou-se realidade
+                    em 1908. Essas duas datas representam acontecimentos
+                    diferentes da nossa história.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 2 -->
+
+        <section class="etapa">
+
+            <h2>2. O que vamos aprender</h2>
+
+            <p>Ao estudar este tema, você deverá compreender:</p>
+
+            <ul class="lista">
+
+                <li>
+                    Onde e quando começou o movimento que inspirou
+                    os Embaixadores do Rei.
+                </li>
+
+                <li>
+                    Quem eram os rapazes que participaram dessa iniciativa.
+                </li>
+
+                <li>
+                    Como o grupo demonstrou interesse pelo trabalho
+                    missionário.
+                </li>
+
+                <li>
+                    Qual foi a participação da União Feminina Missionária
+                    da Convenção Batista do Sul dos Estados Unidos.
+                </li>
+
+                <li>
+                    Qual é a diferença entre os acontecimentos de 1883
+                    e 1908.
+                </li>
+
+                <li>
+                    Por que a história da organização continua importante
+                    para os Embaixadores do Rei.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ETAPA 3 -->
+
+        <section class="etapa">
+
+            <h2>3. Estudo orientado</h2>
+
+            <h3>O começo de uma iniciativa missionária</h3>
+
+            <p>
+                Tudo começou em 1883. Um grupo de rapazes de 12 a 14 anos,
+                da cidade de Owensboro, no estado de Kentucky, nos Estados
+                Unidos da América, costumava reunir-se para estudar missões
+                e orar pelos missionários.
+            </p>
+
+            <p>
+                Pensando no trabalho missionário, o grupo resolveu custear
+                as despesas de uma estudante na escola dirigida pela grande
+                missionária Lottie Moon, em Tengchow, na China.
+            </p>
+
+            <p>
+                Essa atitude demonstrou que aqueles rapazes não estavam
+                interessados apenas em aprender sobre missões. Eles também
+                desejavam participar concretamente do trabalho missionário,
+                ajudando uma pessoa que estava sendo preparada para estudar
+                e servir.
+            </p>
+
+            <h3>A participação da União Feminina Missionária</h3>
+
+            <p>
+                A iniciativa chamou a atenção para a importância de
+                envolver meninos e rapazes no trabalho missionário.
+            </p>
+
+            <p>
+                A União Feminina Missionária da Convenção Batista do Sul
+                dos Estados Unidos pensou em criar uma organização
+                missionária voltada especialmente para meninos e rapazes.
+            </p>
+
+            <p>
+                A proposta tornou-se realidade em 1908. Assim surgiu
+                formalmente a organização que passou a reunir meninos
+                e rapazes em torno do trabalho do Senhor.
+            </p>
+
+            <h3>Duas datas importantes</h3>
+
+            <div class="data-historica">
+
+                <div class="data">
+
+                    <strong>1883</strong>
+
+                    Início do movimento inspirador em Owensboro,
+                    Kentucky.
+
+                </div>
+
+                <div class="data">
+
+                    <strong>1908</strong>
+
+                    A iniciativa missionária torna-se uma organização
+                    para meninos e rapazes.
+
+                </div>
+
+            </div>
+
+            <h3>Uma organização que atravessou fronteiras</h3>
+
+            <p>
+                Com o passar do tempo, a organização Embaixadores do Rei
+                passou a unir meninos e rapazes em várias nações no
+                trabalho do Senhor.
+            </p>
+
+            <p>
+                Além de incentivar o interesse por missões, a organização
+                proporciona aos seus participantes uma experiência de
+                camaradagem fraterna. Os embaixadores aprendem a caminhar
+                juntos, cooperar, estudar e servir.
+            </p>
+
+            <div class="destaque">
+
+                <strong>Para guardar na memória:</strong>
+
+                <p>
+                    A história dos Embaixadores do Rei começou com rapazes
+                    que estudavam missões, oravam pelos missionários e
+                    decidiram contribuir para a obra missionária.
+                </p>
+
+                <p>
+                    Uma iniciativa de jovens tornou-se inspiração para
+                    uma organização missionária dedicada à formação
+                    de meninos e rapazes.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 4 -->
+
+        <section class="etapa">
+
+            <h2>4. Reflexão bíblica</h2>
+
+            <h3>Participando da obra de Deus</h3>
+
+            <p>
+                A história dos primeiros rapazes que inspiraram os
+                Embaixadores do Rei nos apresenta uma atitude importante:
+                eles não ficaram apenas observando o trabalho missionário.
+                Procuraram uma maneira de participar dele.
+            </p>
+
+            <p>
+                A Bíblia ensina que os seguidores de Cristo devem
+                demonstrar sua fé por meio de atitudes e ações.
+            </p>
+
+            <div class="destaque">
+
+                <strong>Texto bíblico para reflexão:</strong>
+
+                <p>
+                    <strong>Tiago 2:17</strong> — A passagem ensina que
+                    a fé, quando não é acompanhada de obras, é morta
+                    em si mesma.
+                </p>
+
+                <p>
+                    Leia o texto em sua Bíblia e converse com seu
+                    conselheiro sobre o seu significado.
+                </p>
+
+            </div>
+
+            <h3>Pensando sobre a história</h3>
+
+            <p>
+                Aqueles rapazes estudavam missões, oravam e contribuíam
+                para ajudar uma estudante. Eles encontraram uma maneira
+                de transformar seu interesse em uma atitude concreta.
+            </p>
+
+            <p>
+                Hoje, cada Embaixador do Rei também pode participar
+                da obra de Deus, usando seus conhecimentos, suas
+                capacidades e seu tempo para servir.
+            </p>
+
+            <div class="pergunta">
+
+                <strong>Para refletir:</strong>
+
+                Como você pode demonstrar interesse pelo trabalho
+                missionário em sua igreja e em sua comunidade?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 5 -->
+
+        <section class="etapa">
+
+            <h2>5. Vamos praticar</h2>
+
+            <h3>Atividade 1 — Complete as informações</h3>
+
+            <div class="pergunta">
+
+                <strong>1.</strong>
+
+                O movimento que inspirou os Embaixadores do Rei começou
+                no ano de:
+
+                <input class="resposta resposta-curta" type="text">
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>2.</strong>
+
+                A cidade onde o grupo de rapazes se reunia era:
+
+                <input class="resposta resposta-curta" type="text">
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>3.</strong>
+
+                O estado americano onde ficava essa cidade era:
+
+                <input class="resposta resposta-curta" type="text">
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>4.</strong>
+
+                A missionária que dirigia a escola na China chamava-se:
+
+                <input class="resposta resposta-curta" type="text">
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>5.</strong>
+
+                A organização missionária para meninos e rapazes
+                tornou-se realidade em:
+
+                <input class="resposta resposta-curta" type="text">
+
+            </div>
+
+
+            <h3>Atividade 2 — Compreendendo a história</h3>
+
+            <div class="pergunta">
+
+                <strong>6.</strong>
+
+                O que os rapazes de Owensboro costumavam fazer
+                em suas reuniões?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>7.</strong>
+
+                Como o grupo decidiu contribuir para o trabalho
+                missionário?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>8.</strong>
+
+                Qual foi a participação da União Feminina Missionária
+                da Convenção Batista do Sul dos Estados Unidos?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+
+            <h3>Atividade 3 — Entendendo as datas</h3>
+
+            <div class="pergunta">
+
+                <strong>9.</strong>
+
+                Explique com suas palavras a diferença entre os
+                acontecimentos de 1883 e 1908.
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 6 -->
+
+        <section class="etapa">
+
+            <h2>6. Desafio do Embaixador</h2>
+
+            <h3>Missões também começam com pequenas atitudes</h3>
+
+            <p>
+                Os primeiros rapazes que inspiraram a organização
+                perceberam que poderiam participar do trabalho
+                missionário mesmo sendo jovens.
+            </p>
+
+            <p>
+                O desafio desta semana é descobrir como a sua embaixada
+                pode demonstrar interesse pelo trabalho missionário.
+            </p>
+
+            <p>
+                Converse com seu conselheiro e com outros embaixadores
+                sobre uma atitude prática que vocês possam realizar.
+            </p>
+
+            <p>Algumas possibilidades:</p>
+
+            <ul class="lista">
+
+                <li>
+                    Orar por missionários e por suas famílias.
+                </li>
+
+                <li>
+                    Conhecer o trabalho de missionários apoiados
+                    por sua igreja.
+                </li>
+
+                <li>
+                    Estudar sobre povos e lugares que precisam
+                    conhecer o evangelho.
+                </li>
+
+                <li>
+                    Participar de uma atividade missionária
+                    organizada pela igreja.
+                </li>
+
+                <li>
+                    Incentivar outros meninos a conhecer o trabalho
+                    missionário.
+                </li>
+
+            </ul>
+
+            <div class="pergunta">
+
+                <strong>Meu compromisso:</strong>
+
+                Que atitude missionária você pretende realizar?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>Relato do desafio:</strong>
+
+                Conte como foi sua experiência.
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 7 -->
+
+        <section class="etapa">
+
+            <h2>7. Preparando a demonstração</h2>
+
+            <p>
+                Agora é hora de demonstrar o que você aprendeu.
+                Converse com seu conselheiro e procure responder
+                às perguntas sem depender do material.
+            </p>
+
+            <div class="pergunta">
+
+                <strong>1.</strong>
+
+                Em que ano começou o movimento que inspirou
+                os Embaixadores do Rei?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>2.</strong>
+
+                Em qual cidade e estado dos Estados Unidos
+                começou essa iniciativa?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>3.</strong>
+
+                O que os rapazes faziam em suas reuniões?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>4.</strong>
+
+                Quem foi Lottie Moon e onde ficava a escola
+                dirigida por ela?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>5.</strong>
+
+                Em que ano a iniciativa tornou-se uma organização
+                missionária para meninos e rapazes?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>6.</strong>
+
+                Qual foi a participação da União Feminina Missionária
+                da Convenção Batista do Sul dos Estados Unidos?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+            <div class="pergunta">
+
+                <strong>7.</strong>
+
+                O que a história dos primeiros rapazes ensina
+                aos Embaixadores do Rei de hoje?
+
+                <textarea class="resposta"></textarea>
+
+            </div>
+
+
+            <h3>Avaliação do conselheiro</h3>
+
+            <div class="campo">
+
+                <label for="avaliacao">Observações:</label>
+
+                <textarea id="avaliacao" class="resposta"></textarea>
+
+            </div>
+
+            <div class="linha-assinatura">
+
+                <div class="assinatura">
+                    Embaixador
+                </div>
+
+                <div class="assinatura">
+                    Conselheiro
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- REFERÊNCIAS -->
+
+        <section>
+
+            <h2>Referências</h2>
+
+            <p>
+                <strong>História da Organização Embaixadores do Rei:</strong>
+                texto histórico apresentado para o estudo do início
+                da organização nos Estados Unidos.
+            </p>
+
+            <p>
+                <strong>Guia dos Embaixadores do Rei.</strong>
+                Seção histórica, página 6. Material de formação
+                da organização.
+            </p>
+
+            <p>
+                <strong>Bíblia Sagrada:</strong>
+                Tiago 2:17.
+            </p>
+
+            <p>
+                As perguntas, atividades, reflexões e propostas de
+                aplicação foram elaboradas como recursos pedagógicos
+                complementares para o estudo do tema.
+            </p>
+
+        </section>
+
+
+        <footer>
+
+            <p>
+                Embaixadores do Rei
+                <br>
+                Conhecer • Crescer • Servir
+            </p>
+
+            <p>
+                Posto de Escudeiro — Tema 5
+            </p>
+
+        </footer>
+
+
+        <!-- BOTÕES -->
+
+        <div class="botoes">
+
+            <button onclick="window.print()">
+                Imprimir / Salvar em PDF
+            </button>
+
+            <button
+                class="botao-voltar"
+                onclick="window.location.href='../../../index.html'">
+
+                Voltar ao início
+
+            </button>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

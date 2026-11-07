@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escudeiro — Tema 9: Serviço Real</title>
+
+    <style>
+
+        :root {
+            --azul: #102B49;
+            --azul-secundario: #183D61;
+            --dourado: #C5A15B;
+            --dourado-claro: #E0C98F;
+            --creme: #F8F5ED;
+            --branco: #FFFFFF;
+            --texto: #263442;
+            --cinza: #687583;
+            --linha: #D9DDE2;
+            --verde: #315D48;
+            --verde-claro: #EAF2EC;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--creme);
+            color: var(--texto);
+            line-height: 1.7;
+        }
+
+        .pagina {
+            max-width: 1000px;
+            margin: 35px auto;
+            background: var(--branco);
+            padding: 45px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 4px solid var(--dourado);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .identificacao {
+            color: var(--dourado);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-family: Georgia, serif;
+            color: var(--azul);
+            font-size: 38px;
+            margin: 12px 0;
+        }
+
+        .subtitulo {
+            color: var(--azul-secundario);
+            font-size: 19px;
+        }
+
+        .informacao {
+            background: var(--verde-claro);
+            border-left: 5px solid var(--verde);
+            padding: 18px;
+            border-radius: 6px;
+            margin: 25px 0;
+        }
+
+        .etapa {
+            margin: 35px 0;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--linha);
+        }
+
+        .etapa h2 {
+            font-family: Georgia, serif;
+            color: var(--azul);
+            font-size: 25px;
+            margin-bottom: 18px;
+            border-left: 5px solid var(--dourado);
+            padding-left: 14px;
+        }
+
+        h3 {
+            color: var(--azul-secundario);
+            margin: 22px 0 10px;
+            font-size: 19px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin: 12px 0 20px 28px;
+        }
+
+        li {
+            margin-bottom: 9px;
+        }
+
+        .destaque {
+            background: #F8F2E5;
+            border-left: 5px solid var(--dourado);
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .caixa-verde {
+            background: var(--verde-claro);
+            border-left: 5px solid var(--verde);
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .atividade {
+            background: #F5F7F9;
+            border: 1px solid var(--linha);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .linha-resposta {
+            border-bottom: 1px solid #89939D;
+            height: 35px;
+            margin: 8px 0 15px;
+        }
+
+        .versiculo {
+            font-family: Georgia, serif;
+            font-style: italic;
+            color: var(--azul-secundario);
+            font-size: 18px;
+            padding: 18px;
+            background: var(--creme);
+            border-radius: 6px;
+            margin: 18px 0;
+        }
+
+        .referencia {
+            font-weight: bold;
+            color: var(--dourado);
+            display: block;
+            margin-top: 8px;
+            font-style: normal;
+        }
+
+        .aviso {
+            font-size: 14px;
+            color: var(--cinza);
+            background: #F3F4F5;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 18px 0;
+        }
+
+        .campo {
+            margin: 20px 0;
+        }
+
+        .campo label {
+            font-weight: bold;
+            color: var(--azul);
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .campo input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #89939D;
+            padding: 9px;
+            font-size: 16px;
+            background: transparent;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 35px 0 10px;
+        }
+
+        button {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .botao-imprimir {
+            background: var(--azul);
+            color: white;
+        }
+
+        .botao-voltar {
+            background: var(--dourado);
+            color: var(--azul);
+        }
+
+        button:hover {
+            opacity: 0.85;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            border-top: 2px solid var(--dourado);
+            margin-top: 40px;
+            padding-top: 20px;
+            color: var(--cinza);
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+
+            .pagina {
+                margin: 10px;
+                padding: 22px;
+            }
+
+            h1 {
+                font-size: 29px;
+            }
+
+            .etapa h2 {
+                font-size: 22px;
+            }
+
+        }
+
+        @page {
+            size: A4;
+            margin: 1.7cm;
+        }
+
+        @media print {
+
+            body {
+                background: white;
+                color: black;
+                font-size: 11pt;
+            }
+
+            .pagina {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .botoes {
+                display: none;
+            }
+
+            header {
+                border-bottom: 2px solid #777;
+            }
+
+            .etapa {
+                break-inside: avoid;
+            }
+
+            h2, h3 {
+                break-after: avoid;
+            }
+
+            .atividade,
+            .destaque,
+            .caixa-verde,
+            .versiculo {
+                break-inside: avoid;
+            }
+
+            input {
+                color: black;
+            }
+
+            footer {
+                margin-top: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="pagina">
+
+    <header>
+
+        <div class="identificacao">
+            Embaixadores do Rei
+        </div>
+
+        <h1>Serviço Real</h1>
+
+        <div class="subtitulo">
+            Posto de Escudeiro — Tema 9
+        </div>
+
+        <p style="text-align:center; margin-top:15px;">
+            Aprendendo a servir a Deus por meio do amor,
+            da solidariedade e da cooperação.
+        </p>
+
+    </header>
+
+
+    <!-- ETAPA 1 -->
+
+    <section class="etapa">
+
+        <h2>1. Conhecendo o tema</h2>
+
+        <p>
+            Ser Embaixador do Rei é muito mais do que conhecer
+            histórias bíblicas, memorizar versículos e participar
+            de reuniões. É também colocar em prática os ensinamentos
+            de Jesus Cristo.
+        </p>
+
+        <p>
+            Uma das maneiras de demonstrar nossa fé é ajudar outras
+            pessoas. Quando utilizamos nosso tempo, nossas habilidades
+            e nossos esforços para realizar algo útil em benefício
+            do próximo, estamos praticando o Serviço Real.
+        </p>
+
+        <p>
+            O Serviço Real é uma atividade de serviço cristão realizada
+            pelos Embaixadores do Rei. Pode acontecer dentro da igreja,
+            na comunidade ou em favor de pessoas que precisam de ajuda.
+        </p>
+
+        <div class="destaque">
+
+            <strong>Uma ideia fundamental:</strong>
+
+            <p>
+                O Serviço Real não é apenas realizar uma tarefa.
+                É servir com disposição, responsabilidade, amor
+                e espírito de cooperação.
+            </p>
+
+        </div>
+
+        <p>
+            Jesus ensinou que a verdadeira grandeza não está em ser
+            servido, mas em estar disposto a servir.
+        </p>
+
+    </section>
+
+
+    <!-- ETAPA 2 -->
+
+    <section class="etapa">
+
+        <h2>2. O que vamos aprender</h2>
+
+        <p>Ao estudar este tema, você deverá compreender:</p>
+
+        <ul>
+
+            <li>O significado do Serviço Real na organização Embaixadores do Rei.</li>
+
+            <li>A importância de servir a Deus ajudando outras pessoas.</li>
+
+            <li>As diferentes modalidades de Serviço Real.</li>
+
+            <li>O valor da solidariedade e da cooperação.</li>
+
+            <li>Como planejar e realizar uma atividade em grupo.</li>
+
+            <li>Como utilizar seus talentos e habilidades no serviço cristão.</li>
+
+        </ul>
+
+        <div class="caixa-verde">
+
+            <strong>Pense um pouco:</strong>
+
+            <p>
+                Se você percebesse que existe uma necessidade em sua
+                igreja ou comunidade, o que poderia fazer para ajudar?
+            </p>
+
+            <p>
+                Servir começa quando deixamos de apenas observar
+                um problema e procuramos contribuir para solucioná-lo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 3 -->
+
+    <section class="etapa">
+
+        <h2>3. Estudo orientado</h2>
+
+        <h3>O que é Serviço Real?</h3>
+
+        <p>
+            Serviço Real é uma forma de colocar em prática o amor
+            cristão por meio de ações concretas. Os Embaixadores
+            utilizam seus talentos, seu tempo e seus esforços para
+            colaborar com a igreja e ajudar o próximo.
+        </p>
+
+        <p>
+            Essas atividades podem ser realizadas individualmente
+            ou em grupo, mas o trabalho coletivo possui uma
+            característica muito importante: a cooperação.
+        </p>
+
+
+        <h3>O mutirão de Serviço Real</h3>
+
+        <p>
+            O mutirão é uma atividade em que várias pessoas se reúnem
+            para realizar um trabalho em conjunto.
+        </p>
+
+        <p>
+            Nesse tipo de atividade, todos procuram participar
+            de acordo com suas capacidades. Ninguém deve ficar
+            esquecido ou ser considerado menos importante.
+        </p>
+
+        <p>
+            O mutirão ensina duas atitudes fundamentais:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>Solidariedade:</strong>
+                perceber a necessidade do outro e demonstrar
+                disposição para ajudar.
+            </li>
+
+            <li>
+                <strong>Cooperação:</strong>
+                trabalhar junto com outras pessoas, compartilhando
+                responsabilidades e ajudando uns aos outros.
+            </li>
+
+        </ul>
+
+        <h3>Onde podemos realizar um mutirão?</h3>
+
+        <p>O trabalho pode ser interno ou externo.</p>
+
+        <div class="atividade">
+
+            <strong>Serviço interno:</strong>
+
+            <ul>
+                <li>Organizar e limpar espaços da igreja.</li>
+                <li>Ajudar na conservação do templo.</li>
+                <li>Plantar e cuidar do jardim.</li>
+                <li>Organizar materiais e ambientes utilizados pela embaixada.</li>
+            </ul>
+
+            <strong>Serviço externo:</strong>
+
+            <ul>
+                <li>Colaborar com a limpeza de um espaço comunitário autorizado.</li>
+                <li>Ajudar uma pessoa necessitada em uma atividade apropriada.</li>
+                <li>Participar de campanhas de solidariedade.</li>
+                <li>Colaborar com projetos sociais da igreja.</li>
+            </ul>
+
+        </div>
+
+        <p>
+            Toda atividade deve ser planejada e acompanhada por
+            adultos responsáveis. O trabalho precisa respeitar
+            a idade, a segurança e as capacidades de cada participante.
+        </p>
+
+
+        <h3>Algumas sugestões de Serviços Reais</h3>
+
+        <p>
+            O material tradicional dos Embaixadores do Rei apresenta
+            diversas sugestões de atividades. Conheça algumas delas:
+        </p>
+
+
+        <div class="atividade">
+
+            <h3>1. Culto dos Garotos</h3>
+
+            <p>
+                É uma reunião de caráter evangelístico destinada
+                a meninos e rapazes.
+            </p>
+
+            <p>
+                Os próprios Embaixadores podem participar da
+                organização e direção das atividades, preparando
+                momentos de oração, cânticos, leitura bíblica,
+                testemunhos e mensagens.
+            </p>
+
+            <p>
+                A atividade deve contar com acompanhamento do
+                conselheiro e orientação pastoral.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>2. Operação Vinte Lares</h3>
+
+            <p>
+                O objetivo é compartilhar mensagens evangelísticas
+                com famílias, apresentando o amor de Deus revelado
+                em Jesus Cristo.
+            </p>
+
+            <p>
+                A proposta tradicional consiste em visitar vinte
+                lares, entregar folhetos evangelísticos, conversar
+                com as famílias e orar por elas.
+            </p>
+
+            <p>
+                Atualmente, essa atividade deve ser organizada
+                pela igreja, com autorização e acompanhamento
+                de adultos responsáveis. As visitas precisam
+                ser previamente planejadas, respeitando a
+                segurança e a vontade das famílias.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>3. Postais com Versículos</h3>
+
+            <p>
+                Os Embaixadores podem preparar mensagens com
+                versículos bíblicos para encorajar missionários
+                que trabalham em diferentes regiões do Brasil
+                e em outros países.
+            </p>
+
+            <p>
+                É uma maneira de demonstrar carinho, lembrar
+                os missionários em oração e valorizar o trabalho
+                de quem anuncia o Evangelho.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>4. Recrutamento de novos participantes</h3>
+
+            <p>
+                Uma embaixada pode convidar outros meninos e
+                rapazes para conhecer a organização.
+            </p>
+
+            <p>
+                Os Embaixadores podem preparar convites, apresentar
+                a organização, explicar suas atividades e convidar
+                os colegas para participar de uma reunião.
+            </p>
+
+            <p>
+                O convite deve ser feito com respeito, amizade
+                e liberdade, sem pressionar ninguém.
+            </p>
+
+            <div class="aviso">
+                No material antigo, esta atividade aparece com
+                o título "Recreamento". Pelo conteúdo da descrição,
+                trata-se de uma atividade de recrutamento de novos
+                participantes.
+            </div>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>5. Cooperação com as festas missionárias</h3>
+
+            <p>
+                A igreja pode organizar programações especiais
+                para divulgar o trabalho missionário, como os
+                dias de Missões Mundiais, Nacionais ou Estaduais.
+            </p>
+
+            <p>
+                Os Embaixadores podem colaborar preparando
+                cartazes, exposições, murais e materiais
+                informativos sobre missões.
+            </p>
+
+            <p>
+                O objetivo é ajudar outras pessoas a conhecerem
+                o trabalho missionário e compreenderem a
+                importância de participar dessa obra.
+            </p>
+
+            <p>
+                O material antigo sugere a utilização de recortes
+                de revistas e jornais da organização Batista.
+                Atualmente, também podem ser utilizados materiais
+                digitais e recursos gráficos, respeitando os
+                direitos de utilização das imagens.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>6. Cartões de Boas-Vindas e encorajamento</h3>
+
+            <p>
+                Os Embaixadores podem preparar cartões com
+                mensagens bíblicas para pessoas que precisam
+                de palavras de esperança e encorajamento.
+            </p>
+
+            <p>
+                Podem ser destinados a pessoas hospitalizadas,
+                pessoas privadas de liberdade ou conhecidos
+                que estejam enfrentando dificuldades.
+            </p>
+
+            <p>
+                Antes do envio, é importante verificar as
+                regras das instituições, respeitar a privacidade
+                e obter as autorizações necessárias.
+            </p>
+
+            <p>
+                A atividade também pode ser acompanhada por
+                um momento de oração pelas pessoas que receberão
+                as mensagens.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>7. Garrafas Missionárias — uma prática histórica</h3>
+
+            <p>
+                O material antigo apresenta uma atividade chamada
+                Garrafas Missionárias. A proposta consistia em
+                colocar uma mensagem evangelística dentro de uma
+                garrafa fechada e lançá-la em um rio ou no mar,
+                esperando que alguém encontrasse a mensagem.
+            </p>
+
+            <p>
+                Essa sugestão revela a criatividade missionária
+                de outra época, mas não deve ser realizada
+                atualmente.
+            </p>
+
+            <div class="aviso">
+                Lançar garrafas em rios e mares pode causar
+                poluição e prejudicar os animais e ambientes
+                aquáticos. Hoje podemos compartilhar mensagens
+                por meio de cartões, correspondências, visitas
+                organizadas pela igreja e recursos digitais.
+            </div>
+
+        </div>
+
+
+        <h3>Planejando um Serviço Real</h3>
+
+        <p>
+            Uma atividade de Serviço Real precisa ter propósito.
+            Não basta reunir pessoas e começar um trabalho sem
+            saber o que se deseja realizar.
+        </p>
+
+        <p>Podemos organizar a atividade em cinco momentos:</p>
+
+        <ol>
+
+            <li>
+                <strong>Identificar uma necessidade:</strong>
+                descobrir o que precisa ser feito.
+            </li>
+
+            <li>
+                <strong>Escolher a atividade:</strong>
+                conversar e decidir como a embaixada poderá ajudar.
+            </li>
+
+            <li>
+                <strong>Planejar:</strong>
+                organizar materiais, participantes, responsabilidades
+                e acompanhamento.
+            </li>
+
+            <li>
+                <strong>Executar:</strong>
+                realizar o trabalho com dedicação e cooperação.
+            </li>
+
+            <li>
+                <strong>Avaliar:</strong>
+                conversar sobre os resultados e o que foi aprendido.
+            </li>
+
+        </ol>
+
+        <div class="destaque">
+
+            <strong>Pergunta orientadora:</strong>
+
+            <p>
+                Que necessidade da nossa igreja ou comunidade
+                podemos ajudar a atender?
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 4 -->
+
+    <section class="etapa">
+
+        <h2>4. Reflexão bíblica</h2>
+
+        <h3>Jesus nos ensinou a servir</h3>
+
+        <p>
+            Jesus Cristo demonstrou, por meio de suas atitudes,
+            que servir ao próximo é uma expressão do amor.
+            Ele não apenas ensinava as pessoas: também cuidava
+            delas, acolhia os necessitados e demonstrava compaixão.
+        </p>
+
+        <div class="versiculo">
+
+            "Porque o Filho do homem também não veio para ser
+            servido, mas para servir e dar a sua vida em resgate
+            de muitos."
+
+            <span class="referencia">
+                Marcos 10:45
+            </span>
+
+        </div>
+
+        <p>
+            Esse ensinamento nos ajuda a compreender que o
+            serviço cristão não deve ser realizado apenas para
+            receber elogios ou reconhecimento.
+        </p>
+
+        <p>
+            Servimos porque aprendemos com Cristo a amar,
+            respeitar e ajudar as pessoas.
+        </p>
+
+        <div class="versiculo">
+
+            "Porque vós, irmãos, fostes chamados à liberdade.
+            Não useis então da liberdade para dar ocasião
+            à carne, mas servi-vos uns aos outros pelo amor."
+
+            <span class="referencia">
+                Gálatas 5:13
+            </span>
+
+        </div>
+
+        <h3>Para refletir</h3>
+
+        <ul>
+
+            <li>Por que Jesus relacionou grandeza com serviço?</li>
+
+            <li>É possível servir sem receber elogios?</li>
+
+            <li>Como podemos demonstrar amor por meio de nossas atitudes?</li>
+
+            <li>O que significa servir uns aos outros pelo amor?</li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ETAPA 5 -->
+
+    <section class="etapa">
+
+        <h2>5. Vamos praticar</h2>
+
+        <div class="atividade">
+
+            <h3>Atividade 1 — Complete as frases</h3>
+
+            <p>
+                a) O Serviço Real é uma maneira de colocar em prática
+                o amor __________.
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                b) Quando várias pessoas trabalham juntas em uma
+                atividade, estão praticando a __________.
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                c) Ajudar uma pessoa necessitada é uma atitude
+                de __________.
+            </p>
+
+            <div class="linha-resposta"></div>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>Atividade 2 — Verdadeiro ou falso</h3>
+
+            <p>
+                Escreva V para verdadeiro e F para falso.
+            </p>
+
+            <p>( &nbsp;&nbsp; ) O Serviço Real pode acontecer dentro ou fora da igreja.</p>
+
+            <p>( &nbsp;&nbsp; ) Em um mutirão, somente os mais fortes devem trabalhar.</p>
+
+            <p>( &nbsp;&nbsp; ) A cooperação significa ajudar uns aos outros.</p>
+
+            <p>( &nbsp;&nbsp; ) O Serviço Real deve ser realizado com responsabilidade.</p>
+
+            <p>( &nbsp;&nbsp; ) Uma atividade missionária pode utilizar cartões com versículos.</p>
+
+            <p>( &nbsp;&nbsp; ) Devemos jogar garrafas nos rios para divulgar o Evangelho.</p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>Atividade 3 — Relacione</h3>
+
+            <p>
+                Relacione cada atividade à sua descrição.
+            </p>
+
+            <p>
+                1. Culto dos Garotos
+            </p>
+
+            <p>
+                2. Postais com Versículos
+            </p>
+
+            <p>
+                3. Mutirão
+            </p>
+
+            <p>
+                4. Festas Missionárias
+            </p>
+
+            <p>
+                ( &nbsp;&nbsp; ) Trabalho coletivo para atender a uma necessidade.
+            </p>
+
+            <p>
+                ( &nbsp;&nbsp; ) Mensagens de encorajamento aos missionários.
+            </p>
+
+            <p>
+                ( &nbsp;&nbsp; ) Programação evangelística destinada a meninos e rapazes.
+            </p>
+
+            <p>
+                ( &nbsp;&nbsp; ) Divulgação do trabalho missionário.
+            </p>
+
+        </div>
+
+
+        <div class="atividade">
+
+            <h3>Atividade 4 — Situação-problema</h3>
+
+            <p>
+                Imagine que a embaixada percebeu que o jardim
+                da igreja está abandonado e precisa de cuidados.
+            </p>
+
+            <p>
+                Os Embaixadores decidiram conversar com o
+                conselheiro para organizar um mutirão.
+            </p>
+
+            <p>
+                Responda:
+            </p>
+
+            <p>
+                a) Qual é a necessidade identificada?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                b) Que materiais poderiam ser necessários?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                c) Como os participantes poderiam dividir as tarefas?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                d) Por que todos devem participar de acordo com
+                suas capacidades?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 6 -->
+
+    <section class="etapa">
+
+        <h2>6. Desafio do Embaixador</h2>
+
+        <p>
+            Agora chegou o momento de transformar conhecimento
+            em atitude!
+        </p>
+
+        <div class="destaque">
+
+            <h3>Desafio: Serviço Real em ação</h3>
+
+            <p>
+                Converse com seu conselheiro e com os demais
+                integrantes da embaixada.
+            </p>
+
+            <p>
+                Procurem identificar uma necessidade real da
+                igreja ou da comunidade que possa ser atendida
+                por meio de uma atividade coletiva.
+            </p>
+
+        </div>
+
+        <p>Para realizar o desafio:</p>
+
+        <ol>
+
+            <li>Identifiquem uma necessidade.</li>
+
+            <li>Escolham uma atividade adequada à idade dos participantes.</li>
+
+            <li>Organizem os materiais e as responsabilidades.</li>
+
+            <li>Realizem o trabalho com acompanhamento dos adultos responsáveis.</li>
+
+            <li>Conversem sobre os resultados e o aprendizado.</li>
+
+        </ol>
+
+        <p>
+            O mais importante não é realizar um trabalho grandioso,
+            mas compreender o valor de servir com amor e dedicação.
+        </p>
+
+        <div class="caixa-verde">
+
+            <strong>Minha reflexão:</strong>
+
+            <p>
+                O que aprendi sobre servir ao próximo?
+            </p>
+
+            <div class="linha-resposta"></div>
+            <div class="linha-resposta"></div>
+            <div class="linha-resposta"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 7 -->
+
+    <section class="etapa">
+
+        <h2>7. Preparando a demonstração</h2>
+
+        <p>
+            Antes de realizar a demonstração ao conselheiro,
+            revise os principais conhecimentos deste tema.
+        </p>
+
+        <div class="atividade">
+
+            <h3>Perguntas para demonstração</h3>
+
+            <p>
+                <strong>1.</strong> O que é Serviço Real?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>2.</strong> Quais são os dois valores
+                fundamentais ensinados pelo mutirão?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>3.</strong> Qual é a diferença entre
+                serviço interno e serviço externo?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>4.</strong> Cite três sugestões de
+                atividades de Serviço Real.
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>5.</strong> O que é um mutirão?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>6.</strong> Por que todos devem participar
+                de acordo com suas capacidades?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>7.</strong> Quais são os cinco momentos
+                para planejar uma atividade de Serviço Real?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+            <p>
+                <strong>8.</strong> Como o ensinamento de Jesus
+                em Marcos 10:45 se relaciona com o Serviço Real?
+            </p>
+
+            <div class="linha-resposta"></div>
+
+        </div>
+
+
+        <h3>Registro da demonstração</h3>
+
+        <div class="campo">
+
+            <label>Nome do Embaixador:</label>
+
+            <input type="text">
+
+        </div>
+
+        <div class="campo">
+
+            <label>Nome do conselheiro:</label>
+
+            <input type="text">
+
+        </div>
+
+        <div class="campo">
+
+            <label>Data da demonstração:</label>
+
+            <input type="text">
+
+        </div>
+
+        <div class="campo">
+
+            <label>Observações do conselheiro:</label>
+
+            <div class="linha-resposta"></div>
+            <div class="linha-resposta"></div>
+            <div class="linha-resposta"></div>
+
+        </div>
+
+        <div class="campo">
+
+            <label>Assinatura do conselheiro:</label>
+
+            <div class="linha-resposta"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REFERÊNCIAS -->
+
+    <section class="etapa">
+
+        <h2>Referências e fontes de estudo</h2>
+
+        <p>
+            <strong>Material institucional:</strong>
+            trecho histórico sobre Serviço Real fornecido
+            para a elaboração deste estudo, contendo sugestões
+            de atividades e orientações sobre mutirões.
+        </p>
+
+        <p>
+            <strong>Material complementar:</strong>
+            Apostila — Os Postos da Organização ER,
+            DAER Gonçalense, Pr. Lucas Mourão.
+        </p>
+
+        <p>
+            <strong>Referências bíblicas:</strong>
+            Marcos 10:45 e Gálatas 5:13.
+        </p>
+
+        <div class="aviso">
+
+            As explicações, perguntas, atividades e adaptações
+            contemporâneas foram organizadas para fins educativos.
+
+            Algumas sugestões do material antigo, como as
+            Garrafas Missionárias, foram apresentadas como
+            registros históricos e não como atividades a serem
+            realizadas atualmente.
+
+            As atividades práticas devem ser planejadas e
+            acompanhadas pelo conselheiro e pelos adultos
+            responsáveis.
+
+        </div>
+
+    </section>
+
+
+    <div class="botoes">
+
+        <button
+            class="botao-imprimir"
+            onclick="window.print()">
+
+            Imprimir / Salvar em PDF
+
+        </button>
+
+        <button
+            class="botao-voltar"
+            onclick="window.location.href='../../../index.html'">
+
+            Voltar ao início
+
+        </button>
+
+    </div>
+
+
+    <footer>
+
+        <p style="text-align:center;">
+            EMBAIXADORES DO REI
+        </p>
+
+        <p style="text-align:center;">
+            Posto de Escudeiro — Tema 9
+        </p>
+
+        <p style="text-align:center;">
+            Serviço Real: aprender, servir e cooperar.
+        </p>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>

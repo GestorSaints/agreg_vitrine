@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Estudo do posto de Escudeiro sobre as cores da organização Embaixadores do Rei.">
+
+    <title>Escudeiro — Tema 3: As Cores dos Embaixadores do Rei</title>
+
+    <link rel="stylesheet" href="../../../css/estilo.css">
+
+    <style>
+        :root {
+            --azul: #102B49;
+            --azul-secundario: #183D61;
+            --dourado: #C5A15B;
+            --dourado-claro: #E0C98F;
+            --creme: #F7F3EA;
+            --branco: #FFFFFF;
+            --texto: #263442;
+            --linha: #D8DDE3;
+            --azul-insignia: #244F85;
+            --branco-insignia: #F0F0EC;
+            --amarelo-insignia: #E6B92E;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--creme);
+            color: var(--texto);
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        .pagina-estudo {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 35px;
+            background: var(--branco);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .cabecalho-estudo {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 3px solid var(--dourado);
+        }
+
+        .identificacao {
+            color: var(--dourado);
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Cinzel", Georgia, serif;
+            color: var(--azul);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 12px 0;
+        }
+
+        .subtitulo {
+            color: var(--azul-secundario);
+            font-size: 1.05rem;
+        }
+
+        .dados-aluno {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .campo {
+            border-bottom: 1px solid var(--linha);
+            padding: 8px 0;
+        }
+
+        .campo strong {
+            color: var(--azul);
+        }
+
+        .etapa {
+            margin: 30px 0;
+            padding: 25px;
+            border: 1px solid var(--linha);
+            border-radius: 8px;
+            page-break-inside: auto;
+        }
+
+        .etapa h2 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--dourado-claro);
+            font-size: 1.35rem;
+        }
+
+        .destaque {
+            background: var(--creme);
+            border-left: 5px solid var(--dourado);
+            padding: 16px 20px;
+            margin: 20px 0;
+            color: #102B49;
+        }
+
+        .cor-estudo {
+            margin: 24px 0;
+            padding: 20px;
+            border: 1px solid var(--linha);
+            border-radius: 8px;
+            background: #FAFAF8;
+            break-inside: avoid;
+        }
+
+        .cor-estudo h3 {
+            margin-top: 0;
+        }
+
+        .faixa-cor {
+            height: 12px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .faixa-azul {
+            background: var(--azul-insignia);
+        }
+
+        .faixa-branca {
+            background: var(--branco-insignia);
+            border: 1px solid #CCCCCC;
+        }
+
+        .faixa-amarela {
+            background: var(--amarelo-insignia);
+        }
+
+        .referencia {
+            color: var(--azul-secundario);
+            font-weight: bold;
+        }
+
+        .pergunta {
+            margin: 18px 0;
+        }
+
+        .linha-resposta {
+            display: block;
+            min-height: 35px;
+            border-bottom: 1px solid #AAB2BB;
+            margin-top: 8px;
+        }
+
+        .alternativas {
+            margin: 12px 0;
+        }
+
+        .alternativas p {
+            margin: 7px 0;
+        }
+
+        .acoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
+        }
+
+        .botao-imprimir {
+            background: var(--azul);
+            color: white;
+        }
+
+        .botao-voltar {
+            background: var(--dourado);
+            color: var(--azul);
+        }
+
+        .rodape-estudo {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid var(--dourado);
+            text-align: center;
+            color: #66717D;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 650px) {
+            .pagina-estudo {
+                margin: 0;
+                padding: 20px;
+            }
+
+            .dados-aluno {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .etapa {
+                padding: 18px;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 18mm 16mm;
+        }
+
+        @media print {
+            body {
+                background: white;
+                font-size: 11pt;
+            }
+
+            .pagina-estudo {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            .acoes {
+                display: none;
+            }
+
+            .etapa {
+                border: 1px solid #CCCCCC;
+            }
+
+            .cor-estudo {
+                break-inside: avoid;
+            }
+
+            h2,
+            h3 {
+                break-after: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="pagina-estudo">
+
+        <header class="cabecalho-estudo">
+
+            <div class="identificacao">
+                Embaixadores do Rei
+            </div>
+
+            <h1>As Cores da Organização Embaixadores do Rei</h1>
+
+            <p class="subtitulo">
+                Posto de Escudeiro — Tema 3
+            </p>
+
+        </header>
+
+
+        <section class="dados-aluno">
+
+            <div class="campo">
+                <strong>Nome:</strong>
+            </div>
+
+            <div class="campo">
+                <strong>Embaixada:</strong>
+            </div>
+
+            <div class="campo">
+                <strong>Conselheiro:</strong>
+            </div>
+
+            <div class="campo">
+                <strong>Data:</strong>
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 1 -->
+
+        <section class="etapa">
+
+            <h2>1. Conhecendo o tema</h2>
+
+            <p>
+                Você já percebeu que as cores estão presentes em muitos
+                símbolos, bandeiras e emblemas?
+            </p>
+
+            <p>
+                As cores podem ajudar a identificar uma organização,
+                transmitir mensagens e lembrar valores importantes.
+                Na organização Embaixadores do Rei, três cores possuem
+                significados especiais.
+            </p>
+
+            <p>
+                São elas: azul, branco e amarelo.
+            </p>
+
+            <p>
+                Essas cores não estão presentes apenas para deixar
+                a insígnia bonita. Cada uma delas representa um valor
+                que deve fazer parte da vida do Embaixador.
+            </p>
+
+            <div class="destaque">
+
+                <strong>Uma pergunta para começar:</strong>
+
+                <p>
+                    Se você encontrasse um menino usando as cores
+                    dos Embaixadores do Rei, saberia explicar o que
+                    cada uma delas significa?
+                </p>
+
+            </div>
+
+            <p>
+                Neste estudo, vamos conhecer os três significados:
+                lealdade, pureza e preciosidade.
+            </p>
+
+        </section>
+
+
+        <!-- ETAPA 2 -->
+
+        <section class="etapa">
+
+            <h2>2. O que vamos aprender</h2>
+
+            <p>Ao concluir este estudo, você deverá ser capaz de:</p>
+
+            <ul>
+
+                <li>Identificar as três cores oficiais da insígnia.</li>
+
+                <li>Explicar o significado da cor azul.</li>
+
+                <li>Compreender o significado da cor branca.</li>
+
+                <li>Explicar o significado da cor amarela.</li>
+
+                <li>Relacionar as cores com os compromissos da vida cristã.</li>
+
+                <li>Demonstrar como esses valores podem ser praticados
+                    no cotidiano.</li>
+
+            </ul>
+
+            <div class="destaque">
+
+                <strong>Nosso objetivo:</strong>
+
+                <p>
+                    Conhecer as cores e compreender os valores que
+                    elas representam para os Embaixadores do Rei.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 3 -->
+
+        <section class="etapa">
+
+            <h2>3. Estudo orientado</h2>
+
+            <p>
+                As cores da insígnia dos Embaixadores do Rei são três:
+                azul, branco e amarelo.
+            </p>
+
+            <p>
+                Cada uma delas representa um significado especial.
+                Vamos conhecer esses significados.
+            </p>
+
+
+            <div class="cor-estudo">
+
+                <div class="faixa-cor faixa-azul"></div>
+
+                <h3>AZUL — LEALDADE</h3>
+
+                <p>
+                    A cor azul representa a <strong>lealdade</strong>.
+                </p>
+
+                <p>
+                    Para o Embaixador do Rei, essa lealdade deve ser
+                    demonstrada em quatro compromissos:
+                </p>
+
+                <ul>
+
+                    <li><strong>Lealdade a Cristo:</strong>
+                        reconhecer Jesus como Senhor e procurar
+                        seguir seus ensinamentos.</li>
+
+                    <li><strong>Lealdade à Igreja de Cristo:</strong>
+                        valorizar a igreja, participar de sua vida
+                        e cooperar com seus propósitos.</li>
+
+                    <li><strong>Lealdade à organização Embaixadores
+                        do Rei:</strong> respeitar sua identidade,
+                        sua história e seus compromissos.</li>
+
+                    <li><strong>Lealdade aos seus ideais:</strong>
+                        procurar viver os princípios representados
+                        pelo Estudo da Bíblia, Oração, Missões,
+                        Mordomia e Serviço Real.</li>
+
+                </ul>
+
+                <p>
+                    Ser leal não significa apenas dizer que somos fiéis.
+                    A lealdade precisa aparecer em nossas escolhas,
+                    atitudes e compromissos.
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Para guardar:</strong>
+
+                    <p>
+                        Azul significa lealdade a Cristo, à Igreja de Cristo,
+                        à organização Embaixadores do Rei e aos seus ideais.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cor-estudo">
+
+                <div class="faixa-cor faixa-branca"></div>
+
+                <h3>BRANCO — PUREZA</h3>
+
+                <p>
+                    A cor branca representa a <strong>pureza</strong>.
+                </p>
+
+                <p>
+                    Essa pureza envolve diferentes aspectos da vida
+                    do Embaixador:
+                </p>
+
+                <ul>
+
+                    <li><strong>Pureza do corpo:</strong>
+                        cuidar do corpo e procurar utilizá-lo
+                        de maneira responsável e digna.</li>
+
+                    <li><strong>Pureza da mente:</strong>
+                        cultivar pensamentos que estejam de acordo
+                        com os ensinamentos de Deus.</li>
+
+                    <li><strong>Pureza da alma:</strong>
+                        buscar uma vida interior sincera diante de Deus.</li>
+
+                    <li><strong>Pureza na adoração:</strong>
+                        adorar a Deus e somente a Ele.</li>
+
+                </ul>
+
+                <p>
+                    A pureza não deve ser entendida apenas como aparência
+                    ou comportamento exterior. Ela também envolve aquilo
+                    que cultivamos em nosso interior.
+                </p>
+
+                <p>
+                    O Embaixador deve procurar viver com sinceridade,
+                    integridade e respeito aos ensinamentos bíblicos.
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Para guardar:</strong>
+
+                    <p>
+                        Branco significa pureza do corpo, da mente,
+                        da alma e na adoração a Deus e somente a Ele.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cor-estudo">
+
+                <div class="faixa-cor faixa-amarela"></div>
+
+                <h3>AMARELO — PRECIOSIDADE</h3>
+
+                <p>
+                    A cor amarela representa a <strong>preciosidade</strong>.
+                </p>
+
+                <p>
+                    Esse significado pode ser compreendido de duas maneiras.
+                </p>
+
+                <p>
+                    <strong>1. Cristo é precioso para o Embaixador.</strong>
+                </p>
+
+                <p>
+                    Cristo é precioso para o Embaixador quando este
+                    o aceita como seu Senhor, Salvador e Guia.
+                </p>
+
+                <p>
+                    Isso significa reconhecer a importância de Jesus
+                    em sua vida e procurar seguir sua direção.
+                </p>
+
+                <p>
+                    <strong>2. O Embaixador é precioso para Cristo.</strong>
+                </p>
+
+                <p>
+                    O Embaixador é precioso para Cristo quando emprega
+                    no trabalho de Deus o melhor de sua capacidade.
+                </p>
+
+                <p>
+                    Isso nos ensina que devemos oferecer a Deus nossos
+                    esforços, talentos, disposição e dedicação.
+                </p>
+
+                <p>
+                    Não precisamos fazer tudo perfeitamente,
+                    mas devemos procurar realizar nosso trabalho
+                    com responsabilidade e dar o melhor de nós.
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Para guardar:</strong>
+
+                    <p>
+                        Amarelo significa preciosidade:
+                        Cristo é precioso para o Embaixador quando
+                        é aceito como Senhor, Salvador e Guia;
+                        e o Embaixador é precioso para Cristo quando
+                        emprega no trabalho de Deus o melhor de sua capacidade.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h3>Reunindo os três significados</h3>
+
+            <p>
+                Agora podemos compreender a mensagem das três cores:
+            </p>
+
+            <ul>
+
+                <li><strong>Azul:</strong> Lealdade.</li>
+
+                <li><strong>Branco:</strong> Pureza.</li>
+
+                <li><strong>Amarelo:</strong> Preciosidade.</li>
+
+            </ul>
+
+            <p>
+                Esses valores ajudam o Embaixador a compreender
+                os compromissos que assume diante de Cristo,
+                da Igreja e da organização.
+            </p>
+
+        </section>
+
+
+        <!-- ETAPA 4 -->
+
+        <section class="etapa">
+
+            <h2>4. Reflexão bíblica</h2>
+
+            <p>
+                A Bíblia apresenta ensinamentos que nos ajudam
+                a compreender a lealdade, a pureza e a dedicação
+                que devem orientar a vida cristã.
+            </p>
+
+
+            <div class="destaque">
+
+                <p class="referencia">
+                    Apocalipse 2:10
+                </p>
+
+                <p>
+                    Nesse texto, encontramos a orientação de permanecer
+                    fiel até a morte.
+                </p>
+
+                <p>
+                    A passagem nos ajuda a refletir sobre a importância
+                    da fidelidade e da perseverança na vida cristã.
+                </p>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <p class="referencia">
+                    Mateus 5:8
+                </p>
+
+                <p>
+                    Jesus ensina sobre a importância de ter um coração puro.
+                </p>
+
+                <p>
+                    Esse ensinamento nos lembra que a pureza também
+                    envolve nosso interior, nossas intenções e nossa
+                    maneira de nos relacionarmos com Deus.
+                </p>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <p class="referencia">
+                    Colossenses 3:23
+                </p>
+
+                <p>
+                    Paulo ensina que devemos realizar nosso trabalho
+                    de coração, como para o Senhor.
+                </p>
+
+                <p>
+                    Esse princípio nos ajuda a compreender a preciosidade
+                    do serviço realizado com dedicação a Deus.
+                </p>
+
+            </div>
+
+
+            <h3>Pensando sobre nossa vida</h3>
+
+            <p>
+                As cores nos fazem refletir sobre a maneira como
+                vivemos nossa fé.
+            </p>
+
+            <p>
+                A lealdade nos lembra de nossos compromissos.
+                A pureza nos chama a cuidar de nossa vida interior
+                e exterior. A preciosidade nos ensina a reconhecer
+                o valor de Cristo e a oferecer a Ele o melhor de
+                nossa capacidade.
+            </p>
+
+            <div class="pergunta">
+
+                <strong>Para refletir:</strong>
+
+                <p>
+                    1. Em qual situação da sua vida você precisa
+                    demonstrar mais lealdade?
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+                <p>
+                    2. Por que devemos cuidar não apenas do corpo,
+                    mas também da mente e da alma?
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+                <p>
+                    3. Como você pode oferecer o melhor de sua capacidade
+                    no trabalho de Deus?
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 5 -->
+
+        <section class="etapa">
+
+            <h2>5. Vamos praticar</h2>
+
+            <p>
+                Vamos verificar o que você aprendeu sobre as cores
+                da organização.
+            </p>
+
+
+            <div class="pergunta">
+
+                <strong>1. Quais são as três cores oficiais
+                    da insígnia?</strong>
+
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>2. O que representa a cor azul?</strong>
+
+                <div class="alternativas">
+                    <p>( ) Pureza.</p>
+                    <p>( ) Lealdade.</p>
+                    <p>( ) Preciosidade.</p>
+                </div>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>3. A lealdade do Embaixador deve ser demonstrada
+                    a quem ou a quê?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>4. O que representa a cor branca?</strong>
+
+                <div class="alternativas">
+                    <p>( ) Preciosidade.</p>
+                    <p>( ) Lealdade.</p>
+                    <p>( ) Pureza.</p>
+                </div>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>5. Quais aspectos da vida são mencionados
+                    no significado da cor branca?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>6. O que representa a cor amarela?</strong>
+
+                <div class="alternativas">
+                    <p>( ) Pureza.</p>
+                    <p>( ) Preciosidade.</p>
+                    <p>( ) Lealdade.</p>
+                </div>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>7. Quando Cristo é precioso para o Embaixador?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>8. Quando o Embaixador é precioso para Cristo?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>9. Relacione cada cor ao seu significado:</strong>
+
+                <p>
+                    Azul ( ) Preciosidade
+                </p>
+
+                <p>
+                    Branco ( ) Lealdade
+                </p>
+
+                <p>
+                    Amarelo ( ) Pureza
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 6 -->
+
+        <section class="etapa">
+
+            <h2>6. Desafio do Embaixador</h2>
+
+            <p>
+                Durante esta semana, procure colocar em prática
+                os valores representados pelas três cores.
+            </p>
+
+
+            <div class="pergunta">
+
+                <strong>DESAFIO AZUL — LEALDADE</strong>
+
+                <p>
+                    Demonstre lealdade a Cristo, à Igreja,
+                    à organização ou aos ideais dos Embaixadores do Rei.
+                </p>
+
+                <p>
+                    Escolha uma atitude concreta que você poderá praticar.
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>DESAFIO BRANCO — PUREZA</strong>
+
+                <p>
+                    Pense em uma atitude que possa ajudá-lo a cuidar
+                    melhor de seu corpo, sua mente, sua alma
+                    ou de sua adoração a Deus.
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>DESAFIO AMARELO — PRECIOSIDADE</strong>
+
+                <p>
+                    Escolha uma tarefa ou serviço que você possa
+                    realizar para Deus, empregando o melhor
+                    de sua capacidade.
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <strong>Missão da semana:</strong>
+
+                <p>
+                    Escolha pelo menos uma das três atitudes
+                    e coloque-a em prática.
+                </p>
+
+                <p>
+                    Na próxima reunião, compartilhe com o conselheiro
+                    ou com seus colegas o que você aprendeu com essa experiência.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 7 -->
+
+        <section class="etapa">
+
+            <h2>7. Preparando a demonstração</h2>
+
+            <p>
+                Chegou o momento de demonstrar que você conhece
+                os significados das cores da organização.
+            </p>
+
+            <p>
+                Explique as respostas com suas próprias palavras.
+            </p>
+
+
+            <div class="pergunta">
+
+                <strong>1. Quais são as três cores da insígnia
+                    dos Embaixadores do Rei?</strong>
+
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>2. O que significa a cor azul?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>3. A quem e a quê o Embaixador deve ser leal?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>4. O que significa a cor branca?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>5. Quais aspectos da vida devem ser preservados
+                    em pureza?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>6. O que significa a cor amarela?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>7. Quando Cristo é precioso para o Embaixador?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>8. Quando o Embaixador é precioso para Cristo?</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="pergunta">
+
+                <strong>9. Cite uma maneira de praticar cada um
+                    dos três valores em sua vida.</strong>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <br>
+
+            <p><strong>Resultado da demonstração:</strong></p>
+
+            <p>
+                ( ) Demonstrou conhecimento do tema.
+            </p>
+
+            <p>
+                ( ) Precisa revisar alguns pontos.
+            </p>
+
+            <br>
+
+            <div class="dados-aluno">
+
+                <div class="campo">
+                    <strong>Assinatura do Embaixador:</strong>
+                </div>
+
+                <div class="campo">
+                    <strong>Data:</strong>
+                </div>
+
+                <div class="campo">
+                    <strong>Assinatura do Conselheiro:</strong>
+                </div>
+
+                <div class="campo">
+                    <strong>Data:</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <footer class="rodape-estudo">
+
+            <p>
+                Embaixadores do Rei
+            </p>
+
+            <p>
+                Posto de Escudeiro — Tema 3:
+                As Cores da Organização Embaixadores do Rei
+            </p>
+
+            <p>
+                Estudo elaborado para fins educacionais.
+            </p>
+
+            <p>
+                Referências bíblicas:
+                Apocalipse 2:10; Mateus 5:8; Colossenses 3:23.
+            </p>
+
+            <p>
+                Referência documental:
+                Guia dos Embaixadores do Rei, página 9.
+            </p>
+
+        </footer>
+
+
+        <div class="acoes">
+
+            <button class="botao botao-imprimir"
+                onclick="window.print()">
+                Imprimir / Salvar em PDF
+            </button>
+
+            <a class="botao botao-voltar"
+                href="../../../index.html">
+                Voltar ao início
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

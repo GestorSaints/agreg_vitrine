@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Estudo do posto de Escudeiro - Os postos da organização Embaixadores do Rei.">
+
+    <title>Escudeiro | Tema 1 - Embaixadores do Rei</title>
+
+    <link rel="stylesheet" href="../../../css/estilo.css">
+
+    <style>
+        /* =========================================
+           ESTILO DA PÁGINA DE ESTUDO
+        ========================================= */
+
+        :root {
+            --azul: #102B49;
+            --azul-secundario: #183D61;
+            --dourado: #C5A15B;
+            --dourado-claro: #E0C98F;
+            --creme: #F8F5EE;
+            --branco: #FFFFFF;
+            --texto: #283442;
+            --cinza: #66717D;
+            --linha: #DDD8CE;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: var(--creme);
+            color: var(--texto);
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.75;
+        }
+
+        .pagina-estudo {
+            width: min(100% - 32px, 1000px);
+            margin: 35px auto;
+            background: var(--branco);
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(16, 43, 73, 0.10);
+            overflow: hidden;
+        }
+
+        .cabecalho-estudo {
+            background: var(--azul);
+            color: var(--branco);
+            padding: 45px 35px;
+            text-align: center;
+            border-bottom: 6px solid var(--dourado);
+        }
+
+        .cabecalho-estudo .identificacao {
+            color: var(--dourado-claro);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cabecalho-estudo h1 {
+            font-family: "Cinzel", Georgia, serif;
+            font-size: clamp(1.7rem, 4vw, 2.7rem);
+            margin: 15px 0;
+            color: var(--branco);
+        }
+
+        .cabecalho-estudo h2 {
+            color: var(--dourado-claro);
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .dados-aluno {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            padding: 25px 35px;
+            border-bottom: 1px solid var(--linha);
+        }
+
+        .campo {
+            border-bottom: 1px solid #888;
+            min-height: 35px;
+        }
+
+        .campo span {
+            font-size: 0.9rem;
+            color: var(--cinza);
+        }
+
+        .conteudo-estudo {
+            padding: 35px 45px;
+        }
+
+        .etapa {
+            margin-bottom: 45px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--linha);
+        }
+
+        .etapa:last-child {
+            border-bottom: none;
+        }
+
+        .numero-etapa {
+            display: inline-block;
+            background: var(--dourado);
+            color: var(--azul);
+            font-weight: bold;
+            padding: 5px 13px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .etapa h2 {
+            font-family: "Cinzel", Georgia, serif;
+            color: var(--azul);
+            font-size: 1.65rem;
+            margin: 12px 0 20px;
+        }
+
+        .etapa h3 {
+            color: var(--azul-secundario);
+            margin-top: 28px;
+            font-size: 1.15rem;
+        }
+
+        .etapa p {
+            margin: 12px 0;
+        }
+
+        .etapa ul,
+        .etapa ol {
+            padding-left: 25px;
+        }
+
+        .etapa li {
+            margin-bottom: 9px;
+        }
+
+        .destaque {
+            background: #F4F0E6;
+            border-left: 5px solid var(--dourado);
+            padding: 18px 22px;
+            margin: 22px 0;
+            border-radius: 4px;
+            color: #102B49;
+        }
+
+        .destaque strong {
+            color: var(--azul);
+        }
+
+        .sequencia-postos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .posto {
+            background: var(--azul);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .seta {
+            color: var(--dourado);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .pergunta {
+            margin: 24px 0;
+        }
+
+        .pergunta strong {
+            display: block;
+            color: var(--azul);
+            margin-bottom: 8px;
+        }
+
+        .linha-resposta {
+            border-bottom: 1px solid #999;
+            min-height: 35px;
+            margin: 8px 0;
+        }
+
+        .linha-resposta.dupla {
+            min-height: 55px;
+        }
+
+        .linha-resposta.tripla {
+            min-height: 75px;
+        }
+
+        .caixa-compromisso {
+            background: #F4F0E6;
+            padding: 22px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .caixa-versiculo {
+            background: var(--azul);
+            color: rgb(228, 186, 186);
+            padding: 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+
+        .caixa-versiculo strong {
+            color: var(--dourado-claro);
+        }
+
+        .rodape-estudo {
+            background: var(--azul);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-top: 5px solid var(--dourado);
+        }
+
+        .rodape-estudo h2 {
+            font-family: "Cinzel", Georgia, serif;
+            color: var(--dourado-claro);
+        }
+
+        .referencias {
+            font-size: 0.88rem;
+            color: var(--cinza);
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--linha);
+        }
+
+        .acoes {
+            width: min(100% - 32px, 1000px);
+            margin: 25px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 12px 22px;
+            border: none;
+            border-radius: 5px;
+            background: var(--azul);
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: var(--azul-secundario);
+        }
+
+        .botao-imprimir {
+            background: #98743A;
+        }
+
+        .botao-imprimir:hover {
+            background: #795B2D;
+        }
+
+        @media (max-width: 650px) {
+
+            .pagina-estudo {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .cabecalho-estudo {
+                padding: 35px 20px;
+            }
+
+            .conteudo-estudo {
+                padding: 25px 20px;
+            }
+
+            .dados-aluno {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .sequencia-postos {
+                flex-direction: column;
+            }
+
+            .seta {
+                transform: rotate(90deg);
+            }
+
+            .acoes {
+                padding: 0 5px;
+            }
+        }
+
+        /* =========================================
+           FORMATAÇÃO PARA IMPRESSÃO A4
+        ========================================= */
+
+        @page {
+            size: A4;
+            margin: 18mm 16mm;
+        }
+
+        @media print {
+
+            body {
+                background: white !important;
+                color: #222 !important;
+                font-size: 10.5pt;
+            }
+
+            .acoes {
+                display: none !important;
+            }
+
+            .pagina-estudo {
+                width: 100%;
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .cabecalho-estudo {
+                background: white !important;
+                color: var(--azul) !important;
+                border-bottom: 3px solid var(--dourado);
+                padding: 20px;
+            }
+
+            .cabecalho-estudo h1 {
+                color: var(--azul) !important;
+                font-size: 22pt;
+            }
+
+            .cabecalho-estudo h2,
+            .cabecalho-estudo .identificacao {
+                color: var(--azul) !important;
+            }
+
+            .conteudo-estudo {
+                padding: 15px 5px;
+            }
+
+            .etapa {
+                break-inside: auto;
+            }
+
+            .destaque,
+            .caixa-versiculo,
+            .posto {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .pergunta {
+                break-inside: avoid;
+            }
+
+            .rodape-estudo {
+                background: white !important;
+                color: var(--azul) !important;
+                border-top: 2px solid var(--dourado);
+            }
+
+            .rodape-estudo h2 {
+                color: var(--azul) !important;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="acoes">
+
+        <a class="botao" href="../../../index.html">
+            ← Voltar ao início
+        </a>
+
+        <button class="botao botao-imprimir"
+            onclick="window.print()">
+            Imprimir estudo / Salvar em PDF
+        </button>
+
+    </div>
+
+
+    <main class="pagina-estudo">
+
+        <!-- CABEÇALHO -->
+
+        <header class="cabecalho-estudo">
+
+            <div class="identificacao">
+                Embaixadores do Rei
+            </div>
+
+            <h1>Manual do Embaixador Escudeiro</h1>
+
+            <h2>Tema 1 — Os postos da organização Embaixadores do Rei</h2>
+
+        </header>
+
+
+        <!-- IDENTIFICAÇÃO DO ALUNO -->
+
+        <section class="dados-aluno">
+
+            <div class="campo">
+                <span>Nome:</span>
+            </div>
+
+            <div class="campo">
+                <span>Embaixada:</span>
+            </div>
+
+            <div class="campo">
+                <span>Data:</span>
+            </div>
+
+            <div class="campo">
+                <span>Conselheiro:</span>
+            </div>
+
+        </section>
+
+
+        <div class="conteudo-estudo">
+
+
+            <!-- ETAPA 1 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 1</span>
+
+                <h2>Conhecendo o tema</h2>
+
+                <h3>O que são os postos dos Embaixadores do Rei?</h3>
+
+                <p>
+                    Você já observou que, na escola, aprendemos muitas coisas
+                    ao longo dos anos?
+                </p>
+
+                <p>
+                    Primeiro, aprendemos conhecimentos básicos. Depois,
+                    avançamos para novos assuntos, desenvolvemos nossas
+                    habilidades e descobrimos coisas que antes não conhecíamos.
+                </p>
+
+                <p>
+                    Nos Embaixadores do Rei também existe um programa de
+                    aprendizagem organizado em etapas. Essas etapas são
+                    chamadas de <strong>postos</strong>.
+                </p>
+
+                <p>
+                    Os postos fazem parte do programa educacional da
+                    organização Embaixadores do Rei. Cada posto corresponde
+                    a uma etapa de conhecimentos que o embaixador adquire
+                    durante sua participação na embaixada.
+                </p>
+
+                <p>
+                    A organização possui quatro postos:
+                </p>
+
+                <div class="sequencia-postos">
+
+                    <div class="posto">ESCUD﻿EIRO</div>
+
+                    <span class="seta">→</span>
+
+                    <div class="posto">ARAUTO</div>
+
+                    <span class="seta">→</span>
+
+                    <div class="posto">SÊNIOR</div>
+
+                    <span class="seta">→</span>
+
+                    <div class="posto">EMÉRITO</div>
+
+                </div>
+
+                <p>
+                    Todo menino que ingressa na organização começa pelo
+                    primeiro posto: <strong>Embaixador Escudeiro</strong>.
+                </p>
+
+                <p>
+                    Ao longo de sua caminhada, ele estuda os conteúdos
+                    de cada manual, realiza atividades, participa dos
+                    trabalhos da embaixada e desenvolve conhecimentos
+                    importantes para sua formação cristã e missionária.
+                </p>
+
+                <h3>Os postos não são patentes!</h3>
+
+                <p>
+                    Existe algo muito importante que você precisa compreender:
+                    os postos não são patentes militares e não representam
+                    uma hierarquia de superioridade entre os meninos.
+                </p>
+
+                <p>
+                    Um embaixador que está no posto de Emérito não é mais
+                    importante do que um Escudeiro. Da mesma maneira,
+                    um Escudeiro não tem menos valor dentro da embaixada.
+                </p>
+
+                <p>
+                    Todos são Embaixadores do Rei.
+                </p>
+
+                <p>
+                    A diferença está na etapa de aprendizagem em que
+                    cada um se encontra.
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Para guardar:</strong>
+
+                    <p>
+                        O posto indica o conhecimento adquirido,
+                        não o valor de uma pessoa.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ETAPA 2 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 2</span>
+
+                <h2>O que vamos aprender?</h2>
+
+                <p>Ao concluir este estudo, você deverá ser capaz de:</p>
+
+                <ul>
+
+                    <li>Identificar os quatro postos dos Embaixadores do Rei.</li>
+
+                    <li>Colocar os postos na ordem correta.</li>
+
+                    <li>Explicar por que os postos fazem parte do programa
+                        educacional da organização.</li>
+
+                    <li>Compreender que os postos não representam
+                        superioridade entre os embaixadores.</li>
+
+                    <li>Explicar como acontece a conclusão de um posto.</li>
+
+                    <li>Reconhecer a importância dos estudos para a
+                        formação cristã e missionária.</li>
+
+                </ul>
+
+                <h3>Conhecendo cada posto</h3>
+
+                <p>
+                    <strong>1. Embaixador Escudeiro:</strong>
+                    é o primeiro posto. É por ele que o menino começa
+                    sua caminhada de estudos na organização.
+                </p>
+
+                <p>
+                    <strong>2. Embaixador Arauto:</strong>
+                    é o segundo posto. Representa a continuidade dos
+                    estudos e o aprofundamento dos conhecimentos.
+                </p>
+
+                <p>
+                    <strong>3. Embaixador Sênior:</strong>
+                    é o terceiro posto. Dá continuidade à formação
+                    do embaixador.
+                </p>
+
+                <p>
+                    <strong>4. Embaixador Emérito:</strong>
+                    é o quarto e último posto. Nele, o embaixador
+                    também precisa concluir todas as tarefas previstas
+                    no manual para receber seu certificado.
+                </p>
+
+                <div class="destaque">
+                    <strong>Memorize a sequência:</strong>
+
+                    <p>
+                        Escudeiro → Arauto → Sênior → Emérito.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- ETAPA 3 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 3</span>
+
+                <h2>Estudo orientado</h2>
+
+                <h3>Como funciona a progressão nos postos?</h3>
+
+                <p>
+                    Cada posto possui um manual com estudos e atividades
+                    que devem ser realizados pelo embaixador.
+                </p>
+
+                <p>
+                    Esses materiais abordam diferentes conhecimentos
+                    importantes para sua formação, como:
+                </p>
+
+                <ul>
+
+                    <li>História da organização Embaixadores do Rei;</li>
+
+                    <li>Conhecimentos tradicionais da organização;</li>
+
+                    <li>História dos Batistas;</li>
+
+                    <li>Estudos bíblicos;</li>
+
+                    <li>Atividades missionárias;</li>
+
+                    <li>Biografias de missionários;</li>
+
+                    <li>Serviço Real;</li>
+
+                    <li>Atividades específicas para os embaixadores
+                        e suas embaixadas.</li>
+
+                </ul>
+
+                <p>
+                    O trabalho dos postos, juntamente com a revista
+                    <em>O Embaixador</em>, constitui um dos pilares
+                    educacionais da organização.
+                </p>
+
+                <p>
+                    Por isso, estudar os manuais não deve ser apenas
+                    uma obrigação para conquistar um certificado.
+                    O objetivo é aprender, compreender e colocar
+                    em prática os conhecimentos adquiridos.
+                </p>
+
+                <h3>Quanto tempo dura cada posto?</h3>
+
+                <p>
+                    De acordo com a apostila de referência, o embaixador
+                    deverá permanecer em cada posto por aproximadamente
+                    um ano, mesmo que consiga concluir as tarefas do
+                    manual em menos tempo.
+                </p>
+
+                <p>
+                    Existe uma condição específica para os meninos
+                    que ingressam no primeiro posto com 14 anos ou mais:
+                    eles poderão receber o certificado de conclusão
+                    após aproximadamente seis meses em cada posto,
+                    desde que tenham concluído todas as tarefas previstas.
+                </p>
+
+                <h3>Como o embaixador conclui um posto?</h3>
+
+                <ol>
+
+                    <li>Estudar os conteúdos do manual.</li>
+
+                    <li>Realizar todas as tarefas previstas.</li>
+
+                    <li>Ter o acompanhamento do conselheiro.</li>
+
+                    <li>Obter a assinatura do conselheiro na lista
+                        de verificação, também chamada de checklist.</li>
+
+                    <li>Receber o certificado de conclusão em uma
+                        cerimônia ou momento solene de formatura.</li>
+
+                    <li>Ingressar no posto seguinte, respeitando
+                        o tempo de permanência previsto.</li>
+
+                </ol>
+
+                <h3>E quando chega ao posto de Emérito?</h3>
+
+                <p>
+                    O Embaixador Emérito também precisa concluir
+                    todas as tarefas do seu manual.
+                </p>
+
+                <p>
+                    Receber o título de Emérito não significa que
+                    a formação terminou automaticamente.
+                </p>
+
+                <p>
+                    Depois de cumprir as tarefas e receber o certificado,
+                    ele permanece como Embaixador Emérito formado até
+                    o encerramento de sua participação na organização.
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Uma observação importante:</strong>
+
+                    <p>
+                        O conselheiro não deve transformar os postos
+                        em uma simples corrida para conquistar certificados.
+                    </p>
+
+                    <p>
+                        O verdadeiro propósito é ajudar cada menino
+                        a crescer no conhecimento, na fé, no caráter
+                        cristão e no compromisso de servir ao próximo.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ETAPA 4 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 4</span>
+
+                <h2>Reflexão bíblica</h2>
+
+                <h3>Crescendo no conhecimento e na fé</h3>
+
+                <div class="caixa-versiculo">
+
+                    <strong>Leitura bíblica:</strong>
+
+                    <p>
+                        Efésios 4:13-15
+                    </p>
+
+                    <p>
+                        Leia esses versículos em sua Bíblia.
+                    </p>
+
+                </div>
+
+                <p>
+                    O apóstolo Paulo ensina que os cristãos devem crescer
+                    até alcançar a maturidade em Cristo.
+                </p>
+
+                <p>
+                    Esse crescimento envolve conhecimento, firmeza
+                    na fé e uma vida orientada pela verdade e pelo amor.
+                </p>
+
+                <p>
+                    Assim como crescemos fisicamente, também precisamos
+                    amadurecer espiritualmente.
+                </p>
+
+                <p>
+                    Quando somos novos na fé, temos muito a aprender.
+                    Com o passar do tempo, estudamos a Palavra de Deus,
+                    conhecemos melhor os ensinamentos de Jesus e aprendemos
+                    a viver de maneira que agrade ao Senhor.
+                </p>
+
+                <p>
+                    Os estudos dos postos podem contribuir para esse crescimento.
+                </p>
+
+                <p>
+                    Mas existe uma diferença importante: conhecer mais
+                    não significa ser superior aos outros.
+                </p>
+
+                <p>
+                    Jesus ensinou seus discípulos a servir. Portanto,
+                    quanto mais aprendemos, mais responsabilidade temos
+                    de utilizar nosso conhecimento para fazer o bem.
+                </p>
+
+                <p>
+                    Um Embaixador do Rei não deve utilizar seu posto
+                    para humilhar, diminuir ou mandar nos colegas.
+                </p>
+
+                <p>
+                    Ele deve utilizar aquilo que aprende para ajudar,
+                    orientar, cooperar e servir.
+                </p>
+
+                <h3>Pense nisso!</h3>
+
+                <p>
+                    Imagine que um Embaixador Sênior esteja estudando
+                    com um Escudeiro.
+                </p>
+
+                <p>
+                    O Sênior conhece assuntos que o Escudeiro ainda
+                    está aprendendo.
+                </p>
+
+                <p>Qual seria a melhor atitude?</p>
+
+                <ul>
+
+                    <li>Demonstrar superioridade?</li>
+
+                    <li>Zombar das dúvidas do colega?</li>
+
+                    <li>Ajudá-lo a compreender o conteúdo?</li>
+
+                </ul>
+
+                <p>
+                    A resposta demonstra o verdadeiro sentido da
+                    formação cristã: crescer para servir melhor.
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Para guardar no coração:</strong>
+
+                    <p>
+                        O conhecimento deve produzir humildade,
+                        responsabilidade e serviço.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ETAPA 5 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 5</span>
+
+                <h2>Vamos praticar!</h2>
+
+                <h3>Atividade 1 — Organizando os postos</h3>
+
+                <p>
+                    Numere os postos de 1 a 4, de acordo com
+                    a ordem correta.
+                </p>
+
+                <p>( &nbsp;&nbsp; ) Embaixador Sênior.</p>
+
+                <p>( &nbsp;&nbsp; ) Embaixador Emérito.</p>
+
+                <p>( &nbsp;&nbsp; ) Embaixador Escudeiro.</p>
+
+                <p>( &nbsp;&nbsp; ) Embaixador Arauto.</p>
+
+                <p><strong>Agora escreva a sequência completa:</strong></p>
+
+                <div class="linha-resposta"></div>
+
+                <div class="linha-resposta"></div>
+
+
+                <h3>Atividade 2 — Responda com suas palavras</h3>
+
+                <div class="pergunta">
+
+                    <strong>1. O que são os postos dos Embaixadores do Rei?</strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>2. Quantos postos existem na organização?</strong>
+
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>3. Qual é o primeiro posto?</strong>
+
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>4. Qual é o último posto?</strong>
+
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        5. Os postos representam uma hierarquia
+                        de superioridade entre os embaixadores? Explique.
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        6. O que o embaixador precisa fazer
+                        para concluir um posto?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+
+                <h3>Atividade 3 — Situação-problema</h3>
+
+                <p>
+                    Durante uma reunião, um Embaixador Emérito disse
+                    a um Escudeiro:
+                </p>
+
+                <div class="destaque">
+
+                    "Eu estou em um posto superior ao seu.
+                    Por isso, sou mais importante na embaixada."
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>1. Essa afirmação está correta? Por quê?</strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        2. Como você explicaria a esse embaixador
+                        o verdadeiro significado dos postos?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        3. Que atitude cristã poderia resolver essa situação?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+
+                <h3>Atividade 4 — Complete as frases</h3>
+
+                <p>
+                    a) Todo menino que ingressa na organização começa
+                    pelo posto de ______________________________.
+                </p>
+
+                <p>
+                    b) Os postos fazem parte do programa
+                    ______________________________ da organização.
+                </p>
+
+                <p>
+                    c) Os postos não são patentes militares nem representam
+                    uma hierarquia de ______________________________.
+                </p>
+
+                <p>
+                    d) Para concluir um posto, o embaixador precisa
+                    realizar todas as ______________________________
+                    previstas no manual.
+                </p>
+
+                <p>
+                    e) O último posto é o Embaixador
+                    ______________________________.
+                </p>
+
+            </section>
+
+
+            <!-- ETAPA 6 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 6</span>
+
+                <h2>Desafio do Embaixador</h2>
+
+                <h3>O conhecimento que se transforma em atitude</h3>
+
+                <p>
+                    Agora que você conhece os quatro postos,
+                    chegou o momento de transformar o aprendizado
+                    em uma atitude prática.
+                </p>
+
+                <p>
+                    Durante esta semana, realize o seguinte desafio:
+                </p>
+
+                <div class="destaque">
+
+                    <strong>Converse com outro embaixador sobre
+                    a importância dos postos.</strong>
+
+                    <p>Explique a ele:</p>
+
+                    <ul>
+
+                        <li>Quais são os quatro postos;</li>
+
+                        <li>Por que todos possuem o mesmo valor
+                            dentro da embaixada;</li>
+
+                        <li>Por que estudar é mais importante do que
+                            simplesmente conquistar um certificado.</li>
+
+                    </ul>
+
+                </div>
+
+                <p>
+                    Depois, pratique uma atitude de cooperação.
+                </p>
+
+                <p>
+                    Se você conhece algum conteúdo que outro embaixador
+                    ainda não aprendeu, ofereça ajuda. Se você tiver
+                    dúvidas, não tenha vergonha de perguntar.
+                </p>
+
+                <p>
+                    O importante é que todos tenham oportunidade de aprender.
+                </p>
+
+                <div class="caixa-compromisso">
+
+                    <strong>Meu compromisso desta semana</strong>
+
+                    <p>
+                        Uma atitude que vou praticar para ajudar
+                        outro embaixador:
+                    </p>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ETAPA 7 -->
+
+            <section class="etapa">
+
+                <span class="numero-etapa">ETAPA 7</span>
+
+                <h2>Preparando a demonstração</h2>
+
+                <p>
+                    Chegou a hora de mostrar que você compreendeu
+                    o estudo.
+                </p>
+
+                <p>
+                    Prepare-se para conversar com o conselheiro
+                    e responder às perguntas abaixo.
+                </p>
+
+                <h3>Perguntas para demonstração</h3>
+
+                <div class="pergunta">
+
+                    <strong>
+                        1. Quais são os quatro postos dos
+                        Embaixadores do Rei?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        2. Por qual posto começa um menino que
+                        ingressa na organização?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>3. Qual é o objetivo dos postos?</strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        4. Por que os postos não devem ser tratados
+                        como patentes militares?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        5. O que é necessário para concluir um posto?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        6. O que acontece quando o embaixador conclui
+                        todas as tarefas de seu manual?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        7. Um Embaixador Emérito é mais importante
+                        do que um Escudeiro? Por quê?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+                <div class="pergunta">
+
+                    <strong>
+                        8. Como o conhecimento adquirido nos postos
+                        pode ajudar o embaixador a servir a Deus
+                        e ao próximo?
+                    </strong>
+
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+                    <div class="linha-resposta"></div>
+
+                </div>
+
+
+                <h3>Minha explicação</h3>
+
+                <p>
+                    Com minhas próprias palavras, explico que os postos
+                    dos Embaixadores do Rei são:
+                </p>
+
+                <div class="linha-resposta"></div>
+                <div class="linha-resposta"></div>
+                <div class="linha-resposta"></div>
+                <div class="linha-resposta"></div>
+
+
+                <h3>Avaliação do estudo</h3>
+
+                <p><strong>O que aprendi de mais importante neste tema?</strong></p>
+
+                <div class="linha-resposta"></div>
+                <div class="linha-resposta"></div>
+
+                <p><strong>Uma dúvida que ainda tenho:</strong></p>
+
+                <div class="linha-resposta"></div>
+                <div class="linha-resposta"></div>
+
+
+                <div class="dados-aluno">
+
+                    <div class="campo">
+                        <span>Assinatura do Embaixador:</span>
+                    </div>
+
+                    <div class="campo">
+                        <span>Assinatura do Conselheiro:</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- REFERÊNCIAS -->
+
+            <section class="etapa">
+
+                <h2>Referências</h2>
+
+                <p>
+                    <strong>Fonte organizacional principal:</strong>
+                </p>
+
+                <p>
+                    MOURÃO, Lucas.
+                    <em>Apostila — Os Postos da Organização ER.</em>
+                    DAER Gonçalense.
+                </p>
+
+                <p>
+                    Seções consultadas: Postos da Organização
+                    Embaixadores do Rei; Currículo dos Manuais
+                    dos Postos; orientações sobre conclusão e formatura.
+                </p>
+
+                <p>
+                    <strong>Referência bíblica:</strong>
+                </p>
+
+                <p>
+                    Bíblia Sagrada — Efésios 4:13-15.
+                </p>
+
+                <p>
+                    <strong>Material pedagógico complementar:</strong>
+                </p>
+
+                <p>
+                    Atividades, perguntas, situações-problema e desafios
+                    elaborados para este estudo, com a finalidade de
+                    favorecer a compreensão e a aplicação prática
+                    do conteúdo.
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <!-- RODAPÉ -->
+
+        <footer class="rodape-estudo">
+
+            <h2>Uma mensagem para você!</h2>
+
+            <p>
+                Parabéns por concluir este estudo!
+            </p>
+
+            <p>
+                Você aprendeu que os postos dos Embaixadores do Rei
+                representam etapas de conhecimento e formação.
+            </p>
+
+            <p>
+                Cada etapa é uma oportunidade de aprender mais sobre
+                a organização, conhecer melhor a Palavra de Deus
+                e desenvolver atitudes que demonstrem o caráter de Cristo.
+            </p>
+
+            <p>
+                Lembre-se: não estudamos para sermos melhores
+                do que os outros. Estudamos para crescer,
+                amadurecer e servir.
+            </p>
+
+            <p>
+                <strong>
+                    Um verdadeiro Embaixador do Rei não utiliza
+                    o conhecimento para se engrandecer, mas para
+                    glorificar a Deus e ajudar o próximo.
+                </strong>
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <div class="acoes">
+
+        <a class="botao" href="../../../index.html">
+            ← Voltar ao início
+        </a>
+
+        <button class="botao botao-imprimir"
+            onclick="window.print()">
+            Imprimir / Salvar em PDF
+        </button>
+
+    </div>
+
+</body>
+
+</html>

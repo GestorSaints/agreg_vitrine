@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Estudo do posto de Escudeiro: As quatro regras dos Embaixadores do Rei nos esportes.">
+
+    <title>Escudeiro — Tema 4 | Embaixadores do Rei</title>
+
+    <link rel="stylesheet" href="../../../css/estilo.css">
+
+    <style>
+        :root {
+            --azul: #102B49;
+            --azul-secundario: #183D61;
+            --dourado: #C5A15B;
+            --dourado-claro: #E0C98F;
+            --creme: #F8F5ED;
+            --branco: #FFFFFF;
+            --texto: #263442;
+            --linha: #DDD5C5;
+            --verde: #315C49;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px 15px;
+            background: var(--creme);
+            color: var(--texto);
+            font-family: "Open Sans", Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        .pagina {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--branco);
+            padding: 45px;
+            border-top: 7px solid var(--dourado);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .cabecalho {
+            text-align: center;
+            border-bottom: 2px solid var(--linha);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .identificacao {
+            color: var(--dourado);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        h1, h2, h3 {
+            font-family: Georgia, serif;
+            color: var(--azul);
+        }
+
+        h1 {
+            font-size: 30px;
+            margin: 12px 0;
+        }
+
+        .subtitulo {
+            color: var(--azul-secundario);
+            font-size: 17px;
+        }
+
+        .dados-aluno {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .campo {
+            border-bottom: 1px solid #777;
+            padding: 8px 0;
+        }
+
+        .etapa {
+            margin: 35px 0;
+            page-break-inside: avoid;
+        }
+
+        .etapa h2 {
+            font-size: 23px;
+            border-left: 5px solid var(--dourado);
+            padding-left: 14px;
+            margin-bottom: 20px;
+        }
+
+        .destaque {
+            background: var(--creme);
+            border-left: 4px solid var(--dourado);
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color:#102B49
+        }
+
+        .regra {
+            background: #F5F7FA;
+            border: 1px solid var(--linha);
+            border-radius: 7px;
+            padding: 20px;
+            margin: 18px 0;
+        }
+
+        .regra h3 {
+            margin-top: 0;
+            color: var(--azul-secundario);
+        }
+
+        .versiculo {
+            background: #EEF3F7;
+            border-left: 4px solid var(--azul-secundario);
+            padding: 18px 22px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .atividade {
+            border: 1px solid var(--linha);
+            padding: 20px;
+            margin: 18px 0;
+            border-radius: 6px;
+        }
+
+        .resposta {
+            min-height: 55px;
+            border-bottom: 1px solid #999;
+            margin: 12px 0 20px;
+        }
+
+        .resposta-grande {
+            min-height: 100px;
+            border: 1px solid #AAA;
+            border-radius: 4px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .linha-resposta {
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #999;
+            height: 35px;
+            margin-bottom: 8px;
+        }
+
+        .acoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px auto;
+            flex-wrap: wrap;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 5px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .botao-imprimir {
+            background: var(--azul);
+            color: white;
+        }
+
+        .botao-voltar {
+            background: var(--dourado);
+            color: var(--azul);
+        }
+
+        .rodape {
+            border-top: 2px solid var(--linha);
+            margin-top: 45px;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+
+        @media (max-width: 650px) {
+            .pagina {
+                padding: 25px 18px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .dados-aluno {
+                grid-template-columns: 1fr;
+            }
+
+            .etapa h2 {
+                font-size: 20px;
+            }
+        }
+
+        @page {
+            size: A4;
+            margin: 18mm 16mm;
+        }
+
+        @media print {
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .pagina {
+                max-width: none;
+                padding: 0;
+                box-shadow: none;
+                border-top: none;
+            }
+
+            .acoes {
+                display: none !important;
+            }
+
+            .etapa {
+                page-break-inside: avoid;
+            }
+
+            .regra,
+            .destaque,
+            .versiculo,
+            .atividade {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .rodape {
+                margin-top: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="pagina">
+
+        <header class="cabecalho">
+
+            <div class="identificacao">
+                Embaixadores do Rei
+            </div>
+
+            <h1> Quatro Regras nos Esportes</h1>
+
+            <div class="subtitulo">
+                Posto de Escudeiro — Tema 4
+            </div>
+
+            <div class="dados-aluno">
+
+                <div class="campo">
+                    Nome:
+                </div>
+
+                <div class="campo">
+                    Data:
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ETAPA 1 -->
+
+        <section class="etapa">
+
+            <h2>1. Conhecendo o tema</h2>
+
+            <p>
+                O esporte faz parte da vida de muitas crianças e adolescentes.
+                Jogamos futebol, vôlei, basquete e participamos de diversas
+                brincadeiras e competições.
+            </p>
+
+            <p>
+                Durante uma partida, podemos experimentar alegria, entusiasmo,
+                cooperação e também frustração. Nem sempre vencemos. Às vezes,
+                discordamos de uma decisão ou ficamos chateados com o resultado.
+            </p>
+
+            <p>
+                É justamente nesses momentos que demonstramos quem somos.
+                O Embaixador do Rei deve compreender que sua maneira de agir
+                também revela os valores que procura viver como cristão.
+            </p>
+
+            <div class="destaque">
+                <strong>Uma ideia importante:</strong>
+                o objetivo do esporte não é somente vencer uma partida.
+                Também é uma oportunidade de aprender a respeitar,
+                cooperar e desenvolver um caráter digno.
+            </div>
+
+            <p>
+                Para orientar essa conduta, os Embaixadores do Rei aprendem
+                quatro regras especiais para a prática esportiva.
+            </p>
+
+        </section>
+
+
+        <!-- ETAPA 2 -->
+
+        <section class="etapa">
+
+            <h2>2. O que vamos aprender</h2>
+
+            <p>Ao concluir este estudo, você deverá ser capaz de:</p>
+
+            <ul>
+                <li>Identificar as quatro regras dos ER nos esportes.</li>
+                <li>Explicar o significado de cada regra.</li>
+                <li>Reconhecer atitudes que respeitam ou desrespeitam essas regras.</li>
+                <li>Aplicar esses princípios durante jogos e competições.</li>
+                <li>Compreender que o comportamento cristão também se manifesta no esporte.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- ETAPA 3 -->
+
+        <section class="etapa">
+
+            <h2>3. Estudo orientado</h2>
+
+            <p>
+                Vamos conhecer cada uma das quatro regras e compreender
+                como podemos colocá-las em prática.
+            </p>
+
+
+            <div class="regra">
+
+                <h3>1. Ser honesto</h3>
+
+                <p>
+                    A honestidade significa agir com verdade e integridade.
+                    No esporte, isso envolve respeitar as regras do jogo,
+                    não trapacear e reconhecer quando cometemos um erro.
+                </p>
+
+                <p>
+                    Um Embaixador do Rei não deve tentar vencer utilizando
+                    a mentira ou a desonestidade. O resultado de uma partida
+                    não é mais importante do que fazer o que é correto.
+                </p>
+
+                <p>
+                    <strong>Exemplo:</strong> durante uma partida de futebol,
+                    a bola toca em você antes de sair pela lateral.
+                    Mesmo que o árbitro não tenha percebido, você reconhece
+                    o acontecimento.
+                </p>
+
+            </div>
+
+
+            <div class="regra">
+
+                <h3>2. Guardar os lábios</h3>
+
+                <p>
+                    Guardar os lábios significa ter cuidado com aquilo
+                    que falamos.
+                </p>
+
+                <p>
+                    Durante uma partida, podemos ficar irritados,
+                    discordar de uma jogada ou nos decepcionar com
+                    um companheiro. Entretanto, não devemos responder
+                    com ofensas, palavrões, provocações ou palavras
+                    que machuquem outras pessoas.
+                </p>
+
+                <p>
+                    <strong>Exemplo:</strong> um colega erra um passe
+                    importante. Em vez de insultá-lo, você o incentiva
+                    a continuar participando da partida.
+                </p>
+
+            </div>
+
+
+            <div class="regra">
+
+                <h3>3. Perder sem se zangar</h3>
+
+                <p>
+                    Nem sempre conseguiremos vencer. A derrota faz parte
+                    das competições e precisa ser encarada com maturidade.
+                </p>
+
+                <p>
+                    Perder sem se zangar significa aceitar o resultado
+                    sem demonstrar raiva, desrespeito ou hostilidade
+                    contra os adversários e companheiros.
+                </p>
+
+                <p>
+                    Podemos ficar tristes com uma derrota. Isso é natural.
+                    O importante é não permitir que a frustração controle
+                    nossas atitudes.
+                </p>
+
+                <p>
+                    <strong>Exemplo:</strong> sua equipe perde a final
+                    de um campeonato. Você cumprimenta os vencedores,
+                    reconhece o esforço dos adversários e procura aprender
+                    com a experiência.
+                </p>
+
+            </div>
+
+
+            <div class="regra">
+
+                <h3>4. Trabalhar em equipe</h3>
+
+                <p>
+                    Trabalhar em equipe significa cooperar com os demais
+                    participantes para alcançar um objetivo comum.
+                </p>
+
+                <p>
+                    Uma equipe não depende apenas do jogador mais habilidoso.
+                    Todos têm sua importância e precisam aprender a colaborar,
+                    respeitar as funções e ajudar uns aos outros.
+                </p>
+
+                <p>
+                    <strong>Exemplo:</strong> durante uma partida,
+                    você percebe que um companheiro está melhor
+                    posicionado para receber a bola. Em vez de tentar
+                    resolver tudo sozinho, realiza o passe e contribui
+                    para o trabalho coletivo.
+                </p>
+
+            </div>
+
+
+            <div class="destaque">
+
+                <strong>As quatro regras:</strong>
+
+                <ol>
+                    <li>Ser honesto.</li>
+                    <li>Guardar os lábios.</li>
+                    <li>Perder sem se zangar.</li>
+                    <li>Trabalhar em equipe.</li>
+                </ol>
+
+                Essas regras devem orientar nosso comportamento
+                não apenas nos esportes, mas também nas situações
+                de convivência com outras pessoas.
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 4 -->
+
+        <section class="etapa">
+
+            <h2>4. Reflexão bíblica</h2>
+
+            <p>
+                A Bíblia ensina que o nosso comportamento deve refletir
+                os valores de Cristo.
+            </p>
+
+            <div class="versiculo">
+
+                <strong>Efésios 4:25</strong>
+
+                <p>
+                    O apóstolo Paulo ensina que devemos abandonar a mentira
+                    e falar a verdade uns com os outros.
+                </p>
+
+                <p>
+                    Essa orientação nos ajuda a compreender a importância
+                    da honestidade.
+                </p>
+
+            </div>
+
+            <div class="versiculo">
+
+                <strong>Tiago 1:19</strong>
+
+                <p>
+                    A Palavra de Deus nos orienta a sermos prontos para ouvir,
+                    tardios para falar e tardios para nos irar.
+                </p>
+
+                <p>
+                    Esse ensinamento nos ajuda a guardar os lábios
+                    e controlar nossas reações.
+                </p>
+
+            </div>
+
+            <div class="versiculo">
+
+                <strong>Provérbios 16:32</strong>
+
+                <p>
+                    A Bíblia apresenta o domínio próprio como uma demonstração
+                    de força e sabedoria.
+                </p>
+
+                <p>
+                    Aprender a lidar com a derrota sem se deixar dominar
+                    pela raiva também exige domínio próprio.
+                </p>
+
+            </div>
+
+            <div class="versiculo">
+
+                <strong>Filipenses 2:3-4</strong>
+
+                <p>
+                    Paulo ensina que não devemos agir por interesse egoísta,
+                    mas considerar também os interesses dos outros.
+                </p>
+
+                <p>
+                    Esse princípio nos ensina a valorizar os companheiros
+                    e trabalhar em equipe.
+                </p>
+
+            </div>
+
+            <div class="destaque">
+
+                <strong>Para refletir:</strong>
+
+                <p>
+                    Se somos representantes de Cristo, nossas atitudes
+                    devem demonstrar respeito, honestidade, domínio próprio
+                    e consideração pelo próximo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 5 -->
+
+        <section class="etapa">
+
+            <h2>5. Vamos praticar</h2>
+
+            <div class="atividade">
+
+                <h3>Atividade 1 — Relacione as regras</h3>
+
+                <p>
+                    Identifique qual das quatro regras está sendo
+                    demonstrada em cada situação.
+                </p>
+
+                <p>
+                    <strong>A)</strong> Um jogador reconhece que cometeu
+                    uma falta, mesmo que ninguém tenha percebido.
+                </p>
+
+                <div class="resposta"></div>
+
+                <p>
+                    <strong>B)</strong> Um participante evita insultar
+                    o adversário depois de uma jogada.
+                </p>
+
+                <div class="resposta"></div>
+
+                <p>
+                    <strong>C)</strong> Um menino cumprimenta os vencedores
+                    depois de perder uma competição.
+                </p>
+
+                <div class="resposta"></div>
+
+                <p>
+                    <strong>D)</strong> Um jogador realiza um passe para
+                    ajudar sua equipe a alcançar o objetivo.
+                </p>
+
+                <div class="resposta"></div>
+
+            </div>
+
+
+            <div class="atividade">
+
+                <h3>Atividade 2 — Pense e responda</h3>
+
+                <p>
+                    1. Por que a honestidade é importante mesmo quando
+                    ninguém está observando?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    2. O que você pode fazer quando um companheiro
+                    comete um erro durante a partida?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    3. Qual é a diferença entre ficar triste por perder
+                    e perder sem se zangar?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    4. Por que uma equipe precisa da participação
+                    de todos?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 6 -->
+
+        <section class="etapa">
+
+            <h2>6. Desafio do Embaixador</h2>
+
+            <p>
+                Durante a próxima atividade esportiva da sua embaixada,
+                escola ou comunidade, coloque as quatro regras em prática.
+            </p>
+
+            <div class="destaque">
+
+                <strong>Missão: jogar como um Embaixador do Rei!</strong>
+
+                <ul>
+                    <li>Seja honesto em todas as jogadas.</li>
+                    <li>Cuide das palavras que utiliza.</li>
+                    <li>Se perder, mantenha o respeito e a tranquilidade.</li>
+                    <li>Colabore com seus companheiros.</li>
+                </ul>
+
+            </div>
+
+            <p>
+                Depois da atividade, converse com seu conselheiro
+                ou com outro Embaixador do Rei sobre as dificuldades
+                e aprendizados que você experimentou.
+            </p>
+
+            <p>
+                <strong>Qual das quatro regras foi mais fácil de praticar?
+                Qual exigiu mais esforço?</strong>
+            </p>
+
+            <div class="resposta-grande"></div>
+
+        </section>
+
+
+        <!-- ETAPA 7 -->
+
+        <section class="etapa">
+
+            <h2>7. Preparando a demonstração</h2>
+
+            <p>
+                Agora vamos verificar o que você aprendeu.
+                Procure responder com suas próprias palavras.
+            </p>
+
+            <div class="atividade">
+
+                <p>
+                    <strong>1.</strong> Quais são as quatro regras
+                    dos Embaixadores do Rei nos esportes?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    <strong>2.</strong> O que significa ser honesto
+                    durante uma partida?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    <strong>3.</strong> O que significa guardar os lábios?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    <strong>4.</strong> Como devemos reagir quando
+                    nossa equipe perde uma competição?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+                <p>
+                    <strong>5.</strong> Por que devemos trabalhar em equipe?
+                </p>
+
+                <div class="resposta-grande"></div>
+
+            </div>
+
+
+            <h3>Avaliação do estudo</h3>
+
+            <p>
+                O Embaixador demonstrou compreensão das quatro regras
+                e consegue explicar como aplicá-las?
+            </p>
+
+            <div class="resposta-grande"></div>
+
+            <br>
+
+            <p>Assinatura do Embaixador:</p>
+            <div class="campo"></div>
+
+            <p>Assinatura do Conselheiro:</p>
+            <div class="campo"></div>
+
+            <br>
+
+            <div class="destaque">
+
+                <strong>Uma vez Embaixador, sempre Embaixador do Rei!</strong>
+
+                <p>
+                    Lembre-se: nossas atitudes também anunciam os valores
+                    que aprendemos em Cristo. Seja dentro ou fora de campo,
+                    procure agir com honestidade, respeito e cooperação.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <footer class="rodape">
+
+            <p>
+                Embaixadores do Rei
+            </p>
+
+            <p>
+                Material de estudo — Posto de Escudeiro — Tema 4
+            </p>
+
+            <p>
+                Textos bíblicos: Efésios 4:25; Tiago 1:19;
+                Provérbios 16:32; Filipenses 2:3-4.
+            </p>
+
+            <p>
+                As atividades e explicações são complementações pedagógicas
+                elaboradas para este material de estudo.
+            </p>
+
+        </footer>
+
+
+        <div class="acoes">
+
+            <button class="botao botao-imprimir"
+                onclick="window.print()">
+                Imprimir / Salvar em PDF
+            </button>
+
+            <a href="../../../index.html"
+                class="botao botao-voltar">
+                Voltar ao início
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>

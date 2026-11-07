@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Escudeiro — Tema 8 | Movimento Moderno de Missões</title>
+
+<style>
+
+:root {
+    --azul: #102B49;
+    --azul-secundario: #183D61;
+    --dourado: #C5A15B;
+    --dourado-claro: #E0C98F;
+    --creme: #F8F5EE;
+    --branco: #FFFFFF;
+    --texto: #283747;
+    --cinza: #65717D;
+    --linha: #D9DDE2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--creme);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+.cabecalho {
+    background: var(--azul);
+    color: var(--branco);
+    padding: 35px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--dourado);
+}
+
+.cabecalho .identificacao {
+    color: var(--dourado-claro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.cabecalho h1 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    margin: 12px 0;
+}
+
+.cabecalho p {
+    max-width: 750px;
+    margin: auto;
+    color: #E8EDF2;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.progresso {
+    background: var(--branco);
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid var(--linha);
+    margin-bottom: 25px;
+}
+
+.progresso strong {
+    color: var(--azul);
+}
+
+.etapas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.etapas span {
+    background: #E9EDF1;
+    color: var(--azul);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.etapa {
+    background: var(--branco);
+    padding: 30px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    border: 1px solid var(--linha);
+    border-left: 5px solid var(--dourado);
+}
+
+.etapa h2 {
+    font-family: Georgia, serif;
+    color: var(--azul);
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.etapa h3 {
+    color: var(--azul-secundario);
+    margin-top: 25px;
+}
+
+.destaque {
+    background: #F3EFE5;
+    border-left: 4px solid var(--dourado);
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.caixa-biblica {
+    background: #EDF2F7;
+    padding: 18px;
+    border-radius: 8px;
+    margin: 18px 0;
+}
+
+.caixa-biblica strong {
+    color: var(--azul);
+}
+
+.linha-tempo {
+    border-left: 3px solid var(--dourado);
+    margin: 25px 0;
+    padding-left: 22px;
+}
+
+.evento {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.evento::before {
+    content: "";
+    position: absolute;
+    left: -29px;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    background: var(--dourado);
+    border-radius: 50%;
+}
+
+.ano {
+    font-weight: bold;
+    color: var(--azul);
+    font-size: 18px;
+}
+
+.pergunta {
+    background: #F8F9FA;
+    border: 1px solid var(--linha);
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.pergunta label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.resposta {
+    width: 100%;
+    min-height: 75px;
+    padding: 10px;
+    border: 1px solid #C9D0D8;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C9D0D8;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.assinaturas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-top: 45px;
+}
+
+.assinatura {
+    border-top: 1px solid #555;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 35px 0;
+}
+
+.botao {
+    display: inline-block;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background: var(--azul);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botao:hover {
+    background: var(--azul-secundario);
+}
+
+.botao-secundario {
+    background: #76542E;
+}
+
+.rodape {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+    margin-top: 45px;
+}
+
+small {
+    color: var(--cinza);
+}
+
+@media (max-width: 650px) {
+
+    .cabecalho h1 {
+        font-size: 27px;
+    }
+
+    .etapa {
+        padding: 20px;
+    }
+
+    .assinaturas {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@page {
+    size: A4;
+    margin: 18mm;
+}
+
+@media print {
+
+    body {
+        background: white;
+        font-size: 11pt;
+    }
+
+    .cabecalho {
+        background: white !important;
+        color: var(--azul) !important;
+        border-bottom: 3px solid var(--dourado);
+        padding: 15px;
+    }
+
+    .cabecalho p,
+    .cabecalho .identificacao {
+        color: var(--azul) !important;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .etapa {
+        border: 1px solid #CCC;
+        border-left: 4px solid var(--dourado);
+        box-shadow: none;
+        break-inside: auto;
+        margin-bottom: 15px;
+    }
+
+    .botoes,
+    .progresso {
+        display: none;
+    }
+
+    .etapa h2,
+    .etapa h3 {
+        break-after: avoid;
+    }
+
+    .pergunta,
+    .caixa-biblica,
+    .destaque,
+    .evento {
+        break-inside: avoid;
+    }
+
+    textarea,
+    input {
+        border: 1px solid #777;
+    }
+
+    .rodape {
+        background: white !important;
+        color: var(--azul) !important;
+        border-top: 1px solid #CCC;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+
+    <div class="identificacao">
+        Embaixadores do Rei
+    </div>
+
+    <h1>Movimento Moderno de Missões</h1>
+
+    <p>
+        Posto de Escudeiro — Tema 8
+        <br>
+        A história de William Carey, o sapateiro que dedicou sua vida
+        à proclamação do Evangelho entre outros povos.
+    </p>
+
+</header>
+
+
+<main class="container">
+
+    <section class="progresso">
+
+        <strong>Nosso caminho de aprendizagem</strong>
+
+        <div class="etapas">
+            <span>1. Conhecendo o tema</span>
+            <span>2. Objetivos</span>
+            <span>3. Estudo orientado</span>
+            <span>4. Reflexão bíblica</span>
+            <span>5. Prática</span>
+            <span>6. Desafio</span>
+            <span>7. Demonstração</span>
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 1 -->
+
+    <section class="etapa">
+
+        <h2>1. Conhecendo o tema</h2>
+
+        <p>
+            Imagine um homem que trabalhava fazendo sapatos.
+            Ele não era rei, não era general e não possuía grandes
+            riquezas. Entretanto, tinha uma convicção muito forte:
+            o Evangelho de Jesus Cristo deveria ser anunciado
+            a todos os povos.
+        </p>
+
+        <p>
+            Seu nome era <strong>William Carey</strong>.
+            Nascido na Inglaterra, em 1761, Carey tornou-se uma
+            das figuras mais importantes do movimento missionário
+            protestante moderno.
+        </p>
+
+        <div class="destaque">
+
+            <strong>Uma pergunta para começar:</strong>
+
+            <p>
+                Se uma pessoa conhece a mensagem de Jesus Cristo,
+                mas percebe que existem povos que ainda não tiveram
+                contato com o Evangelho, o que ela pode fazer?
+            </p>
+
+        </div>
+
+        <p>
+            Neste estudo, vamos conhecer como a dedicação de um
+            sapateiro inglês contribuiu para despertar uma nova
+            consciência missionária entre os cristãos protestantes.
+        </p>
+
+    </section>
+
+
+    <!-- ETAPA 2 -->
+
+    <section class="etapa">
+
+        <h2>2. O que vamos aprender</h2>
+
+        <p>Ao estudar este tema, o Embaixador deverá compreender:</p>
+
+        <ol>
+
+            <li>
+                O contexto religioso e missionário da Inglaterra
+                no século XVIII.
+            </li>
+
+            <li>
+                Quem foi William Carey e como começou sua trajetória.
+            </li>
+
+            <li>
+                Por que Carey defendia a evangelização de todos os povos.
+            </li>
+
+            <li>
+                Como aconteceu sua viagem missionária à Índia.
+            </li>
+
+            <li>
+                A importância da tradução da Bíblia e da educação
+                em seu trabalho missionário.
+            </li>
+
+            <li>
+                Como sua história influenciou o desenvolvimento
+                do movimento missionário protestante.
+            </li>
+
+        </ol>
+
+        <div class="destaque">
+
+            <strong>Ideia principal:</strong>
+
+            <p>
+                A obra missionária exige fé, dedicação, perseverança
+                e disposição para servir a Deus e ao próximo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 3 -->
+
+    <section class="etapa">
+
+        <h2>3. Estudo orientado</h2>
+
+        <h3>3.1 — A Inglaterra no século XVIII</h3>
+
+        <p>
+            Durante o século XVIII, a Inglaterra vivia importantes
+            transformações religiosas, sociais e econômicas.
+            Havia comunidades cristãs protestantes que desenvolviam
+            trabalhos de evangelização, mas a organização de missões
+            permanentes em terras distantes ainda não ocupava
+            o lugar que viria a ocupar nos séculos seguintes.
+        </p>
+
+        <p>
+            Muitos cristãos começaram a refletir sobre a responsabilidade
+            de anunciar o Evangelho também aos povos de outras regiões
+            do mundo.
+        </p>
+
+        <p>
+            Nesse contexto surgiu William Carey, que ajudaria a
+            transformar essa preocupação em um movimento organizado.
+        </p>
+
+
+        <h3>3.2 — Quem foi William Carey?</h3>
+
+        <p>
+            William Carey nasceu em 17 de agosto de 1761, em
+            Paulerspury, na Inglaterra.
+        </p>
+
+        <p>
+            Ainda jovem, aprendeu o ofício de sapateiro.
+            Enquanto trabalhava, desenvolveu grande interesse
+            pelo estudo das Escrituras e pelo conhecimento
+            de outros povos e regiões do mundo.
+        </p>
+
+        <p>
+            Carey não possuía uma posição social privilegiada.
+            Seu trabalho cotidiano era simples, mas sua visão
+            sobre a responsabilidade missionária era extraordinária
+            para aquele contexto.
+        </p>
+
+        <p>
+            Ele passou a estudar idiomas, geografia e relatos
+            sobre diferentes povos. Também se dedicou ao ministério
+            cristão e à pregação.
+        </p>
+
+        <div class="destaque">
+
+            <strong>Uma lição importante:</strong>
+
+            <p>
+                A origem humilde de uma pessoa não determina
+                a importância do serviço que ela pode realizar.
+                Conhecimento, dedicação e fé podem transformar
+                uma vocação em uma grande obra.
+            </p>
+
+        </div>
+
+
+        <h3>3.3 — A convicção missionária</h3>
+
+        <p>
+            Carey acreditava que a ordem de Jesus para anunciar
+            o Evangelho deveria ser levada a sério também em relação
+            aos povos que viviam longe da Europa.
+        </p>
+
+        <p>
+            Em 1792, publicou um trabalho conhecido como
+            <strong>Uma Investigação sobre as Obrigações dos Cristãos
+            de Usarem Meios para a Conversão dos Pagãos</strong>.
+        </p>
+
+        <p>
+            Nesse trabalho, defendia que os cristãos não deveriam
+            apenas desejar a evangelização dos povos, mas também
+            organizar ações concretas para que isso acontecesse.
+        </p>
+
+        <p>
+            Em maio de 1792, Carey pregou uma mensagem que ficou
+            associada à frase:
+        </p>
+
+        <div class="destaque">
+
+            <p style="text-align:center; font-size:20px;">
+                <strong>
+                    "Espere grandes coisas de Deus;
+                    empreenda grandes coisas para Deus."
+                </strong>
+            </p>
+
+            <small>
+                Frase tradicionalmente associada à mensagem
+                missionária de William Carey.
+            </small>
+
+        </div>
+
+        <p>
+            Ainda em 1792, foi organizada a Sociedade Missionária
+            Batista, na Inglaterra, com o propósito de apoiar
+            o envio de missionários a outros povos.
+        </p>
+
+
+        <h3>3.4 — A viagem para a Índia</h3>
+
+        <p>
+            Em 1793, William Carey partiu para a Índia acompanhado
+            de sua família e do médico e missionário John Thomas.
+        </p>
+
+        <p>
+            A viagem marcou o início de uma longa trajetória
+            missionária. Carey enfrentou dificuldades financeiras,
+            problemas de saúde, diferenças culturais e obstáculos
+            relacionados ao idioma.
+        </p>
+
+        <p>
+            A adaptação não foi simples. O trabalho missionário
+            exigia paciência, aprendizado e perseverança.
+        </p>
+
+        <p>
+            Em 1799, outros missionários se juntaram ao trabalho,
+            entre eles Joshua Marshman e William Ward.
+            Juntos, ficaram conhecidos como o grupo missionário
+            de Serampore.
+        </p>
+
+
+        <h3>3.5 — O trabalho missionário na Índia</h3>
+
+        <p>
+            Carey compreendeu que anunciar o Evangelho também
+            exigia conhecer a língua e a realidade das pessoas
+            a quem desejava servir.
+        </p>
+
+        <p>
+            Por isso, dedicou grande parte de sua vida ao estudo
+            de idiomas e à tradução das Escrituras.
+        </p>
+
+        <p>
+            Seu trabalho incluiu:
+        </p>
+
+        <ul>
+
+            <li>
+                Tradução da Bíblia e de partes das Escrituras
+                para idiomas utilizados na Índia.
+            </li>
+
+            <li>
+                Organização de atividades de impressão e publicação.
+            </li>
+
+            <li>
+                Participação em iniciativas educacionais.
+            </li>
+
+            <li>
+                Estudo de línguas e culturas locais.
+            </li>
+
+            <li>
+                Formação de pessoas para colaborar com o trabalho
+                cristão e educacional.
+            </li>
+
+        </ul>
+
+        <p>
+            O trabalho de Carey não ficou restrito à pregação.
+            Ele também contribuiu para a produção de materiais
+            escritos e para iniciativas de educação.
+        </p>
+
+
+        <h3>3.6 — Uma vida de perseverança</h3>
+
+        <p>
+            A trajetória de William Carey não foi marcada apenas
+            por conquistas. Ele enfrentou perdas familiares,
+            dificuldades financeiras, conflitos e problemas
+            relacionados ao próprio trabalho missionário.
+        </p>
+
+        <p>
+            Mesmo diante das dificuldades, continuou dedicando
+            sua vida ao serviço missionário.
+        </p>
+
+        <p>
+            William Carey morreu em 9 de junho de 1834, em Serampore,
+            na Índia.
+        </p>
+
+        <p>
+            Sua história tornou-se uma referência para gerações
+            de cristãos interessados na evangelização mundial.
+        </p>
+
+
+        <h3>3.7 — Linha do tempo</h3>
+
+        <div class="linha-tempo">
+
+            <div class="evento">
+
+                <div class="ano">1761</div>
+
+                <p>
+                    Nascimento de William Carey, na Inglaterra.
+                </p>
+
+            </div>
+
+            <div class="evento">
+
+                <div class="ano">1792</div>
+
+                <p>
+                    Publicação de sua obra sobre a responsabilidade
+                    missionária dos cristãos e organização da
+                    Sociedade Missionária Batista.
+                </p>
+
+            </div>
+
+            <div class="evento">
+
+                <div class="ano">1793</div>
+
+                <p>
+                    Viagem de William Carey para a Índia.
+                </p>
+
+            </div>
+
+            <div class="evento">
+
+                <div class="ano">1799</div>
+
+                <p>
+                    Chegada de outros missionários que se uniram
+                    ao trabalho de Serampore.
+                </p>
+
+            </div>
+
+            <div class="evento">
+
+                <div class="ano">1834</div>
+
+                <p>
+                    Falecimento de William Carey, na Índia.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="destaque">
+
+            <strong>Para guardar:</strong>
+
+            <p>
+                William Carey ficou conhecido como uma das figuras
+                fundamentais do movimento missionário protestante
+                moderno. Seu trabalho ajudou a incentivar a organização
+                de missões cristãs em diferentes partes do mundo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 4 -->
+
+    <section class="etapa">
+
+        <h2>4. Reflexão bíblica</h2>
+
+        <h3>A missão de anunciar o Evangelho</h3>
+
+        <div class="caixa-biblica">
+
+            <strong>Mateus 28:19-20</strong>
+
+            <p>
+                "Portanto, ide, fazei discípulos de todas as nações,
+                batizando-os em nome do Pai, e do Filho,
+                e do Espírito Santo; ensinando-os a guardar
+                todas as coisas que eu vos tenho mandado."
+            </p>
+
+            <small>
+                Texto apresentado em redação tradicional.
+                Consulte a tradução bíblica utilizada pela embaixada.
+            </small>
+
+        </div>
+
+        <p>
+            Antes mesmo de William Carey, Jesus já havia ensinado
+            aos seus discípulos a responsabilidade de fazer
+            discípulos de todas as nações.
+        </p>
+
+        <p>
+            Carey compreendeu que essa missão não deveria ficar
+            limitada a uma região ou a um povo.
+        </p>
+
+        <p>
+            A história de Carey nos lembra que a obra missionária
+            pode envolver diferentes formas de serviço:
+            pregar, ensinar, traduzir, educar, cooperar e ajudar
+            outras pessoas a conhecerem a mensagem de Cristo.
+        </p>
+
+        <div class="destaque">
+
+            <strong>Pense e responda:</strong>
+
+            <p>
+                Por que a missão de anunciar o Evangelho não deve
+                depender apenas de pessoas famosas, ricas ou poderosas?
+            </p>
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>Minha reflexão:</label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 5 -->
+
+    <section class="etapa">
+
+        <h2>5. Vamos praticar</h2>
+
+        <h3>Atividade 1 — Complete as informações</h3>
+
+        <div class="pergunta">
+
+            <label>1. William Carey nasceu no ano de:</label>
+
+            <input type="text">
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>2. Antes de se tornar missionário, Carey trabalhava como:</label>
+
+            <input type="text">
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>3. O país para onde Carey viajou como missionário foi:</label>
+
+            <input type="text">
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>4. Em que ano Carey iniciou sua viagem missionária para a Índia?</label>
+
+            <input type="text">
+
+        </div>
+
+
+        <h3>Atividade 2 — Verdadeiro ou falso</h3>
+
+        <div class="pergunta">
+
+            <p>
+                ( ) William Carey nasceu na Índia.
+            </p>
+
+            <p>
+                ( ) Carey trabalhava como sapateiro antes de sua
+                trajetória missionária.
+            </p>
+
+            <p>
+                ( ) Carey defendia a evangelização de povos de
+                diferentes regiões do mundo.
+            </p>
+
+            <p>
+                ( ) O trabalho de Carey envolveu tradução das Escrituras.
+            </p>
+
+            <p>
+                ( ) Carey morreu no ano de 1834.
+            </p>
+
+        </div>
+
+
+        <h3>Atividade 3 — Coloque em ordem cronológica</h3>
+
+        <p>
+            Numere os acontecimentos de acordo com a sequência histórica:
+        </p>
+
+        <div class="pergunta">
+
+            <p>
+                ( ) Viagem de William Carey para a Índia.
+            </p>
+
+            <p>
+                ( ) Nascimento de William Carey.
+            </p>
+
+            <p>
+                ( ) Organização da Sociedade Missionária Batista.
+            </p>
+
+            <p>
+                ( ) Falecimento de William Carey.
+            </p>
+
+        </div>
+
+
+        <h3>Atividade 4 — Compreendendo a história</h3>
+
+        <div class="pergunta">
+
+            <label>
+                1. Por que William Carey considerava importante
+                anunciar o Evangelho a outros povos?
+            </label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>
+                2. Por que aprender idiomas era importante
+                para o trabalho missionário de Carey?
+            </label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>
+                3. Cite duas atividades desenvolvidas por Carey
+                além da pregação.
+            </label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>
+                4. Qual ensinamento da história de Carey pode
+                ser aplicado à vida de um Embaixador do Rei?
+            </label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 6 -->
+
+    <section class="etapa">
+
+        <h2>6. Desafio do Embaixador</h2>
+
+        <h3>Conhecer, compartilhar e servir</h3>
+
+        <p>
+            William Carey percebeu que a missão de anunciar o Evangelho
+            precisava sair das ideias e se transformar em ações.
+        </p>
+
+        <p>
+            O Embaixador do Rei também pode desenvolver uma atitude
+            missionária em sua própria realidade.
+        </p>
+
+        <p>Durante esta semana, procure realizar as seguintes atividades:</p>
+
+        <ol>
+
+            <li>
+                Leia Mateus 28:19-20 e converse com seu conselheiro
+                sobre a responsabilidade missionária dos cristãos.
+            </li>
+
+            <li>
+                Pesquise sobre um missionário batista que trabalhou
+                em outro país.
+            </li>
+
+            <li>
+                Converse com sua família ou com outros Embaixadores
+                sobre maneiras de apoiar o trabalho missionário.
+            </li>
+
+            <li>
+                Participe de uma atividade de oração ou apoio
+                às missões organizada por sua igreja.
+            </li>
+
+        </ol>
+
+        <div class="destaque">
+
+            <strong>Uma pergunta para sua caminhada:</strong>
+
+            <p>
+                Como você pode demonstrar interesse pela obra
+                missionária mesmo sem viajar para outro país?
+            </p>
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>Meu compromisso missionário:</label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETAPA 7 -->
+
+    <section class="etapa">
+
+        <h2>7. Preparando a demonstração</h2>
+
+        <p>
+            O Embaixador deverá demonstrar que compreendeu a história
+            do Movimento Moderno de Missões e a contribuição
+            de William Carey.
+        </p>
+
+        <h3>Questões para demonstração</h3>
+
+        <ol>
+
+            <li>Quem foi William Carey?</li>
+
+            <li>Em que país ele nasceu?</li>
+
+            <li>Qual era sua profissão antes de se dedicar
+                ao trabalho missionário?</li>
+
+            <li>Em que ano foi organizada a Sociedade Missionária
+                Batista da Inglaterra?</li>
+
+            <li>Em que ano Carey partiu para a Índia?</li>
+
+            <li>Quais foram algumas das dificuldades enfrentadas
+                por ele no trabalho missionário?</li>
+
+            <li>Qual foi a importância da tradução da Bíblia
+                em seu trabalho?</li>
+
+            <li>Como sua história contribuiu para o desenvolvimento
+                do movimento missionário moderno?</li>
+
+        </ol>
+
+        <h3>Verificação da aprendizagem</h3>
+
+        <div class="pergunta">
+
+            <p>
+                <input type="checkbox">
+                Conhece a história de William Carey.
+            </p>
+
+            <p>
+                <input type="checkbox">
+                Identifica os principais acontecimentos de sua trajetória.
+            </p>
+
+            <p>
+                <input type="checkbox">
+                Compreende a importância da organização missionária.
+            </p>
+
+            <p>
+                <input type="checkbox">
+                Reconhece a relação entre a Grande Comissão
+                e o trabalho missionário.
+            </p>
+
+            <p>
+                <input type="checkbox">
+                Consegue explicar o tema com suas próprias palavras.
+            </p>
+
+        </div>
+
+        <div class="pergunta">
+
+            <label>Observações do conselheiro:</label>
+
+            <textarea class="resposta"></textarea>
+
+        </div>
+
+        <div class="assinaturas">
+
+            <div class="assinatura">
+                Embaixador do Rei
+            </div>
+
+            <div class="assinatura">
+                Conselheiro
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <div class="botoes">
+
+        <button class="botao" onclick="window.print()">
+            Imprimir / Salvar em PDF
+        </button>
+
+        <a href="../../../index.html" class="botao botao-secundario">
+            Voltar ao início
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer class="rodape">
+
+    <p>
+        Embaixadores do Rei
+    </p>
+
+    <p>
+        Conhecer a Palavra, desenvolver a fé e servir a Cristo.
+    </p>
+
+    <small>
+        Material educativo complementar — Posto de Escudeiro.
+    </small>
+
+</footer>
+
+</body>
+</html>

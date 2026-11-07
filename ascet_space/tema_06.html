@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escudeiro - Tema 6 | História dos Batistas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --azul: #102B49;
+            --azul-secundario: #183D61;
+            --azul-claro: #294F70;
+            --dourado: #C5A15B;
+            --dourado-claro: #E0C98F;
+            --creme: #F7F4EC;
+            --branco: #FFFFFF;
+            --texto: #263442;
+            --cinza: #65717C;
+            --linha: #DED8CA;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--creme);
+            color: var(--texto);
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.7;
+        }
+
+        .cabecalho {
+            background: var(--azul);
+            color: var(--branco);
+            padding: 35px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--dourado);
+        }
+
+        .cabecalho .posto {
+            color: var(--dourado-claro);
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .cabecalho h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 30px;
+            margin: 12px 0;
+        }
+
+        .cabecalho p {
+            color: #E8EDF2;
+            font-size: 15px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 950px;
+            margin: 35px auto;
+        }
+
+        .apresentacao {
+            background: var(--branco);
+            border-left: 5px solid var(--dourado);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .apresentacao h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+
+        .etapa {
+            background: var(--branco);
+            margin-bottom: 25px;
+            padding: 28px;
+            border-radius: 7px;
+            border: 1px solid var(--linha);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+            page-break-inside: auto;
+        }
+
+        .etapa h2 {
+            color: var(--azul);
+            font-family: 'Cinzel', serif;
+            font-size: 21px;
+            border-bottom: 2px solid var(--dourado);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .etapa h3 {
+            color: var(--azul-secundario);
+            margin: 22px 0 8px;
+            font-size: 17px;
+        }
+
+        .etapa p {
+            margin-bottom: 13px;
+            text-align: justify;
+        }
+
+        .etapa ul,
+        .etapa ol {
+            margin: 12px 0 18px 25px;
+        }
+
+        .etapa li {
+            margin-bottom: 9px;
+        }
+
+        .destaque {
+            background: #F3EBD9;
+            border-left: 4px solid var(--dourado);
+            padding: 17px;
+            margin: 18px 0;
+            border-radius: 4px;
+            color: #102B49;
+        }
+
+        .destaque strong {
+            color: var(--azul);
+        }
+
+        .versiculo {
+            background: var(--azul);
+            color: var(--branco);
+            padding: 22px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .versiculo p {
+            font-style: italic;
+            text-align: center;
+            font-size: 17px;
+        }
+
+        .versiculo strong {
+            color: var(--dourado-claro);
+        }
+
+        .atividade {
+            background: #F8F7F2;
+            border: 1px solid var(--linha);
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .atividade h3 {
+            margin-top: 0;
+        }
+
+        .linha-resposta {
+            display: block;
+            border-bottom: 1px solid #929292;
+            height: 32px;
+            margin: 8px 0;
+        }
+
+        .campo {
+            margin: 18px 0;
+        }
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+            color: var(--azul);
+            margin-bottom: 7px;
+        }
+
+        .campo input,
+        .campo textarea {
+            width: 100%;
+            border: 1px solid #BFC6CC;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        .campo textarea {
+            min-height: 85px;
+            resize: vertical;
+        }
+
+        .pergunta {
+            margin: 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--linha);
+        }
+
+        .pergunta strong {
+            color: var(--azul);
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 35px 0;
+        }
+
+        .botao {
+            background: var(--azul);
+            color: var(--branco);
+            border: none;
+            padding: 13px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .botao:hover {
+            background: var(--azul-claro);
+            transform: translateY(-2px);
+        }
+
+        .botao.secundario {
+            background: var(--dourado);
+            color: var(--azul);
+        }
+
+        .rodape {
+            background: var(--azul);
+            color: var(--branco);
+            padding: 25px;
+            text-align: center;
+            border-top: 4px solid var(--dourado);
+            font-size: 13px;
+        }
+
+        .rodape strong {
+            color: var(--dourado-claro);
+        }
+
+        @media (max-width: 600px) {
+
+            .cabecalho h1 {
+                font-size: 23px;
+            }
+
+            .etapa {
+                padding: 20px;
+            }
+
+            .etapa h2 {
+                font-size: 18px;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 1.7cm;
+            }
+
+            body {
+                background: white;
+                color: #222;
+                font-size: 11pt;
+            }
+
+            .cabecalho {
+                background: white !important;
+                color: var(--azul) !important;
+                border-bottom: 3px solid var(--dourado);
+                padding: 15px 0;
+            }
+
+            .cabecalho .posto,
+            .cabecalho p {
+                color: var(--azul) !important;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 100%;
+                margin: 15px auto;
+            }
+
+            .apresentacao,
+            .etapa {
+                box-shadow: none;
+                border: 1px solid #CCC;
+                margin-bottom: 18px;
+                padding: 18px;
+            }
+
+            .etapa h2 {
+                color: var(--azul) !important;
+            }
+
+            .versiculo {
+                background: #EAEFF3 !important;
+                color: #222 !important;
+                border: 1px solid #AAA;
+            }
+
+            .versiculo strong {
+                color: var(--azul) !important;
+            }
+
+            .destaque {
+                background: #F5F0E5 !important;
+            }
+
+            .botoes {
+                display: none !important;
+            }
+
+            .rodape {
+                background: white !important;
+                color: #333 !important;
+                border-top: 2px solid var(--dourado);
+            }
+
+            .rodape strong {
+                color: var(--azul) !important;
+            }
+
+            input,
+            textarea {
+                border: 1px solid #999 !important;
+            }
+
+            .etapa {
+                break-inside: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="posto">Organização Embaixadores do Rei</div>
+
+        <h1>História dos Batistas: Nossa Origem</h1>
+
+        <p>Posto de Escudeiro — Tema 6</p>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="apresentacao">
+
+            <h2>Uma história de fé e missão</h2>
+
+            <p>
+                A história dos Batistas faz parte da história do cristianismo.
+                Ao longo dos séculos, homens e mulheres procuraram compreender
+                as Escrituras, viver sua fé e anunciar o evangelho de Jesus Cristo.
+            </p>
+
+            <p>
+                Neste estudo, vamos conhecer brevemente as origens do movimento
+                Batista na Europa e acompanhar sua chegada ao Brasil, com atenção
+                especial aos primeiros trabalhos em Santa Bárbara d'Oeste e Salvador.
+            </p>
+
+            <div class="destaque">
+                <strong>Uma ideia importante:</strong>
+                conhecer nossa história não significa apenas decorar datas e nomes.
+                Significa compreender como gerações de cristãos participaram da
+                missão de anunciar o evangelho.
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 1 -->
+
+        <section class="etapa">
+
+            <h2>1. Conhecendo o tema</h2>
+
+            <p>
+                Os Batistas fazem parte da grande família cristã. Sua história
+                está ligada a movimentos de renovação religiosa que aconteceram
+                na Europa, especialmente durante e depois da Reforma Protestante.
+            </p>
+
+            <p>
+                A Reforma Protestante, iniciada no século XVI, foi um movimento
+                que questionou práticas e ensinamentos da Igreja de seu tempo.
+                Reformadores defenderam a importância das Escrituras e buscaram
+                mudanças na vida religiosa.
+            </p>
+
+            <p>
+                Durante os séculos seguintes, surgiram diferentes grupos
+                protestantes. Entre eles estavam comunidades que defendiam
+                o batismo de pessoas que professassem conscientemente sua fé
+                em Jesus Cristo.
+            </p>
+
+            <p>
+                Essas comunidades deram origem ao movimento Batista, que se
+                desenvolveu especialmente na Inglaterra, no início do século XVII.
+            </p>
+
+            <div class="destaque">
+                <strong>Para guardar:</strong>
+                os Batistas valorizam a Bíblia como referência de fé e prática,
+                a conversão pessoal, o batismo de pessoas que professam sua fé
+                e a vida comunitária da igreja.
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 2 -->
+
+        <section class="etapa">
+
+            <h2>2. O que vamos aprender</h2>
+
+            <p>Ao concluir este estudo, esperamos que você consiga:</p>
+
+            <ul>
+                <li>Reconhecer a relação entre a Reforma Protestante e o surgimento do movimento Batista.</li>
+
+                <li>Identificar, de maneira simples, os Batistas Gerais e os Batistas Particulares.</li>
+
+                <li>Conhecer o estabelecimento de uma comunidade batista em Santa Bárbara d'Oeste.</li>
+
+                <li>Reconhecer a participação dos missionários William Buck Bagby e Anne Luther Bagby.</li>
+
+                <li>Compreender a importância histórica da igreja organizada em Salvador, em 1882.</li>
+
+                <li>Reconhecer a participação de Antônio Teixeira de Albuquerque na história batista brasileira.</li>
+
+                <li>Valorizar o trabalho missionário e o compromisso de anunciar o evangelho.</li>
+            </ul>
+
+            <div class="destaque">
+                <strong>Pergunta para começar:</strong>
+                se uma pessoa recebe uma mensagem importante, o que pode fazer
+                para que outras pessoas também a conheçam?
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 3 -->
+
+        <section class="etapa">
+
+            <h2>3. Estudo orientado</h2>
+
+            <h3>Parte 1 — Os Batistas na Europa</h3>
+
+            <p>
+                No início do século XVII, surgiram na Inglaterra comunidades
+                cristãs que passaram a ser conhecidas como Batistas.
+                Elas defendiam que o batismo deveria acontecer depois de uma
+                pessoa professar sua fé em Jesus Cristo.
+            </p>
+
+            <p>
+                Naquele período, desenvolveram-se duas importantes tradições
+                históricas dentro do movimento Batista: os Batistas Gerais
+                e os Batistas Particulares.
+            </p>
+
+            <h3>Os Batistas Gerais</h3>
+
+            <p>
+                Os Batistas Gerais defendiam que a morte de Cristo tinha
+                alcance universal: Jesus morreu por todos, e o convite
+                à salvação deveria ser anunciado a todas as pessoas.
+            </p>
+
+            <h3>Os Batistas Particulares</h3>
+
+            <p>
+                Os Batistas Particulares defendiam a doutrina da redenção
+                particular, associada à eleição divina: Cristo morreu
+                especialmente pelos eleitos, segundo sua compreensão
+                das Escrituras.
+            </p>
+
+            <div class="destaque">
+                <strong>Importante:</strong>
+                essa diferença dizia respeito à maneira como esses grupos
+                compreendiam a obra de Cristo na salvação. Apesar das diferenças,
+                ambos faziam parte do desenvolvimento histórico do movimento Batista.
+            </div>
+
+            <p>
+                Com o passar do tempo, diferentes comunidades Batistas se
+                desenvolveram em vários países. O movimento também chegou
+                às Américas e, posteriormente, ao Brasil.
+            </p>
+
+
+            <h3>Parte 2 — Os primeiros trabalhos Batistas no Brasil</h3>
+
+            <p>
+                No século XIX, o Brasil recebeu imigrantes de diferentes
+                países, inclusive dos Estados Unidos. Entre esses imigrantes
+                havia famílias que pertenciam a igrejas Batistas.
+            </p>
+
+            <p>
+                Em <strong>1871</strong>, na região de Santa Bárbara d'Oeste,
+                no interior de São Paulo, foi organizada uma comunidade
+                batista formada por imigrantes norte-americanos.
+            </p>
+
+            <p>
+                Essa comunidade atendia principalmente às necessidades
+                religiosas dos próprios imigrantes. Por isso, é importante
+                distinguir esse primeiro trabalho da posterior expansão
+                missionária voltada à evangelização dos brasileiros.
+            </p>
+
+            <div class="destaque">
+                <strong>1871 — Santa Bárbara d'Oeste:</strong>
+                uma importante referência para o início da presença
+                organizada de uma comunidade Batista no Brasil.
+            </div>
+
+
+            <h3>Parte 3 — Os missionários Bagby</h3>
+
+            <p>
+                Uma nova etapa da história Batista brasileira começou
+                com a chegada de missionários norte-americanos que vieram
+                trabalhar na evangelização do povo brasileiro.
+            </p>
+
+            <p>
+                Entre eles estavam <strong>William Buck Bagby</strong>
+                e sua esposa, <strong>Anne Luther Bagby</strong>.
+                O casal dedicou sua vida ao trabalho missionário no Brasil.
+            </p>
+
+            <p>
+                A obra missionária não foi realizada por uma única pessoa.
+                Outros missionários e colaboradores também participaram
+                desse trabalho, contribuindo para a formação das primeiras
+                igrejas e para a expansão da mensagem Batista.
+            </p>
+
+
+            <h3>Parte 4 — Salvador e a evangelização dos brasileiros</h3>
+
+            <p>
+                Em <strong>1882</strong>, na cidade de Salvador, na Bahia,
+                foi organizada uma igreja Batista voltada ao trabalho
+                entre os brasileiros.
+            </p>
+
+            <p>
+                Essa etapa contou com a participação de William Buck Bagby,
+                Anne Luther Bagby, Zachary Taylor e Kate Crawford Taylor,
+                além de colaboradores brasileiros.
+            </p>
+
+            <p>
+                Um nome de grande importância nessa história é
+                <strong>Antônio Teixeira de Albuquerque</strong>,
+                um ex-padre que abraçou a fé Batista e participou
+                do desenvolvimento da obra entre os brasileiros.
+            </p>
+
+            <p>
+                Sua trajetória representa um momento significativo:
+                brasileiros também passaram a participar diretamente
+                da formação e do crescimento das igrejas Batistas no país.
+            </p>
+
+            <div class="destaque">
+                <strong>1882 — Salvador:</strong>
+                um marco na organização do trabalho Batista voltado
+                à evangelização dos brasileiros.
+            </div>
+
+
+            <h3>Parte 5 — A expansão da obra Batista</h3>
+
+            <p>
+                A partir desses primeiros trabalhos, a presença Batista
+                foi se desenvolvendo em diferentes regiões brasileiras.
+                Igrejas foram organizadas, missionários foram enviados,
+                pastores foram formados e novas comunidades passaram
+                a conhecer a mensagem do evangelho.
+            </p>
+
+            <p>
+                A história Batista no Brasil foi construída com a
+                participação de missionários estrangeiros e, principalmente,
+                de brasileiros que assumiram o compromisso de servir a Deus
+                e compartilhar sua fé.
+            </p>
+
+            <div class="destaque">
+                <strong>Três referências para memorizar:</strong>
+                <ul>
+                    <li><strong>1871:</strong> comunidade Batista de imigrantes em Santa Bárbara d'Oeste.</li>
+                    <li><strong>1882:</strong> organização da igreja Batista voltada aos brasileiros em Salvador.</li>
+                    <li><strong>Antônio Teixeira de Albuquerque:</strong> ex-padre que abraçou a fé Batista e participou dessa história.</li>
+                </ul>
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 4 -->
+
+        <section class="etapa">
+
+            <h2>4. Reflexão bíblica</h2>
+
+            <p>
+                A história da Igreja nos lembra que o evangelho não deve
+                ficar limitado a um povo, uma cidade ou uma geração.
+                Jesus confiou aos seus discípulos a missão de anunciar
+                sua mensagem ao mundo.
+            </p>
+
+            <div class="versiculo">
+
+                <p>
+                    "Ide por todo o mundo, pregai o evangelho a toda criatura."
+                </p>
+
+                <strong>Marcos 16:15</strong>
+
+            </div>
+
+            <p>
+                O trabalho missionário dos cristãos que vieram ao Brasil
+                e daqueles que aqui receberam a mensagem demonstra como
+                pessoas diferentes podem cooperar em uma mesma missão.
+            </p>
+
+            <h3>Pensando sobre a Palavra</h3>
+
+            <p>
+                O compromisso missionário não pertence somente aos pastores
+                ou aos missionários que viajam para outros países. Todo
+                cristão pode testemunhar de Jesus em sua família, escola,
+                igreja e comunidade.
+            </p>
+
+            <div class="atividade">
+
+                <h3>Reflita e responda</h3>
+
+                <p>
+                    1. Por que o evangelho precisa ser anunciado a todas as pessoas?
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+                <p>
+                    2. O que podemos aprender com os missionários que dedicaram
+                    suas vidas ao trabalho no Brasil?
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+                <p>
+                    3. Como você pode participar da missão de Jesus onde vive?
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 5 -->
+
+        <section class="etapa">
+
+            <h2>5. Vamos praticar</h2>
+
+            <p>
+                Agora vamos verificar o que aprendemos sobre a história
+                dos Batistas.
+            </p>
+
+            <div class="atividade">
+
+                <h3>Atividade 1 — Complete as informações</h3>
+
+                <p>1. O movimento Batista desenvolveu-se especialmente na __________.</p>
+                <span class="linha-resposta"></span>
+
+                <p>2. Os dois grupos históricos estudados foram os Batistas __________ e os Batistas __________.</p>
+                <span class="linha-resposta"></span>
+
+                <p>3. Em 1871, uma comunidade Batista de imigrantes foi organizada em __________.</p>
+                <span class="linha-resposta"></span>
+
+                <p>4. Em 1882, foi organizada uma igreja Batista voltada aos brasileiros em __________.</p>
+                <span class="linha-resposta"></span>
+
+                <p>5. Um ex-padre importante nessa história foi __________.</p>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="atividade">
+
+                <h3>Atividade 2 — Relacione os acontecimentos</h3>
+
+                <p>
+                    Escreva o número correspondente ao acontecimento:
+                </p>
+
+                <p>( &nbsp; ) Organização de uma igreja Batista voltada aos brasileiros em Salvador.</p>
+
+                <p>( &nbsp; ) Comunidade Batista de imigrantes em Santa Bárbara d'Oeste.</p>
+
+                <p>( &nbsp; ) Participação de Antônio Teixeira de Albuquerque.</p>
+
+                <p>( &nbsp; ) Trabalho missionário de William e Anne Bagby.</p>
+
+                <p>
+                    1 — 1871 &nbsp;&nbsp;
+                    2 — 1882 &nbsp;&nbsp;
+                    3 — Participação brasileira &nbsp;&nbsp;
+                    4 — Trabalho missionário
+                </p>
+
+                <span class="linha-resposta"></span>
+
+            </div>
+
+
+            <div class="atividade">
+
+                <h3>Atividade 3 — Compreendendo a história</h3>
+
+                <p>
+                    Explique com suas palavras por que é importante
+                    diferenciar a comunidade Batista de imigrantes
+                    em Santa Bárbara d'Oeste do trabalho missionário
+                    voltado aos brasileiros em Salvador.
+                </p>
+
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 6 -->
+
+        <section class="etapa">
+
+            <h2>6. Desafio do Embaixador</h2>
+
+            <p>
+                A história dos Batistas é também uma história de pessoas
+                que decidiram servir a Deus e compartilhar o evangelho.
+                Agora é sua vez de transformar conhecimento em atitude.
+            </p>
+
+            <div class="destaque">
+
+                <strong>Desafio: conhecendo nossa história e compartilhando nossa fé.</strong>
+
+                <ol>
+                    <li>Converse com seu conselheiro sobre a história da igreja Batista que você frequenta.</li>
+
+                    <li>Procure saber quando ela foi organizada e quem participou de sua história.</li>
+
+                    <li>Descubra se existem registros, fotografias ou documentos antigos sobre sua comunidade.</li>
+
+                    <li>Compartilhe com outro Embaixador uma informação que aprendeu neste estudo.</li>
+
+                    <li>Ore pelas igrejas e missionários que anunciam o evangelho em diferentes lugares.</li>
+                </ol>
+
+            </div>
+
+            <h3>Minha descoberta</h3>
+
+            <p>
+                Escreva uma informação interessante que você descobriu
+                sobre a história da sua igreja ou comunidade.
+            </p>
+
+            <div class="campo">
+                <textarea placeholder="Escreva aqui sua descoberta..."></textarea>
+            </div>
+
+        </section>
+
+
+        <!-- ETAPA 7 -->
+
+        <section class="etapa">
+
+            <h2>7. Preparando a demonstração</h2>
+
+            <p>
+                Chegou o momento de demonstrar o que você aprendeu.
+                Converse com seu conselheiro e procure responder
+                às perguntas com suas próprias palavras.
+            </p>
+
+            <div class="pergunta">
+                <strong>1. Em qual país o movimento Batista se desenvolveu especialmente no início de sua história?</strong>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>2. Quais eram os dois grupos históricos estudados neste tema?</strong>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>3. O que diferenciava, de maneira geral, os Batistas Gerais dos Particulares?</strong>
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>4. Em que ano e cidade foi organizada a comunidade Batista de imigrantes mencionada no estudo?</strong>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>5. Quem foram William Buck Bagby e Anne Luther Bagby?</strong>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>6. Em que cidade e ano foi organizada a igreja Batista voltada aos brasileiros?</strong>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>7. Quem foi Antônio Teixeira de Albuquerque?</strong>
+                <span class="linha-resposta"></span>
+            </div>
+
+            <div class="pergunta">
+                <strong>8. Qual é a importância da missão de anunciar o evangelho a todas as pessoas?</strong>
+                <span class="linha-resposta"></span>
+                <span class="linha-resposta"></span>
+            </div>
+
+
+            <div class="campo">
+                <label>Nome do Embaixador:</label>
+                <input type="text">
+            </div>
+
+            <div class="campo">
+                <label>Nome do Conselheiro:</label>
+                <input type="text">
+            </div>
+
+            <div class="campo">
+                <label>Observações da demonstração:</label>
+                <textarea></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Data:</label>
+                <input type="date">
+            </div>
+
+            <div class="campo">
+                <label>Assinatura do Conselheiro:</label>
+                <input type="text">
+            </div>
+
+        </section>
+
+
+        <!-- REFERÊNCIAS -->
+
+        <section class="etapa">
+
+            <h2>Referências e observações</h2>
+
+            <p>
+                <strong>Fonte curricular:</strong>
+                MOURÃO, Lucas. <em>Apostila — Os Postos da Organização ER.</em>
+                DAER Gonçalense. A apostila apresenta o tema
+                "História dos Batistas: Nossa origem" no currículo do Escudeiro.
+            </p>
+
+            <p>
+                <strong>Texto bíblico:</strong>
+                Marcos 16:15.
+            </p>
+
+            <p>
+                <strong>Conteúdo histórico complementar:</strong>
+                estudo elaborado para fins educativos, reunindo referências
+                históricas sobre o desenvolvimento do movimento Batista
+                na Inglaterra e sua formação no Brasil.
+            </p>
+
+            <div class="destaque">
+                <strong>Nota histórica:</strong>
+                Santa Bárbara d'Oeste e Salvador representam momentos
+                distintos da história Batista no Brasil. A comunidade
+                de imigrantes organizada em 1871 não deve ser confundida
+                com o trabalho missionário voltado à evangelização
+                dos brasileiros, que teve em Salvador, em 1882,
+                um marco importante.
+            </div>
+
+            <p>
+                As atividades, perguntas e propostas de reflexão foram
+                elaboradas como complementação pedagógica para o estudo
+                dos Embaixadores do Rei.
+            </p>
+
+        </section>
+
+
+        <div class="botoes">
+
+            <button class="botao" onclick="window.print()">
+                Imprimir / Salvar PDF
+            </button>
+
+            <a href="../../../index.html" class="botao secundario">
+                Voltar ao início
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <footer class="rodape">
+
+        <p>
+            <strong>Embaixadores do Rei</strong>
+        </p>
+
+        <p>
+            Conhecer a história. Fortalecer a fé. Servir a Cristo.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

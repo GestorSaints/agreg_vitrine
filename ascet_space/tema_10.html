@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Escudeiro — Tema 10 | Solenidades dos Embaixadores do Rei</title>
+
+<style>
+:root {
+    --azul: #102B49;
+    --azul-secundario: #183D61;
+    --dourado: #C5A15B;
+    --dourado-claro: #E0C98F;
+    --creme: #F4EBDD;
+    --branco: #FFFDF8;
+    --texto: #263442;
+    --cinza: #687582;
+    --linha: #D9D2C5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--creme);
+    color: var(--texto);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+header {
+    background: var(--azul);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--dourado);
+}
+
+header .identificacao {
+    color: var(--dourado-claro);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-family: Georgia, serif;
+    font-size: 2.2rem;
+    margin: 12px 0;
+}
+
+header p {
+    max-width: 760px;
+    margin: auto;
+    color: #E9E5DC;
+}
+
+.container {
+    width: min(1050px, 92%);
+    margin: 35px auto;
+}
+
+.etapa {
+    background: var(--branco);
+    padding: 28px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border-left: 5px solid var(--dourado);
+    box-shadow: 0 3px 12px rgba(16, 43, 73, 0.07);
+}
+
+.etapa h2 {
+    color: var(--azul);
+    font-family: Georgia, serif;
+    margin-top: 0;
+    border-bottom: 1px solid var(--linha);
+    padding-bottom: 12px;
+}
+
+.etapa h3 {
+    color: var(--azul-secundario);
+    margin-top: 25px;
+}
+
+.destaque {
+    background: #F0E7D5;
+    border-left: 4px solid var(--dourado);
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.texto-institucional {
+    background: #F8F5EE;
+    padding: 22px;
+    border: 1px solid var(--linha);
+    border-radius: 8px;
+    margin: 18px 0;
+}
+
+.texto-institucional p {
+    margin: 8px 0;
+}
+
+.referencia {
+    color: var(--cinza);
+    font-size: 0.9rem;
+}
+
+.estrofe {
+    white-space: pre-line;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 1.08rem;
+    line-height: 1.9;
+    padding: 18px;
+}
+
+.refrao {
+    background: #F0E7D5;
+    border: 1px solid var(--dourado);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.cor {
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 6px;
+    background: #F8F5EE;
+}
+
+.azul {
+    border-left: 6px solid #294F70;
+}
+
+.branco {
+    border-left: 6px solid #D8D8D8;
+}
+
+.amarelo {
+    border-left: 6px solid #D5AD32;
+}
+
+.pergunta {
+    margin: 18px 0;
+    padding: 15px;
+    background: #F8F5EE;
+    border-radius: 6px;
+}
+
+.linha-resposta {
+    border-bottom: 1px solid #777;
+    height: 35px;
+    margin: 8px 0 15px;
+}
+
+input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #777;
+    background: transparent;
+    padding: 8px;
+    font: inherit;
+}
+
+button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin: 6px;
+}
+
+.botao-imprimir {
+    background: var(--azul);
+    color: white;
+}
+
+.botao-voltar {
+    background: var(--dourado);
+    color: #172638;
+}
+
+.acoes {
+    text-align: center;
+    padding: 25px;
+}
+
+footer {
+    background: var(--azul);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 1.5cm;
+    }
+
+    body {
+        background: white;
+        font-size: 10.5pt;
+    }
+
+    header {
+        background: white;
+        color: black;
+        border-bottom: 2px solid #777;
+        padding: 15px;
+    }
+
+    header .identificacao,
+    header p {
+        color: black;
+    }
+
+    .container {
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .etapa {
+        box-shadow: none;
+        border: 1px solid #CCC;
+        margin-bottom: 15px;
+        padding: 18px;
+        break-inside: auto;
+    }
+
+    .acoes,
+    footer {
+        display: none;
+    }
+
+    .texto-institucional,
+    .destaque,
+    .refrao {
+        break-inside: avoid;
+    }
+
+    button {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="identificacao">
+        Embaixadores do Rei — Posto de Escudeiro
+    </div>
+
+    <h1>Tema 10 — Solenidades dos Embaixadores do Rei</h1>
+
+    <p>
+        Bandeiras, compromissos, identidade e hino oficial:
+        compreendendo o significado de ser um Embaixador de Cristo.
+    </p>
+</header>
+
+<main class="container">
+
+<!-- ETAPA 1 -->
+
+<section class="etapa">
+    <h2>1. Conhecendo o Tema</h2>
+
+    <p>
+        Os Embaixadores do Rei possuem uma identidade que é
+        expressa por seu tema, sua divisa, seu compromisso e
+        seu hino oficial.
+    </p>
+
+    <p>
+        Esses elementos não existem apenas para serem recitados
+        em reuniões e solenidades. Eles apresentam aquilo em
+        que o Embaixador acredita e os compromissos que deseja
+        assumir diante de Deus.
+    </p>
+
+    <div class="destaque">
+        <strong>Tema dos Embaixadores do Rei:</strong>
+        <h3>Somos Embaixadores por Cristo.</h3>
+    </div>
+
+    <p>
+        Ser Embaixador do Rei significa representar Jesus Cristo
+        por meio de nossas palavras, atitudes e maneira de viver.
+    </p>
+
+    <p>
+        Neste estudo, vamos conhecer os cinco requisitos que
+        fazem parte da identidade institucional dos ER:
+        Tema, Divisa, Significado do Nome, Compromisso e Hino.
+    </p>
+</section>
+
+<!-- ETAPA 2 -->
+
+<section class="etapa">
+    <h2>2. O que vamos aprender</h2>
+
+    <p>Ao concluir este estudo, o Embaixador deverá compreender:</p>
+
+    <ul>
+        <li>O significado do tema da organização.</li>
+        <li>O ensinamento bíblico presente na divisa.</li>
+        <li>O que significa ser um Embaixador do Rei.</li>
+        <li>O compromisso assumido por um Embaixador.</li>
+        <li>O significado das três estrofes do Hino Oficial.</li>
+        <li>A relação entre o hino e as cores da organização.</li>
+    </ul>
+
+    <div class="destaque">
+        <strong>Requisito de demonstração:</strong>
+        o Embaixador deverá saber citar o Tema, a Divisa,
+        o Significado do Nome, o Compromisso e o Hino Oficial.
+    </div>
+</section>
+
+<!-- ETAPA 3 -->
+
+<section class="etapa">
+    <h2>3. Estudo Orientado</h2>
+
+    <h3>A. O Tema</h3>
+
+    <div class="texto-institucional">
+        <p><strong>Somos Embaixadores por Cristo.</strong></p>
+    </div>
+
+    <p>
+        O tema apresenta a missão da organização.
+        O Embaixador não representa apenas uma associação:
+        ele procura representar Jesus Cristo.
+    </p>
+
+    <p>
+        Isso significa procurar viver de maneira coerente
+        com os ensinamentos de Jesus, na família, na escola,
+        na igreja, nas amizades e em todos os lugares.
+    </p>
+
+    <h3>B. A Divisa</h3>
+
+    <div class="texto-institucional">
+        <p>
+            "De sorte que somos embaixadores por Cristo,
+            como se Deus por nós vos exortasse.
+            Rogamo-vos, pois, por Cristo que vos reconcilieis
+            com Deus."
+        </p>
+
+        <strong>2 Coríntios 5:20</strong>
+    </div>
+
+    <p>
+        A divisa é uma passagem bíblica que apresenta a razão
+        de nossa identidade como Embaixadores.
+    </p>
+
+    <p>
+        O apóstolo Paulo ensina que os cristãos representam
+        Cristo e anunciam a mensagem da reconciliação com Deus.
+        Essa representação exige fidelidade à mensagem de Jesus.
+    </p>
+
+    <h3>C. Significado do Nome — Embaixador do Rei</h3>
+
+    <p>
+        Na linguagem das relações entre países, um embaixador
+        é alguém que representa seu governo em outra nação.
+        Ele transmite mensagens e cuida dos interesses daquele
+        que representa.
+    </p>
+
+    <p>
+        Quando dizemos Embaixador do Rei, estamos falando
+        de alguém que procura representar Jesus Cristo,
+        o Rei dos reis.
+    </p>
+
+    <p>
+        O Embaixador deve demonstrar, por seu testemunho,
+        o que significa seguir a Cristo. Suas atitudes
+        precisam combinar com a mensagem que anuncia.
+    </p>
+
+    <div class="destaque">
+        <strong>Para pensar:</strong>
+        Como um Embaixador representa Cristo quando joga futebol,
+        realiza uma atividade na escola, conversa com os amigos
+        ou ajuda sua família?
+    </div>
+
+    <h3>D. O Compromisso</h3>
+
+    <p>
+        O compromisso é uma declaração de responsabilidade
+        e fidelidade. No material institucional, ele é
+        recitado em ocasiões como o hasteamento da bandeira
+        dos ER nos acampamentos e no início das reuniões
+        da embaixada, conforme a orientação ali apresentada.
+    </p>
+
+    <p>
+        Mais importante do que simplesmente repetir suas
+        palavras é procurar viver aquilo que elas ensinam.
+    </p>
+
+    <div class="texto-institucional">
+        <div class="estrofe">
+Prometo:
+
+Esforçar-me por uma vida digna de um Embaixador do Rei;
+guardar meus lábios da mentira, da impureza e de tomar
+o nome de Deus em vão;
+
+conservar meu corpo limpo e pronto para o serviço;
+
+estudar a vida de grandes Embaixadores do Rei na Palavra
+de Deus e nos livros missionários;
+
+dar tudo o que puder para o sustento de missões e,
+pelo meu trabalho ajudar a estabelecer o Reino de Deus
+na terra.
+
+Prometo ser leal a Jesus Cristo, viver para Ele
+e servi-lo sempre.
+
+"Terei uma vida pura, direi sempre a verdade,
+corrigirei os meus erros, seguirei a Cristo, o Rei.
+Se assim não for, para que nasci?"
+        </div>
+    </div>
+
+    <h3>E. O Hino Oficial</h3>
+
+    <p>
+        O Hino Oficial dos Embaixadores do Rei apresenta,
+        em suas três estrofes, valores que estão relacionados
+        às cores da organização: lealdade, pureza e preciosidade.
+    </p>
+
+    <p>
+        O refrão reafirma o propósito do Embaixador e sua
+        confiança no Senhor.
+    </p>
+
+    <div class="texto-institucional">
+        <h2 style="text-align:center;">FIRMANDO PROPÓSITOS</h2>
+        <h3 style="text-align:center;">Primeira estrofe — Lealdade</h3>
+
+        <div class="estrofe">Sendo Embaixador eu quero
+Ser leal a Cristo o Rei
+Conhecer seu mandamento
+Pertencer a Sua Grei
+À minha organização
+Eu desejo ser leal
+Minha Igreja e seu programa
+Honrarei até o final.</div>
+
+        <div class="refrao">
+            <h3 style="text-align:center;">Refrão</h3>
+            <div class="estrofe">Meu propósito está firme
+Sou Embaixador do Rei
+O Senhor em quem confio
+Dar-me plena paz, eu sei.</div>
+        </div>
+
+        <h3 style="text-align:center;">Segunda estrofe — Pureza</h3>
+
+        <div class="estrofe">Sendo Embaixador eu quero
+Ter o corpo limpo e são
+Ter a mente pura eu posso
+E também o coração
+Minha alma será pura
+Para adorar a Deus
+Pois somente a Ele devo
+Dispersar louvores meus.</div>
+
+        <div class="refrao">
+            <h3 style="text-align:center;">Refrão</h3>
+            <div class="estrofe">Meu propósito está firme
+Sou Embaixador do Rei
+O Senhor em quem confio
+Dar-me plena paz, eu sei.</div>
+        </div>
+
+        <h3 style="text-align:center;">Terceira estrofe — Preciosidade</h3>
+
+        <div class="estrofe">Sendo Embaixador eu quero
+Ser precioso a meu Jesus
+Trabalhando na Seara
+Espalhando a Sua Luz
+Cristo a mim é mui precioso
+Quando eu Embaixador
+Como Conselheiro aceito,
+Guia, Rei e Salvador.</div>
+
+        <div class="refrao">
+            <h3 style="text-align:center;">Refrão</h3>
+            <div class="estrofe">Meu propósito está firme
+Sou Embaixador do Rei
+O Senhor em quem confio
+Dar-me plena paz, eu sei.</div>
+        </div>
+
+    </div>
+
+    <h3>O Hino e as Cores da Organização</h3>
+
+    <div class="cor azul">
+        <strong>AZUL — LEALDADE</strong>
+        <p>
+            Lealdade a Cristo, à Igreja de Cristo,
+            à organização Embaixadores do Rei e aos seus ideais.
+            A primeira estrofe do hino destaca essa fidelidade.
+        </p>
+    </div>
+
+    <div class="cor branco">
+        <strong>BRANCO — PUREZA</strong>
+        <p>
+            Pureza do corpo, da mente e da alma;
+            pureza na adoração a Deus e somente a Ele.
+            A segunda estrofe apresenta esse ideal.
+        </p>
+    </div>
+
+    <div class="cor amarelo">
+        <strong>AMARELO — PRECIOSIDADE</strong>
+        <p>
+            Cristo é precioso para o Embaixador quando este
+            o aceita como Senhor, Salvador e Guia.
+            O Embaixador é precioso para Cristo quando emprega
+            no trabalho de Deus o melhor de sua capacidade.
+            Essa mensagem aparece na terceira estrofe.
+        </p>
+    </div>
+
+    <div class="destaque">
+        <strong>Uma maneira de memorizar:</strong>
+        <p>Primeira estrofe: Lealdade — Azul.</p>
+        <p>Segunda estrofe: Pureza — Branco.</p>
+        <p>Terceira estrofe: Preciosidade — Amarelo.</p>
+    </div>
+</section>
+
+<!-- ETAPA 4 -->
+
+<section class="etapa">
+    <h2>4. Reflexão Bíblica</h2>
+
+    <h3>Somos representantes de Cristo</h3>
+
+    <p>
+        Em 2 Coríntios 5:20, Paulo utiliza a figura do
+        embaixador para explicar a missão dos cristãos.
+        Eles representam Cristo e anunciam a reconciliação
+        entre Deus e os seres humanos.
+    </p>
+
+    <p>
+        Essa responsabilidade não fica limitada às reuniões
+        da embaixada. Ela acompanha o cristão em sua vida diária.
+    </p>
+
+    <h3>Deus observa o coração</h3>
+
+    <div class="texto-institucional">
+        <p>
+            "Porque o Senhor não vê como vê o homem,
+            pois o homem vê o que está diante dos olhos,
+            porém o Senhor olha para o coração."
+        </p>
+        <strong>1 Samuel 16:7</strong>
+    </div>
+
+    <p>
+        O uniforme, a bandeira e os símbolos ajudam a identificar
+        a organização, mas a verdadeira fidelidade a Cristo
+        deve aparecer no caráter e nas atitudes.
+    </p>
+
+    <div class="pergunta">
+        <strong>Para refletir:</strong>
+        <p>
+            Se alguém observasse minhas atitudes durante uma semana,
+            conseguiria perceber que procuro seguir Jesus?
+        </p>
+    </div>
+</section>
+
+<!-- ETAPA 5 -->
+
+<section class="etapa">
+    <h2>5. Vamos Praticar</h2>
+
+    <h3>Atividade 1 — Complete</h3>
+
+    <div class="pergunta">
+        O tema dos Embaixadores do Rei é:
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        A divisa encontra-se em:
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        O azul representa:
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        O branco representa:
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        O amarelo representa:
+        <div class="linha-resposta"></div>
+    </div>
+
+    <h3>Atividade 2 — Relacione</h3>
+
+    <p>Relacione cada estrofe do hino com seu significado:</p>
+
+    <ul>
+        <li>Primeira estrofe — __________________________</li>
+        <li>Segunda estrofe — ___________________________</li>
+        <li>Terceira estrofe — __________________________</li>
+    </ul>
+
+    <h3>Atividade 3 — Compreensão</h3>
+
+    <div class="pergunta">
+        1. O que significa representar Cristo?
+        <div class="linha-resposta"></div>
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        2. Por que o compromisso não deve ser apenas decorado?
+        <div class="linha-resposta"></div>
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        3. Como você pode demonstrar lealdade a Cristo no cotidiano?
+        <div class="linha-resposta"></div>
+        <div class="linha-resposta"></div>
+    </div>
+
+    <div class="pergunta">
+        4. Qual é a relação entre as três estrofes do hino
+        e as cores da organização?
+        <div class="linha-resposta"></div>
+        <div class="linha-resposta"></div>
+    </div>
+</section>
+
+<!-- ETAPA 6 -->
+
+<section class="etapa">
+    <h2>6. Desafio do Embaixador</h2>
+
+    <p>
+        Durante esta semana, procure colocar em prática
+        os ensinamentos do Tema, da Divisa e do Compromisso.
+    </p>
+
+    <ul>
+        <li>
+            Demonstre lealdade a Cristo por meio de suas escolhas.
+        </li>
+        <li>
+            Procure manter pureza em seus pensamentos,
+            palavras e atitudes.
+        </li>
+        <li>
+            Dedique seus talentos e capacidades ao serviço de Deus.
+        </li>
+        <li>
+            Memorize o Tema, a Divisa, o Significado do Nome,
+            o Compromisso e o Hino Oficial.
+        </li>
+    </ul>
+
+    <div class="destaque">
+        <strong>Meu propósito:</strong>
+        <p>
+            Não quero apenas dizer que sou Embaixador do Rei.
+            Quero demonstrar, por minha vida, que procuro
+            representar Jesus Cristo.
+        </p>
+    </div>
+</section>
+
+<!-- ETAPA 7 -->
+
+<section class="etapa">
+    <h2>7. Preparando a Demonstração</h2>
+
+    <p>
+        O Embaixador deverá apresentar ao conselheiro
+        os cinco requisitos deste tema.
+    </p>
+
+    <h3>Requisitos para demonstração</h3>
+
+    <div class="pergunta">
+        <strong>1. Tema</strong>
+        <p>O Embaixador deverá citar o tema da organização.</p>
+        <div class="linha-resposta"></div>
+        <label><input type="checkbox"> Demonstrado</label>
+    </div>
+
+    <div class="pergunta">
+        <strong>2. Divisa</strong>
+        <p>
+            O Embaixador deverá citar a divisa e sua referência bíblica.
+        </p>
+        <div class="linha-resposta"></div>
+        <label><input type="checkbox"> Demonstrado</label>
+    </div>
+
+    <div class="pergunta">
+        <strong>3. Significado do Nome</strong>
+        <p>
+            O Embaixador deverá explicar o significado de
+            ser um Embaixador do Rei.
+        </p>
+        <div class="linha-resposta"></div>
+        <div class="linha-resposta"></div>
+        <label><input type="checkbox"> Demonstrado</label>
+    </div>
+
+    <div class="pergunta">
+        <strong>4. Compromisso</strong>
+        <p>
+            O Embaixador deverá recitar o compromisso.
+        </p>
+        <div class="linha-resposta"></div>
+        <label><input type="checkbox"> Demonstrado</label>
+    </div>
+
+    <div class="pergunta">
+        <strong>5. Hino Oficial</strong>
+        <p>
+            O Embaixador deverá recitar ou cantar o Hino Oficial,
+            apresentando suas três estrofes e o refrão.
+        </p>
+        <div class="linha-resposta"></div>
+        <label><input type="checkbox"> Demonstrado</label>
+    </div>
+
+    <h3>Registro da Demonstração</h3>
+
+    <p>Nome do Embaixador:</p>
+    <input type="text">
+
+    <p>Nome do Conselheiro:</p>
+    <input type="text">
+
+    <p>Data da demonstração:</p>
+    <input type="text">
+
+    <br><br>
+
+    <p>Assinatura do Conselheiro:</p>
+    <div class="linha-resposta"></div>
+
+    <p>Observações:</p>
+    <div class="linha-resposta"></div>
+    <div class="linha-resposta"></div>
+</section>
+
+<div class="acoes">
+    <button class="botao-imprimir" onclick="window.print()">
+        Imprimir / Salvar em PDF
+    </button>
+
+    <button class="botao-voltar"
+        onclick="window.location.href='../../../index.html'">
+        Voltar ao início
+    </button>
+</div>
+
+</main>
+
+<footer>
+    Laboratório Educacional — Embaixadores do Rei<br>
+    Estudo, formação cristã e serviço a Cristo.
+</footer>
+
+</body>
+</html>
