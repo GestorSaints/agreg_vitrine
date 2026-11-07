@@ -1,136 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport"
-  content="width=device-width, initial-scale=1.0">
-
-  <title>AGREG Store</title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ambiente de aprendizagem e formação cristã dos Embaixadores do Rei.">
+    <title>Embaixadores do Rei | Conhecimento, Fé e Formação Missionária</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="js/principal.js" defer></script>
+    <script src="js/biblico.js" defer></script>
 
 </head>
-
 <body>
+    <header class="cabecalho">
+        <a class="marca" href="#inicio" data-nav="inicio" aria-label="Página inicial">
+            <img src="imagens/insignia/insignia_er.jpg" alt="Insígnia dos Embaixadores do Rei"
+                 onerror="this.style.display='none'">
+            <span class="marca-texto">
+                <strong>EMBAIXADORES DO REI</strong>
+                <small>Conhecimento, Fé e Formação Missionária</small>
+            </span>
+        </a>
 
-  <!---------------------------- HEADER -------------------------------->
+        <button class="menu-alternar" id="menuAlternar" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
 
-  <header>
+        <nav class="navegacao" id="navegacao-principal" aria-label="Navegação principal">
+            <button class="link-nav ativo" data-nav="inicio">Início</button>
+            <button class="link-nav" data-nav="biblico">Conhecimento Bíblico</button>
+            <button class="link-nav" data-nav="ordem">Ordem Unida</button>
+            <a class="link-nav link-sobre" href="#sobre">O projeto</a>
+        </nav>
+    </header>
 
-    <div class="header-left">
-      <img src="img/agreg_logo.jpeg" class="logo">
-    </div>
+    <main>
+        <section class="tela ativa" id="tela-inicio" data-tela="inicio">
+            <section class="destaque">
+                <div class="destaque-conteudo">
+                    <span class="sobretitulo">AMBIENTE DE APRENDIZAGEM</span>
+                    <h1>Conhecimento,<br><em>Fé e Formação</em><br>Missionária.</h1>
+                    <p>Um espaço para estudar, compreender e praticar os conhecimentos que fazem parte da formação dos Embaixadores do Rei.</p>
+                    <button class="botao botao-dourado" data-nav="biblico">Começar a aprender <span aria-hidden="true">→</span></button>
+                </div>
+                <div class="destaque-imagem">
+                    <img src="imagens/insignia/emb_rei_01.jpg" alt="Símbolo dos Embaixadores do Rei"
+                         onerror="this.parentElement.classList.add('imagem-indisponivel'); this.style.display='none'">
+                    <span class="legenda-imagem">EMBAIXADORES DO REI</span>
+                </div>
+                <div class="ornamento" aria-hidden="true"></div>
+            </section>
 
-<!---------------------------- MENU -------------------------------->
+            <section class="secao secao-aprendizagem">
+                <div class="titulo-secao">
+                    <span class="sobretitulo">AMBIENTES DE FORMAÇÃO</span>
+                    <h2>Escolha uma área de aprendizagem</h2>
+                    <p>Estude com orientação, pratique o que aprendeu e prepare-se para demonstrar seus conhecimentos.</p>
+                </div>
 
-<nav class="menu">
-  <a href="feminino.html" onclick="showCategory('feminino')">
-    Feminino
-  </a>
-  <a href="masculino.html" onclick="showCategory('masculino')">
-    Masculino
-  </a>
-  <a href="#">
-        Promoções
-  </a>
-  <a href="#">
-        Contato
-  </a>
-</nav>
+                <div class="cartoes-ambiente">
+                    <article class="cartao-ambiente cartao-biblico">
+                        <div class="icone-cartao" aria-hidden="true">✦</div>
+                        <span class="etiqueta">FORMAÇÃO BÍBLICA E CRISTÃ</span>
+                        <h3>Conhecimento Bíblico</h3>
+                        <p>Explore os temas de estudo dos quatro postos e aprofunde seu conhecimento da Bíblia, da história Batista e da obra missionária.</p>
+                        <button class="botao botao-escuro" data-nav="biblico">Acessar os postos <span aria-hidden="true">→</span></button>
+                    </article>
 
+                    <article class="cartao-ambiente cartao-ordem">
+                        <div class="icone-cartao" aria-hidden="true">◆</div>
+                        <span class="etiqueta">DISCIPLINA E COOPERAÇÃO</span>
+                        <h3>Ordem Unida</h3>
+                        <p>Um ambiente próprio para conhecer comandos, movimentos e orientações, com explicações didáticas e demonstrações.</p>
+                        <button class="botao botao-contorno" data-nav="ordem">Conhecer o ambiente <span aria-hidden="true">→</span></button>
+                    </article>
+                </div>
+            </section>
 
-    <div class="header-right">
-      <a
-      href="https://wa.me/558681799539" target="_blank" class="whatsapp-btn">
-        <i class="fa-brands fa-whatsapp"></i>
-        WhatsApp
-      </a>
-    </div>
-  </header>
+            <section class="faixa-metodo">
+                <div class="titulo-secao titulo-claro">
+                    <span class="sobretitulo">NOSSA PROPOSTA</span>
+                    <h2>Aprender é mais do que memorizar.</h2>
+                    <p>O conhecimento ganha sentido quando é compreendido e colocado em prática.</p>
+                </div>
+                <div class="passos">
+                    <article><span>01</span><div><h3>Estudar</h3><p>Conhecer os assuntos e compreender seus fundamentos.</p></div></article>
+                    <article><span>02</span><div><h3>Praticar</h3><p>Exercitar o conhecimento por meio de atividades e desafios.</p></div></article>
+                    <article><span>03</span><div><h3>Demonstrar</h3><p>Compartilhar o que aprendeu com acompanhamento do conselheiro.</p></div></article>
+                </div>
+            </section>
 
-  <!----------------------------- MAIN (inicio) ----------------------->
-  <main>
-      <div class="carousel">
-  <div class="slide active">
-    <img src="img/banners_agreg06.jpeg" alt="Moda Masculina">
-    <div class="caption">
-      <h2>Moda Masculina</h2>
-    </div>
-  </div>
+            <section class="secao sobre" id="sobre">
+                <span class="sobretitulo">NOSSO PROPÓSITO</span>
+                <h2>Uma ferramenta a serviço da formação.</h2>
+                <p>Esta plataforma é um recurso complementar de aprendizagem. Ela apoia o estudo individual e a preparação dos Embaixadores do Rei, sem substituir a convivência, a orientação do conselheiro ou os procedimentos de avaliação da organização.</p>
+            </section>
+        </section>
 
-  <div class="slide">
-    <img src="img/banners_agreg00.png" alt="Moda Feminina">
-    <div class="caption">
-      <h2>Moda Feminina</h2>
-    </div>
-  </div>
-</div>
-  </main>
-  <!------------------------ MAIN (fim) ------------------------------->
+        <section class="tela secao-interna" id="tela-biblico" data-tela="biblico" hidden>
+            <div class="cabecalho-interno">
+                <button class="voltar" data-nav="inicio">← Página inicial</button>
+                <span class="sobretitulo">AMBIENTE DE APRENDIZAGEM</span>
+                <h1>Conhecimento Bíblico</h1>
+                <p>Selecione seu posto para conhecer os temas de estudo correspondentes.</p>
+            </div>
+            <div class="grade-postos" id="gradePostos"></div>
+        </section>
 
-  <!------------------------------- FOOTER ----------------------------->
+        <section class="tela secao-interna" id="tela-ordem" data-tela="ordem" hidden>
+            <div class="cabecalho-interno">
+                <button class="voltar" data-nav="inicio">← Página inicial</button>
+                <span class="sobretitulo">AMBIENTE DE APRENDIZAGEM</span>
+                <h1>Ordem Unida</h1>
+                <p>Um espaço de estudo e consulta dedicado à Ordem Unida dos Embaixadores do Rei.</p>
+            </div>
+            <div class="aviso-construcao">
+                <span class="aviso-simbolo">◆</span>
+                <h2>Ambiente em preparação</h2>
+                <p>Esta área será desenvolvida com conteúdos explicativos, ilustrações e demonstrações dos movimentos e comandos. O material será organizado com atenção às orientações vigentes da organização.</p>
+            </div>
+        </section>
 
-  <footer>
-    <div class="footer-container">
+        <section class="tela secao-interna" id="tela-posto" data-tela="posto" hidden>
+            <div class="cabecalho-interno">
+                <button class="voltar" data-nav="biblico">← Voltar aos postos</button>
+                <span class="sobretitulo">CONHECIMENTO BÍBLICO</span>
+                <h1 id="tituloPosto">Posto</h1>
+                <p id="descricaoPosto">Temas de estudo deste posto.</p>
+            </div>
+            <div class="lista-temas" id="listaTemas"></div>
+            <p class="nota-curricular">Os títulos apresentados correspondem aos temas identificados nos sumários dos manuais. O desenvolvimento dos estudos será incorporado após a conferência das fontes, sem atribuir ao material oficial conteúdos que ainda não foram consultados.</p>
+        </section>
 
-      <!-- MARCA -->
+        <section class="tela secao-interna" data-tela="tema" hidden>
+            <div class="cabecalho-interno">
+                <button class="voltar" id="voltarPosto">← Voltar aos temas</button>
+                <span class="sobretitulo">ESTUDO ORIENTADO</span>
+                <h1 id="tituloTema">Tema de estudo</h1>
+            </div>
+            <div class="aviso-construcao aviso-estudo">
+                <span class="aviso-simbolo">✦</span>
+                <h2>Conteúdo em preparação</h2>
+                <p>Este tema já está identificado no mapa curricular. O estudo orientado, os exercícios e os desafios serão preparados a partir das fontes correspondentes e revisados antes de serem disponibilizados.</p>
+            </div>
+        </section>
+    </main>
 
-      <div class="footer-brand">
-        <h2>
-          AGREG
-        </h2>
-        <p>
-          Moda moderna para homens e mulheres.
-        </p>
-      </div>
-
-      <!-- REDES -->
-
-      <div class="footer-socials">
-        <h3>
-          Redes Sociais
-        </h3>
-        <div class="social-icons">
-
-          <a href="https://wa.me/558681799539" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-
-          <a href="https://www.instagram.com/agregmodaa?igsh=OHdrMGRlbWI3cXVw" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- QR CODE -->
-      <div class="qr-code">
-
-        <h3>
-          WhatsApp
-        </h3>
-
-        <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/558681799539"
-        alt="QR Code">
-
-      </div>
-    </div>
-    <div class="copyright">
-      © 2026 AGREG - Todos os direitos reservados.
-    </div>
-
-  </footer>
-
-  <!----------------------- JS ------------------------>
-  <script src="script.js"></script>
-  <!----------------------- JS ------------------------>
+    <footer class="rodape">
+        <div class="rodape-marca">EMBAIXADORES DO REI</div>
+        <p>Conhecimento, Fé e Formação Missionária.</p>
+        <small>Plataforma digital de aprendizagem complementar.</small>
+    </footer>
 </body>
 </html>
