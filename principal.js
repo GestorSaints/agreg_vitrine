@@ -294,7 +294,7 @@ function abrirTema(indice) {
         // Tema 1 — Os postos da organização
         if (indice === 0) {
             window.location.href =
-                "conteudos/biblico/escudeiro/tema_01.html";
+                "ascet_space/tema_01.html";
             return;
         }
 
