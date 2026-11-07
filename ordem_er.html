@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Material educativo de Ordem Unida para os Embaixadores do Rei, com apoio a Embaixadores, conselheiros e interessados.">
+<title>Ordem Unida | Embaixadores do Rei</title>
+<style>
+:root{
+  --azul:#123b65;
+  --azul-escuro:#0b2744;
+  --azul-medio:#245782;
+  --azul-claro:#eaf2f8;
+  --amarelo:#f2c94c;
+  --amarelo-claro:#fff6d8;
+  --branco:#fff;
+  --fundo:#f4f7fa;
+  --texto:#203246;
+  --suave:#607286;
+  --linha:#d9e2ea;
+  --sombra:0 12px 32px rgba(11,39,68,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+button,input{font:inherit}
+.topo{background:linear-gradient(120deg,var(--azul-escuro),var(--azul));color:var(--branco);border-bottom:5px solid var(--amarelo)}
+.topo-interno{max-width:1200px;margin:auto;padding:22px 28px;display:flex;align-items:center;gap:18px}
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--azul-marinho);
+    text-decoration: none;
+}
+
+.marca img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+
+.identidade h1{font-family:Georgia,serif;font-size:clamp(1.35rem,3vw,2rem);margin:0;line-height:1.2}
+.identidade p{margin:6px 0 0;color:#e7eef5;font-size:.94rem}
+.faixa{background:var(--amarelo);color:var(--azul-escuro);text-align:center;padding:7px 12px;font-weight:700;font-size:.86rem;letter-spacing:.04em}
+.layout{max-width:1200px;margin:28px auto;padding:0 22px;display:grid;grid-template-columns:265px minmax(0,1fr);gap:24px}
+.menu{background:var(--branco);border:1px solid var(--linha);border-radius:15px;padding:18px;height:max-content;position:sticky;top:18px;box-shadow:var(--sombra)}
+.menu h2{font-size:.8rem;color:var(--suave);text-transform:uppercase;letter-spacing:.09em;margin:4px 8px 12px}
+.menu button{width:100%;border:0;background:transparent;color:var(--texto);text-align:left;padding:11px 12px;border-radius:9px;cursor:pointer;margin:2px 0;font-weight:600}
+.menu button:hover,.menu button.ativo{background:var(--azul-claro);color:var(--azul)}
+.menu button.ativo{border-left:4px solid var(--amarelo)}
+.menu .numero{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--amarelo-claro);color:var(--azul-escuro);font-size:.78rem;margin-right:8px}
+.menu-nota{margin:16px 5px 2px;padding:12px;background:var(--azul-claro);border-radius:10px;color:var(--suave);font-size:.83rem}
+.conteudo{min-width:0}
+.hero{background:linear-gradient(135deg,var(--azul),var(--azul-medio));color:white;padding:30px;border-radius:17px;box-shadow:var(--sombra);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:210px;height:210px;border:22px solid rgba(242,201,76,.18);border-radius:50%;right:-65px;top:-85px}
+.selo{display:inline-block;background:var(--amarelo);color:var(--azul-escuro);font-weight:800;font-size:.75rem;letter-spacing:.08em;padding:5px 10px;border-radius:30px;text-transform:uppercase}
+.hero h2{font-family:Georgia,serif;font-size:clamp(1.6rem,4vw,2.45rem);line-height:1.15;margin:14px 0 10px;max-width:700px}
+.hero p{max-width:720px;color:#edf3f8;margin:0}
+.acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.botao{border:0;border-radius:9px;padding:10px 15px;cursor:pointer;font-weight:700}
+.botao-amarelo{background:var(--amarelo);color:var(--azul-escuro)}
+.botao-claro{background:white;color:var(--azul)}
+.botao:hover{filter:brightness(.96);transform:translateY(-1px)}
+.barra-ferramentas{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0}
+.busca{flex:1;min-width:190px;padding:11px 13px;border:1px solid var(--linha);border-radius:9px;background:white;color:var(--texto)}
+.perspectivas{display:flex;gap:7px;background:#e7edf3;padding:5px;border-radius:10px}
+.perspectivas button{border:0;padding:8px 11px;border-radius:7px;background:transparent;color:var(--azul);font-weight:700;cursor:pointer}
+.perspectivas button.selecionado{background:white;box-shadow:0 2px 7px #102b4918}
+.painel{display:none;background:white;border:1px solid var(--linha);border-radius:15px;padding:26px;margin-top:18px;box-shadow:var(--sombra)}
+.painel.ativo{display:block}
+.painel h2{font-family:Georgia,serif;color:var(--azul);font-size:1.65rem;margin:0 0 8px}
+.painel h3{color:var(--azul);margin:24px 0 8px}
+.linha-amarela{width:65px;height:4px;background:var(--amarelo);border-radius:4px;margin:12px 0 18px}
+.intro{color:var(--suave);margin-top:0}
+.grade{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0}
+.cartao{border:1px solid var(--linha);border-radius:12px;padding:17px;background:#fff}
+.cartao h3{margin:0 0 7px;font-size:1.03rem}
+.cartao p{margin:0;color:var(--suave);font-size:.93rem}
+.chamada{border-left:4px solid var(--amarelo);background:var(--amarelo-claro);padding:14px 16px;border-radius:0 9px 9px 0;margin:18px 0}
+.lista{padding-left:22px}
+.lista li{margin:7px 0}
+.bloco-publico{border:1px solid var(--linha);border-radius:11px;padding:16px;margin:14px 0;background:#fbfdff}
+.bloco-publico h3{margin:0 0 8px}
+.rotulo{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--azul-medio)}
+.instrutor{background:#f2f6fa}
+body.modo-embaixador .instrutor{display:none}
+body.modo-conselheiro .embaixador{display:none}
+body.modo-todos .instrutor,body.modo-todos .embaixador{display:block}
+.aviso{font-size:.88rem;color:var(--suave);background:#f5f7f9;border-radius:9px;padding:12px 14px}
+.rodape{max-width:1200px;margin:0 auto 30px;padding:0 22px;color:var(--suave);font-size:.85rem}
+.rodape-interno{border-top:1px solid var(--linha);padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.vazio{display:none;padding:20px;text-align:center;color:var(--suave)}
+@media(max-width:850px){
+ .layout{grid-template-columns:1fr}
+ .menu{position:static}
+ .menu-lista{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px}
+}
+@media(max-width:560px){
+ .topo-interno{padding:17px}.marca{width:52px;height:52px;flex-basis:52px}
+ .layout{padding:0 13px;margin:17px auto}.menu-lista{grid-template-columns:1fr}
+ .hero,.painel{padding:20px}.grade{grid-template-columns:1fr}
+ .perspectivas{width:100%;justify-content:space-between}.perspectivas button{flex:1}
+}
+@media print{
+ body{background:white}.topo{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .layout{display:block;margin:10px auto}.menu,.barra-ferramentas,.acoes,.rodape{display:none!important}
+ .painel{display:block!important;box-shadow:none;break-inside:avoid;border:0}
+ .hero{box-shadow:none}.instrutor,.embaixador{display:block!important}
+}
+</style>
+</head>
+<body class="modo-todos">
+<header class="topo">
+ <div class="topo-interno">
+  <div class="marca" aria-label="Embaixadores do Rei">
+    <img src="imagens/insignia/insignia_er.jpg" alt="Insígnia dos Embaixadores do Rei"
+                 onerror="this.style.display='none'">
+  </div>
+  <div class="identidade">
+   <h1>Ordem Unida</h1>
+   <p>Material educativo para os Embaixadores do Rei</p>
+  </div>
+ </div>
+ <div class="faixa">LEALDADE • PUREZA • PRECIOSIDADE</div>
+</header>
+
+<div class="layout">
+ <aside class="menu">
+  <h2>Conteúdo</h2>
+  <div class="menu-lista">
+   <button class="ativo" data-alvo="inicio"><span class="numero">⌂</span>Apresentação</button>
+   <button data-alvo="fundamentos"><span class="numero">1</span>Fundamentos</button>
+   <button data-alvo="individual"><span class="numero">2</span>Instrução individual</button>
+   <button data-alvo="coletiva"><span class="numero">3</span>Instrução coletiva</button>
+   <button data-alvo="bastao"><span class="numero">4</span>Bastão dos ER</button>
+   <button data-alvo="instrutor"><span class="numero">5</span>Orientações ao instrutor</button>
+   <button data-alvo="referencias"><span class="numero">i</span>Referências e limites</button>
+  </div>
+  <div class="menu-nota">Este material está em construção. Os conteúdos serão desenvolvidos e conferidos antes de serem considerados instruções oficiais da organização.</div>
+ </aside>
+
+ <main class="conteudo">
+  <section class="hero" id="inicio">
+   <span class="selo">Aprender • praticar • servir</span>
+   <h2>Ordem, atenção e cooperação em equipe</h2>
+   <p>Um espaço de aprendizagem para conhecer movimentos, desenvolver coordenação e participar de atividades organizadas com respeito, responsabilidade e espírito de equipe.</p>
+   <div class="acoes">
+    <button class="botao botao-amarelo" onclick="abrirSecao('fundamentos')">Começar pelo Capítulo I</button>
+    <button class="botao botao-claro" onclick="window.print()">Imprimir / salvar em PDF</button>
+   </div>
+  </section>
+
+  <div class="barra-ferramentas">
+   <input class="busca" id="busca" type="search" placeholder="Buscar assunto nesta página..." aria-label="Buscar assunto">
+   <div class="perspectivas" aria-label="Escolher perspectiva">
+    <button class="selecionado" data-modo="todos">Todos</button>
+    <button data-modo="embaixador">Embaixador</button>
+    <button data-modo="conselheiro">Conselheiro</button>
+   </div>
+  </div>
+
+  <section class="painel" id="fundamentos">
+   <span class="selo">Capítulo I • Introdução</span>
+   <h2>1. Fundamentos da Ordem Unida</h2><div class="linha-amarela"></div>
+   <p class="intro">Nesta seção vamos compreender o sentido da organização dos movimentos e das formações, trazendo os conceitos para a realidade educativa dos Embaixadores do Rei.</p>
+   <div class="grade">
+    <article class="cartao"><h3>O que é?</h3><p>É um conjunto organizado de posições, movimentos e formações realizados individualmente ou em grupo, de maneira coordenada.</p></article>
+    <article class="cartao"><h3>Para que serve?</h3><p>Ajuda o grupo a agir de forma organizada, desenvolver atenção, coordenação, responsabilidade e cooperação.</p></article>
+    <article class="cartao"><h3>Atitudes importantes</h3><p>Respeito, atenção às orientações, cuidado com os colegas, pontualidade e compromisso com a atividade.</p></article>
+    <article class="cartao"><h3>Aprender com segurança</h3><p>Os exercícios devem respeitar a idade, as condições físicas, o espaço disponível e a segurança de todos.</p></article>
+   </div>
+   <div class="bloco-publico embaixador">
+    <div class="rotulo">Aprendendo • Embaixador</div>
+    <h3>O que devo levar para a prática?</h3>
+    <p>Prestar atenção, compreender o movimento antes de executá-lo, respeitar o ritmo dos colegas e praticar sem brincadeiras que possam machucar alguém.</p>
+   </div>
+   <div class="bloco-publico instrutor">
+    <div class="rotulo">Ensinando • Conselheiro</div>
+    <h3>Orientação para conduzir a aprendizagem</h3>
+    <p>Apresente primeiro a finalidade do exercício. Demonstre em ritmo lento, explique os pontos principais, permita a experimentação e corrija com respeito. A precisão deve ser construída gradualmente, sem humilhação ou comparação entre os meninos.</p>
+   </div>
+   <div class="chamada"><strong>Princípio orientador:</strong> a organização dos movimentos deve servir à formação, à cooperação e à boa apresentação do grupo — não à intimidação nem à imitação de práticas de combate.</div>
+   <h3>Vocabulário inicial</h3>
+   <ul class="lista">
+    <li><strong>Formação:</strong> maneira organizada de posicionar os participantes.</li>
+    <li><strong>Fileira:</strong> participantes colocados lado a lado.</li>
+    <li><strong>Coluna:</strong> participantes posicionados um atrás do outro.</li>
+    <li><strong>Alinhamento:</strong> organização dos participantes numa mesma linha.</li>
+    <li><strong>Intervalo:</strong> espaço lateral entre participantes.</li>
+    <li><strong>Distância:</strong> espaço entre participantes posicionados em profundidade.</li>
+   </ul>
+   <p class="aviso">Os termos serão detalhados e ilustrados nas próximas etapas. A terminologia será ajustada quando necessário para a linguagem usada pelos Embaixadores do Rei.</p>
+  </section>
+
+  <section class="painel" id="individual">
+   <span class="selo">Capítulo II • Instrução individual sem arma</span>
+   <h2>2. Instrução individual</h2><div class="linha-amarela"></div>
+   <p class="intro">A aprendizagem começa com movimentos que cada participante consegue compreender e executar com atenção, equilíbrio e controle corporal.</p>
+   <div class="grade">
+    <article class="cartao"><h3>Posições básicas</h3><p>Sentido, descansar e à vontade, com adaptações educativas apropriadas.</p></article>
+    <article class="cartao"><h3>Organização individual</h3><p>Entrar em forma, ocupar o lugar combinado e sair de forma com atenção.</p></article>
+    <article class="cartao"><h3>Passos e marchas</h3><p>Postura, coordenação dos braços e pernas, ritmo e deslocamento seguro.</p></article>
+    <article class="cartao"><h3>Voltas e mudanças de direção</h3><p>Direita, esquerda e meia-volta, inicialmente parado e depois em deslocamento, se adequado.</p></article>
+   </div>
+   <div class="bloco-publico embaixador"><div class="rotulo">Aprendendo • Embaixador</div><h3>Como praticar</h3><p>Observe a demonstração, escute o comando, faça o movimento sem pressa e repita até conseguir executá-lo com segurança.</p></div>
+   <div class="bloco-publico instrutor"><div class="rotulo">Ensinando • Conselheiro</div><h3>Sequência sugerida</h3><p>Ensine um movimento por vez: explique, demonstre, pratique sem cadência, pratique com ritmo confortável e revise. Não introduza velocidade antes de haver compreensão e controle.</p></div>
+   <div class="chamada">O manual de referência é militar. Por isso, suas medidas, cadências, comandos e finalidades não serão transferidos automaticamente para os Embaixadores do Rei.</div>
+   <p class="aviso">Conteúdo detalhado em preparação. As descrições finais serão elaboradas após seleção e adaptação dos movimentos pertinentes.</p>
+  </section>
+
+  <section class="painel" id="coletiva">
+   <span class="selo">Capítulo IV • Instrução coletiva</span>
+   <h2>3. Instrução coletiva</h2><div class="linha-amarela"></div>
+   <p class="intro">Nesta etapa, os participantes aprendem a atuar juntos, mantendo organização, atenção ao grupo e cuidado com o espaço de cada colega.</p>
+   <div class="grade">
+    <article class="cartao"><h3>Formações</h3><p>Fileiras, colunas e outras disposições úteis às atividades e solenidades.</p></article>
+    <article class="cartao"><h3>Alinhamento e cobertura</h3><p>Referências visuais para organizar o grupo sem empurrões ou movimentos bruscos.</p></article>
+    <article class="cartao"><h3>Deslocamentos</h3><p>Movimentos coordenados do grupo, com atenção ao ritmo e ao espaço disponível.</p></article>
+    <article class="cartao"><h3>Mudanças de formação</h3><p>Transições planejadas e compreensíveis, praticadas passo a passo.</p></article>
+   </div>
+   <div class="bloco-publico embaixador"><div class="rotulo">Aprendendo • Embaixador</div><h3>Meu papel no grupo</h3><p>Conhecer meu lugar, observar o espaço ao redor, acompanhar as orientações e colaborar para que todos participem.</p></div>
+   <div class="bloco-publico instrutor"><div class="rotulo">Ensinando • Conselheiro</div><h3>Organização do exercício</h3><p>Comece com formações simples e espaço suficiente entre os participantes. Explique o percurso antes de iniciar e interrompa a atividade se houver risco de colisão ou confusão.</p></div>
+   <p class="aviso">As formações e os movimentos coletivos serão descritos com diagramas e exemplos próprios para o contexto dos ER.</p>
+  </section>
+
+  <section class="painel" id="bastao">
+   <span class="selo">Instrumento utilizado pelos ER</span>
+   <h2>4. O bastão dos Embaixadores do Rei</h2><div class="linha-amarela"></div>
+   <p class="intro">O bastão será tratado como instrumento próprio das atividades dos Embaixadores do Rei. Não será confundido com arma, nem serão ensinados movimentos de manejo de armamento.</p>
+   <div class="chamada"><strong>Importante:</strong> esta seção ainda não prescreve posições ou movimentos. Vamos registrar e validar com o conhecimento institucional dos ER quais usos, comandos e procedimentos fazem parte da prática real da organização.</div>
+   <div class="grade">
+    <article class="cartao"><h3>Finalidade</h3><p>Apresentar o contexto e as ocasiões em que o bastão é utilizado pelos Embaixadores do Rei.</p></article>
+    <article class="cartao"><h3>Postura e cuidado</h3><p>Orientações de segurança, transporte, guarda e respeito ao espaço dos colegas.</p></article>
+    <article class="cartao"><h3>Movimentos pertinentes</h3><p>Somente movimentos reconhecidos e adequados às atividades dos ER serão incluídos.</p></article>
+    <article class="cartao"><h3>Apresentações</h3><p>Preparação organizada para solenidades e demonstrações, conforme a prática da organização.</p></article>
+   </div>
+   <div class="bloco-publico instrutor"><div class="rotulo">Para validação do conselheiro</div><h3>Critério editorial</h3><p>Não publicar instruções técnicas de manejo sem confirmação de que correspondem ao uso efetivo do bastão pelos Embaixadores do Rei.</p></div>
+  </section>
+
+  <section class="painel" id="instrutor">
+   <span class="selo">Apoio ao ensino</span>
+   <h2>5. Orientações para o instrutor</h2><div class="linha-amarela"></div>
+   <p class="intro">Esta área reunirá recursos para preparar encontros, ensinar movimentos e acompanhar o desenvolvimento dos participantes.</p>
+   <div class="grade">
+    <article class="cartao"><h3>Planejar</h3><p>Definir objetivo, conteúdo, espaço, materiais, duração e cuidados de segurança.</p></article>
+    <article class="cartao"><h3>Demonstrar</h3><p>Apresentar o movimento de modo visível, com explicação simples e sequência clara.</p></article>
+    <article class="cartao"><h3>Praticar</h3><p>Dividir o aprendizado em etapas curtas, dando oportunidade para todos.</p></article>
+    <article class="cartao"><h3>Avaliar</h3><p>Observar compreensão, evolução, cooperação e execução segura, sem constrangimento.</p></article>
+   </div>
+   <h3>Roteiro inicial de uma atividade</h3>
+   <ol class="lista">
+    <li>Apresentar o objetivo e explicar por que o exercício será realizado.</li>
+    <li>Demonstrar o movimento e esclarecer dúvidas.</li>
+    <li>Praticar lentamente, com acompanhamento.</li>
+    <li>Repetir e combinar os movimentos quando houver segurança.</li>
+    <li>Encerrar com uma breve revisão do que foi aprendido.</li>
+   </ol>
+   <p class="aviso">O roteiro é uma proposta pedagógica inicial, não uma prescrição oficial de duração ou avaliação.</p>
+  </section>
+
+  <section class="painel" id="referencias">
+   <span class="selo">Fontes e responsabilidade</span>
+   <h2>Referências e limites da adaptação</h2><div class="linha-amarela"></div>
+   <p>Esta primeira versão toma como referência o <strong>Manual de Campanha EB70-MC-10.308 — Ordem Unida, 4ª edição, 2019</strong>, considerando apenas os Capítulos I, II e IV, conforme definido para este projeto.</p>
+   <ul class="lista">
+    <li>Capítulo I — Introdução.</li>
+    <li>Capítulo II — Instrução Individual sem Arma.</li>
+    <li>Capítulo IV — Instrução Coletiva.</li>
+   </ul>
+   <div class="chamada"><strong>Capítulo III excluído:</strong> trata de instrução individual com arma e não integra este material. Os Embaixadores do Rei utilizam bastão, não armas.</div>
+   <p>O manual é uma fonte de consulta técnica de contexto militar. O conteúdo deste site será selecionado, adaptado e reescrito para a finalidade educativa dos Embaixadores do Rei. Não representa reprodução integral do manual nem substitui orientações oficiais da organização.</p>
+   <p class="aviso">Versão inicial de estrutura. Textos técnicos, comandos, diagramas e movimentos específicos ainda passarão por revisão e validação.</p>
+  </section>
+  <div class="vazio" id="vazio">Nenhum assunto encontrado nesta seção.</div>
+ </main>
+</div>
+
+<footer class="rodape">
+ <div class="rodape-interno">
+  <span>Embaixadores do Rei • Material educativo de apoio</span>
+  <span>Lealdade • Pureza • Preciosidade</span>
+ </div>
+</footer>
+
+<script>
+(function(){
+ "use strict";
+ const botoesMenu = document.querySelectorAll("[data-alvo]");
+ const paineis = document.querySelectorAll(".painel");
+ const botoesModo = document.querySelectorAll("[data-modo]");
+ const busca = document.getElementById("busca");
+ const vazio = document.getElementById("vazio");
+
+ function abrirSecao(id){
+  paineis.forEach(p => p.classList.toggle("ativo", id !== "inicio" && p.id === id));
+  botoesMenu.forEach(b => b.classList.toggle("ativo", b.dataset.alvo === id));
+  vazio.style.display = "none";
+  if(busca) busca.value = "";
+  window.scrollTo({top:0,behavior:"smooth"});
+ }
+ botoesMenu.forEach(botao => botao.addEventListener("click",()=>abrirSecao(botao.dataset.alvo)));
+ window.abrirSecao = abrirSecao;
+
+ botoesModo.forEach(botao => {
+  botao.addEventListener("click",()=>{
+   document.body.classList.remove("modo-todos","modo-embaixador","modo-conselheiro");
+   document.body.classList.add("modo-"+botao.dataset.modo);
+   botoesModo.forEach(b=>b.classList.toggle("selecionado",b===botao));
+  });
+ });
+
+ busca.addEventListener("input",()=>{
+  const termo = busca.value.trim().toLocaleLowerCase("pt-BR");
+  const painelAtivo = document.querySelector(".painel.ativo");
+  if(!painelAtivo) return;
+  let encontrados = 0;
+  painelAtivo.querySelectorAll(".cartao,.bloco-publico,.chamada,.lista li,h3,p").forEach(el=>{
+   if(!termo){el.style.display="";return;}
+   const corresponde = el.textContent.toLocaleLowerCase("pt-BR").includes(termo);
+   el.style.display = corresponde ? "" : "none";
+   if(corresponde) encontrados++;
+  });
+  vazio.style.display = termo && encontrados===0 ? "block" : "none";
+ });
+
+ abrirSecao("fundamentos");
+})();
+</script>
+</body>
+</html>
